@@ -1,0 +1,4 @@
+export const BREAKPOINT_MOBILE = 600;
+export const BREAKPOINT_TABLET = 1000;
+export const BREAKPOINT_LAPTOP = 1300;
+export const BREAKPOINT_DESKTOP = 1500;
