@@ -21,11 +21,8 @@ module.exports = {
         ecmaFeatures: {
             jsx: true,
         },
-        ecmaVersion: 'latest',
+        ecmaVersion: 2018,
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'prettier', '@emotion'],
-    rules: {
-        'prettier/prettier': 'error',
-    },
+    plugins: ['react', '@typescript-eslint', '@emotion', 'prettier'],
 };

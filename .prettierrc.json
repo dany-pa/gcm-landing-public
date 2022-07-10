@@ -13,7 +13,7 @@
     "proseWrap": "preserve",
     "htmlWhitespaceSensitivity": "css",
     "vueIndentScriptAndStyle": true,
-    "endOfLine": "lf",
+    "endOfLine": "auto",
     "embeddedLanguageFormatting": "off",
     "singleAttributePerLine": true
 }
