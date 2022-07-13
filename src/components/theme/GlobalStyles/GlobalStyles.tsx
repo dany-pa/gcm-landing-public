@@ -10,6 +10,11 @@ export const GlobalStyle = () => {
             box-sizing: border-box;
             font-family: 'Arial'; /*какой на самом деле должен быть?*/
         }
+
+        body{
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
     `}
         />
     );
