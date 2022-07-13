@@ -1,6 +1,6 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { FC, PropsWithChildren } from 'react';
-import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../const/breakpoints';
+import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 interface Props {
     style?: SerializedStyles;
 }

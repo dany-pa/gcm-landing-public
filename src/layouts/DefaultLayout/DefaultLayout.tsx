@@ -1,8 +1,7 @@
 import { FC, PropsWithChildren, useCallback, useState } from 'react';
 import { GlobalStyle } from '../../components/theme/GlobalStyles';
-import { DefaultTheme } from '../../components/theme/DefaultTheme';
 import { Menu } from '../../components/Menu';
-import { Wrapper } from '../../components/Wrapper';
+import { Wrapper } from '../../components/ui/Wrapper';
 import { COLOR_BACKGROUND } from '../../const/colors';
 import { css } from '@emotion/react';
 import { DiscordIcon, TwitterIcon, MenuIcon } from '../../components/icons';
@@ -83,7 +82,7 @@ export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     return (
-        <DefaultTheme>
+        <div>
             <GlobalStyle />
             <main css={mainStyle}>
                 <header>
@@ -126,6 +125,6 @@ export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
                 </header>
                 {children}
             </main>
-        </DefaultTheme>
+        </div>
     );
 };

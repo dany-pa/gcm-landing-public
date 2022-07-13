@@ -1,6 +1,6 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { FC } from 'react';
-import { COLOR_PRIMARY } from '../../const/colors';
+import { COLOR_PRIMARY } from '../../../const/colors';
 
 interface Props {
     title: string;

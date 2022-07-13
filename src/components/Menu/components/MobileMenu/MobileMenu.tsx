@@ -5,7 +5,7 @@ import { COLOR_BACKGROUND, COLOR_SECONDARY } from '../../../../const/colors';
 import { DISCORD_URL, TWITTER_URL } from '../../../../const/urls';
 import { MenuLinkType } from '../../../../types/general';
 import { LogoIcon, DiscordMobileIcon, TwitterMobileIcon, CloseIcon } from '../../../icons';
-import { MenuLink } from '../../../MenuLink';
+import { MenuLink } from '../../../ui/MenuLink';
 
 const wrapperStyle = css({
     padding: '40px 0 70px 0',

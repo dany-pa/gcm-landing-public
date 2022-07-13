@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { FC } from 'react';
 import { MenuLinkType } from '../../types/general';
-import { MenuLink } from '../MenuLink';
+import { MenuLink } from '../ui/MenuLink';
 
 const navStyle = css({
     width: '100%',
