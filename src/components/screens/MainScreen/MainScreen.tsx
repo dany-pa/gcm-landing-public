@@ -75,6 +75,8 @@ const sectionStyle = css({
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: COLOR_BACKGROUND,
+    width: '100vw',
+    overflow: 'hidden',
 });
 
 const wrapperStyle = css({

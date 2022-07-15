@@ -1,10 +1,8 @@
 import { css } from '@emotion/react';
-import { COLOR_BACKGROUND, COLOR_PRIMARY, COLOR_SECONDARY, COLOR_WHITE } from '../../../const/colors';
-import { LogoIcon } from '../../icons';
-import { Button } from '../../ui/Button';
+import { COLOR_BACKGROUND, COLOR_SECONDARY, COLOR_WHITE } from '../../../const/colors';
 import { Wrapper } from '../../ui/Wrapper';
-import AboutUsPanel from '../../../images/aboutUsPanel.svg';
-import AboutUsPanelBorder from '../../../images/border.svg';
+import AboutUsPanel from '../../../images/aboutUsPanel.png';
+import MobilePanelAboutUs from '../../../images/mobilePanelAboutUs.png';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { Title } from '../../ui/Title';
 import { Text } from '../../ui/Text';
@@ -12,27 +10,37 @@ import styled from '@emotion/styled';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
+    width: '100vw',
+    overflow: 'hidden',
 });
 
 const panelStyle = css({
     position: 'relative',
-    left: -42,
-    top: -50,
-    filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
-    transform: 'rotate(182deg)',
-    // // mixBlendMode: 'color-burn',
-    // mixBlendMode: 'soft-light',
-    opacity: '0.6',
-    // opacity: '0.45',
-    // backgroundBlendMode: 'soft-light',
+    mixBlendMode: 'normal',
+    width: 744,
+    height: 513,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 680,
+        height: 470,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 627,
+        height: 433,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'none',
+    },
 });
-
-const panelBorerStyle = css({
-    position: 'absolute',
-    top: 0,
-    backgroundBlendMode: 'screen',
-    mixBlendMode: 'screen',
-    opacity: '0.5',
+const mbilePanelStyle = css({
+    display: 'none',
+    width: 408,
+    height: 398,
+    mixBlendMode: 'normal',
+    opacity: '0.45',
+    position: 'relative',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'block',
+    },
 });
 
 const AdvanceStyled = styled.div({
@@ -48,7 +56,7 @@ const DividerStyled = styled.div({
 });
 
 const advanceWrapperStyle = css({
-    backgroundColor: COLOR_PRIMARY,
+    backgroundColor: '#8E38C2',
     padding: '10px 0',
     display: 'flex',
     alignItems: 'center',
@@ -63,19 +71,35 @@ const advanceWrapperStyle = css({
     },
 });
 
+const AboutUsPanelWrapper = css({
+    position: 'relative',
+    color: COLOR_SECONDARY,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 150,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        marginBottom: 50,
+    },
+});
+
+const AboutUsImgWrapper = css({
+    position: 'relative',
+});
+
 export const AboutUsScreen = () => {
     return (
         <section css={sectionStyle}>
             <Wrapper>
-                <div css={{ position: 'relative', color: COLOR_SECONDARY }}>
-                    <div css={{ position: 'relative' }}>
-                        {/* <img
-                            css={panelBorerStyle}
-                            src={AboutUsPanelBorder}
-                        /> */}
+                <div css={AboutUsPanelWrapper}>
+                    <div css={AboutUsImgWrapper}>
                         <img
                             src={AboutUsPanel}
                             css={panelStyle}
+                        />
+                        <img
+                            src={MobilePanelAboutUs}
+                            css={mbilePanelStyle}
                         />
                     </div>
                     <div
@@ -86,29 +110,30 @@ export const AboutUsScreen = () => {
                             justifyContent: 'center',
                             width: '100%',
                             height: '100%',
+                            position: 'absolute',
                         }}
                     >
-                        <div
-                            css={{
-                                position: 'absolute',
-                                top: 0,
-                                p: {
-                                    fontSize: 20,
-                                    lineHeight: '25px',
-                                    fontWeight: 500,
-                                    marginBottom: '25px',
-                                },
-                            }}
-                        >
-                            <Title type="secondary">GALACTIC MARKET CATS</Title>
-                            <Text type="secondary">
+                        <div>
+                            <Title
+                                type="secondary"
+                                style={css({ marginBottom: 20 })}
+                            >
+                                GALACTIC MARKET CATS
+                            </Title>
+                            <Text
+                                type="secondary"
+                                style={css({ marginBottom: 25 })}
+                            >
                                 <strong>
                                     is more than just a pfp collection.
                                     <br /> It is a character for the free universe,
                                     <br /> the world, the story we build together.
                                 </strong>
                             </Text>
-                            <Text type="secondary">
+                            <Text
+                                type="secondary"
+                                style={css({ marginBottom: 25 })}
+                            >
                                 Many of us didn't have great experience
                                 <br /> with expressing creativity.
                             </Text>
