@@ -4,8 +4,8 @@ import { Wrapper } from '../../ui/Wrapper';
 import firstCharacterBig from '../../../images/characters/1_big.png';
 import secondCharacterBig from '../../../images/characters/2_big.png';
 import thirdCharacterBig from '../../../images/characters/3_big.png';
-import { Title } from '../../ui/Title';
 import { Text } from '../../ui/Text';
+import { BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
@@ -24,11 +24,19 @@ const infoPanelStyle = css({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-around',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        height: 263,
+        alignItems: 'flex-start',
+        marginBottom: '-30px',
+    },
 });
 
 const slideStyle = css({
     position: 'relative',
     display: 'flex',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        flexWrap: 'wrap',
+    },
 });
 
 const characterImgStyle = css({
@@ -69,7 +77,9 @@ export const CharactersScreen = () => {
                             key={character.id}
                         >
                             <div css={infoPanelStyle}>
-                                <Title type="secondary">{character.title}</Title>
+                                <Text type="secondary">
+                                    <strong>{character.title}</strong>
+                                </Text>
                                 <Text type="secondary">{character.text}</Text>
                             </div>
                             <img
