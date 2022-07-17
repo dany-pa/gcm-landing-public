@@ -1,8 +1,11 @@
-import { MainScreen } from '../components/screens/MainScreen';
-import { AboutUsScreen } from '../components/screens/AboutUsScreen';
-import { GalleryScreen } from '../components/screens/GalleryScreen';
-import { BenefitsScreen } from '../components/screens/BenefitsScreen';
-import { CharactersScreen } from '../components/screens/CharactersScreen';
+import {
+    MainScreen,
+    AboutUsScreen,
+    BenefitsScreen,
+    CharactersScreen,
+    GalleryScreen,
+    StoryScreen,
+} from '../components/screens';
 
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../const/breakpoints';
 
@@ -78,6 +81,7 @@ function IndexPage() {
             <GalleryScreen />
             <BenefitsScreen />
             <CharactersScreen />
+            <StoryScreen />
         </DefaultLayout>
     );
 }

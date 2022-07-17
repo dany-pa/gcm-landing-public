@@ -2,7 +2,7 @@ import { SerializedStyles } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, PropsWithChildren, useMemo } from 'react';
 import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
-import { COLOR_PRIMARY, COLOR_SECONDARY } from '../../../const/colors';
+import { COLOR_PRIMARY, COLOR_SECONDARY, COLOR_WHITE } from '../../../const/colors';
 
 const TextStyled = styled.h2({
     fontSize: 22,
@@ -19,13 +19,18 @@ const TextStyled = styled.h2({
 });
 
 interface Props {
-    type?: 'primary' | 'secondary';
+    type?: 'primary' | 'secondary' | 'white';
     style?: SerializedStyles;
 }
 
 export const Text: FC<PropsWithChildren<Props>> = ({ children, type = 'primary', style }) => {
     const colorStyle = useMemo(() => {
-        return { color: type == 'primary' ? COLOR_PRIMARY : COLOR_SECONDARY };
+        const colors = {
+            primary: COLOR_PRIMARY,
+            secondary: COLOR_SECONDARY,
+            white: COLOR_WHITE,
+        };
+        return { color: colors[type] || COLOR_PRIMARY };
     }, [type]);
     return <TextStyled css={[style, colorStyle]}>{children}</TextStyled>;
 };
