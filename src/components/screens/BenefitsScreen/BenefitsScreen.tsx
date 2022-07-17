@@ -7,12 +7,15 @@ import interactiveEvolutionIcon from '../../../images/benefits/interactiveEvolut
 import ownIPIcon from '../../../images/benefits/ownIP.svg';
 import universeWeBuildIcon from '../../../images/benefits/universeWeBuild.svg';
 import dropsIcon from '../../../images/benefits/drops.svg';
+import stackIcon from '../../../images/stack.png';
 import { Text } from '../../ui/Text';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
+import { Title } from '../../ui/Title';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
     boxShadow: 'inset 0px 10px 10px 9px rgba(0,0,0, 0.1)',
+    padding: '30px 0 0 0',
 });
 
 const Benefit = styled.div(
@@ -32,7 +35,7 @@ const Benefit = styled.div(
 );
 
 const benefitWrapperStyle = css({
-    padding: '200px 0',
+    paddingBottom: '30px',
     display: 'flex',
     justifyContent: 'space-between',
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
@@ -240,10 +243,47 @@ const benefitInnerStyle = css({
     justifyContent: 'space-around',
 });
 
+const stackPanelStyle = css({
+    backgroundColor: '#5014BC',
+    width: '100%',
+    borderRadius: 40,
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    padding: '30px 30px 30px 84px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 555,
+        margin: '0 auto 30px auto',
+        position: 'relative',
+        paddingLeft: '64px',
+    },
+});
+
+const stackIconStyle = css({
+    width: 290,
+    height: 290,
+
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 168,
+        height: 168,
+        position: 'absolute',
+        right: '-20px',
+        top: '-25px',
+    },
+});
+
+const wrapperStyle = css({
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        display: 'flex',
+        flexDirection: 'column-reverse',
+    },
+});
+
 export const BenefitsScreen = () => {
     return (
         <section css={sectionStyle}>
-            <Wrapper>
+            <Wrapper style={wrapperStyle}>
                 <div css={benefitWrapperStyle}>
                     {benefits.map((benefit) => {
                         return (
@@ -268,6 +308,27 @@ export const BenefitsScreen = () => {
                             </div>
                         );
                     })}
+                </div>
+                <div css={stackPanelStyle}>
+                    <div css={{ marginRight: 50 }}>
+                        <Text style={css({ marginBottom: 40 })}>
+                            <strong>Galactic Market is Built on Stacks.</strong>
+                        </Text>
+                        <Text style={css({ marginBottom: 30 })}>
+                            Stacks is an open-source blockchain network
+                            <br /> that leverages the security and capital
+                            <br /> of Bitcoin or decentralized apps and smart
+                            <br /> contracts.
+                        </Text>
+                        <Text>
+                            And what's more important, a great community
+                            <br /> of great creative and mindful people.
+                        </Text>
+                    </div>
+                    <img
+                        src={stackIcon}
+                        css={stackIconStyle}
+                    />
                 </div>
             </Wrapper>
         </section>
