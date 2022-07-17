@@ -1,8 +1,11 @@
-import { AboutUsScreen } from '../components/screens/AboutUsScreen';
-import { BenefitsScreen } from '../components/screens/BenefitsScreen';
-import { GalleryScreen } from '../components/screens/GalleryScreen';
 import { MainScreen } from '../components/screens/MainScreen';
+import { AboutUsScreen } from '../components/screens/AboutUsScreen';
+import { GalleryScreen } from '../components/screens/GalleryScreen';
+import { BenefitsScreen } from '../components/screens/BenefitsScreen';
+import { CharactersScreen } from '../components/screens/CharactersScreen';
+
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../const/breakpoints';
+
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
 // markup
@@ -74,6 +77,7 @@ function IndexPage() {
             <AboutUsScreen />
             <GalleryScreen />
             <BenefitsScreen />
+            <CharactersScreen />
         </DefaultLayout>
     );
 }
