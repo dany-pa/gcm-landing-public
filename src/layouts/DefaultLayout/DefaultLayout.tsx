@@ -68,6 +68,7 @@ const menuButtonStyle = css({
     border: 'none',
     cursor: 'pointer',
     position: 'fixed',
+    zIndex: 999,
 });
 
 const links: MenuLinkType[] = [

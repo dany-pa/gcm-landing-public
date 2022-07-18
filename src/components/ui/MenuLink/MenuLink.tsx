@@ -7,9 +7,10 @@ interface Props {
     anchor: string;
     color?: string;
     style?: SerializedStyles;
+    onClick?: () => void;
 }
 
-export const MenuLink: FC<Props> = ({ title, anchor, color = COLOR_PRIMARY, style }) => {
+export const MenuLink: FC<Props> = ({ title, anchor, color = COLOR_PRIMARY, style, onClick }) => {
     const linkStyle = css({
         color: color,
         fontSize: 16,
@@ -30,6 +31,7 @@ export const MenuLink: FC<Props> = ({ title, anchor, color = COLOR_PRIMARY, styl
             css={[linkStyle, style]}
             href={`#${anchor}`}
             key={title}
+            onClick={onClick}
         >
             {title}
         </a>

@@ -115,6 +115,7 @@ export const MobileMenu: FC<Props> = ({ style, links, onCloseClick }) => {
                             anchor={link.anchor}
                             key={link.title}
                             style={linkStyle}
+                            onClick={onCloseClick}
                         />
                     );
                 })}
