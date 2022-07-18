@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import { BREAKPOINT_LAPTOP, BREAKPOINT_TABLET } from '../../../const/breakpoints';
-import { COLOR_BACKGROUND, COLOR_PRIMARY, COLOR_SECONDARY, COLOR_WHITE } from '../../../const/colors';
+import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
+import { COLOR_PRIMARY } from '../../../const/colors';
 import { Wrapper } from '../../ui/Wrapper';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,122 +9,97 @@ import img2 from '../../../images/carousel/img2.png';
 import img3 from '../../../images/carousel/img3.png';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useState } from 'react';
 
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { Title, Text, Button } from '../../ui';
 import { GALLERY_ANCHOR } from '../../../const/urls';
-
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    // variableWidth: true,
-    centerMode: true,
-    centerPadding: 0,
-};
 
 const imgStyle = css({
     width: 285,
     height: 285,
     borderRadius: 13,
+    position: 'relative',
 });
-const activeImgStyle = css({});
+const activeImgStyle = css({
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+});
+const activeImgWrapperStyle = css({
+    '&::after': {
+        content: '""',
+        position: 'absolute',
+        width: 285,
+        height: 15,
+        backgroundColor: COLOR_PRIMARY,
+        bottom: 0,
+        left: 0,
+    },
+});
 
 const sectionStyle = css({
     backgroundColor: '#915FF4',
     padding: '65px 0',
 
-    // '.swiper-container .swiper-slide-active': {
-    '.slick-current ': {
-        // img: {
-        //     width: 500,
-        //     height: 500,
-        // },
-        // transform: 'scale(1.5)',
+    '.swiper': {
+        marginRight: -100,
+    },
+
+    '.swiper-button-prev, .swiper-button-next': {
+        color: '#FFD9F7',
     },
 });
+
+const slides = [img1, img2, img3];
 export const GalleryScreen = () => {
-    const [activeSlider, setActiveSlider] = useState(0);
     return (
         <section
             css={sectionStyle}
             id={GALLERY_ANCHOR}
         >
             <Wrapper>
-                {/* <Swiper
-                    spaceBetween={0}
+                <Swiper
                     slidesPerView={3}
-                    onSlideChange={(swiper) => setActiveSlider(swiper.activeIndex)}
                     modules={[Navigation]}
+                    loop={true}
                     navigation
-                    loop
-                    centeredSlides={true}
+                    watchSlidesProgress={true}
+                    breakpoints={{
+                        [BREAKPOINT_LAPTOP]: {
+                            slidesPerView: 3,
+                        },
+                        [BREAKPOINT_TABLET]: {
+                            slidesPerView: 2,
+                        },
+                        [BREAKPOINT_MOBILE]: {
+                            slidesPerView: 2,
+                        },
+                    }}
                 >
-                    <SwiperSlide>
-                        <img
-                            css={[imgStyle, activeImgStyle]}
-                            src={img1}
-                        />
-                    </SwiperSlide>
+                    {slides.map((slide, index) => {
+                        return (
+                            <SwiperSlide key={index}>
+                                {({ isActive, isVisible }) => {
+                                    return (
+                                        <div css={isActive ? activeImgWrapperStyle : {}}>
+                                            <img
+                                                css={[
+                                                    imgStyle,
+                                                    isActive ? activeImgStyle : {},
+                                                    isVisible
+                                                        ? {
+                                                              filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+                                                          }
+                                                        : {},
+                                                ]}
+                                                src={slide}
+                                            />
+                                        </div>
+                                    );
+                                }}
+                            </SwiperSlide>
+                        );
+                    })}
+                </Swiper>
 
-                    <SwiperSlide>
-                        <img
-                            css={imgStyle}
-                            src={img2}
-                        />
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <img
-                            css={imgStyle}
-                            src={img3}
-                        />
-                    </SwiperSlide>
-                </Swiper> */}
-
-                <Slider {...settings}>
-                    <div>
-                        <img
-                            css={imgStyle}
-                            src={img1}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            css={imgStyle}
-                            src={img2}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            css={imgStyle}
-                            src={img3}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            css={imgStyle}
-                            src={img1}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            css={imgStyle}
-                            src={img2}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            css={imgStyle}
-                            src={img3}
-                        />
-                    </div>
-                </Slider>
                 <div css={{ display: 'flex' }}>
                     <div css={{ marginLeft: 'auto' }}>
                         <Title
