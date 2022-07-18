@@ -7,6 +7,7 @@ import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../.
 import { Title } from '../../ui/Title';
 import { Text } from '../../ui/Text';
 import styled from '@emotion/styled';
+import { ABOUT_US_ANCHOR } from '../../../const/urls';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
@@ -89,7 +90,10 @@ const AboutUsImgWrapper = css({
 
 export const AboutUsScreen = () => {
     return (
-        <section css={sectionStyle}>
+        <section
+            css={sectionStyle}
+            id={ABOUT_US_ANCHOR}
+        >
             <Wrapper>
                 <div css={AboutUsPanelWrapper}>
                     <div css={AboutUsImgWrapper}>

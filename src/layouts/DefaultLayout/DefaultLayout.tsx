@@ -8,7 +8,16 @@ import { DiscordIcon, TwitterIcon, MenuIcon } from '../../components/icons';
 import { BREAKPOINT_TABLET } from '../../const/breakpoints';
 import { MobileMenu } from '../../components/Menu/components/MobileMenu';
 import { MenuLinkType } from '../../types/general';
-import { DISCORD_URL, TWITTER_URL } from '../../const/urls';
+import {
+    ABOUT_US_ANCHOR,
+    BENEFITS_ANCHOR,
+    CHARACTERS_ANCHOR,
+    DISCORD_URL,
+    GALLERY_ANCHOR,
+    STORY_ANCHOR,
+    TWITTER_URL,
+    WHO_WE_ARE_ANCHOR,
+} from '../../const/urls';
 const mainStyle = css({
     backgroundColor: COLOR_BACKGROUND,
     width: '100vw',
@@ -62,12 +71,12 @@ const menuButtonStyle = css({
 });
 
 const links: MenuLinkType[] = [
-    { title: 'ABOUT US', anchor: 'about_us' },
-    { title: 'GALLERY', anchor: 'gallery' },
-    { title: 'BENEFITS', anchor: 'benefits' },
-    { title: 'CHARACTERS', anchor: 'characters' },
-    { title: 'STORY', anchor: 'story' },
-    { title: 'WHO WE ARE', anchor: 'who_we_are' },
+    { title: 'ABOUT US', anchor: ABOUT_US_ANCHOR },
+    { title: 'GALLERY', anchor: GALLERY_ANCHOR },
+    { title: 'BENEFITS', anchor: BENEFITS_ANCHOR },
+    { title: 'CHARACTERS', anchor: CHARACTERS_ANCHOR },
+    { title: 'STORY', anchor: STORY_ANCHOR },
+    { title: 'WHO WE ARE', anchor: WHO_WE_ARE_ANCHOR },
 ];
 
 export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {

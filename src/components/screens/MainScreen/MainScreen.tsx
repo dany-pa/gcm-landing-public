@@ -5,6 +5,7 @@ import { Button } from '../../ui/Button';
 import { Wrapper } from '../../ui/Wrapper';
 import City from '../../../images/city.png';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
+import { ABOUT_US_ANCHOR } from '../../../const/urls';
 
 const logoIconWrapperStyle = css({
     width: 352,
@@ -90,7 +91,9 @@ export const MainScreen = () => {
                 <div css={logoIconWrapperStyle}>
                     <LogoIcon color={COLOR_SECONDARY} />
                 </div>
-                <Button style={buttonStyle}>VIEW MORE</Button>
+                <a href={`#${ABOUT_US_ANCHOR}`}>
+                    <Button style={buttonStyle}>VIEW MORE</Button>
+                </a>
             </Wrapper>
             <img
                 css={cityImgStyle}

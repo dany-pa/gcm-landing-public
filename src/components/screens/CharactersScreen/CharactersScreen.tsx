@@ -6,6 +6,7 @@ import secondCharacterBig from '../../../images/characters/2_big.png';
 import thirdCharacterBig from '../../../images/characters/3_big.png';
 import { Text } from '../../ui/Text';
 import { BREAKPOINT_TABLET } from '../../../const/breakpoints';
+import { CHARACTERS_ANCHOR } from '../../../const/urls';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
@@ -68,7 +69,10 @@ const characters = [
 
 export const CharactersScreen = () => {
     return (
-        <section css={sectionStyle}>
+        <section
+            css={sectionStyle}
+            id={CHARACTERS_ANCHOR}
+        >
             <Wrapper>
                 {characters.map((character) => {
                     return (

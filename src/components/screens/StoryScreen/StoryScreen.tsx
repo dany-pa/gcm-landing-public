@@ -5,6 +5,7 @@ import BackgroundStory2 from '../../../images/story/storieBG_2.png';
 import BackgroundStory3 from '../../../images/story/storieBG_3.png';
 import BackgroundPanel from '../../../images/story/panel.png';
 import { Text } from '../../ui/Text';
+import { STORY_ANCHOR } from '../../../const/urls';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
@@ -69,7 +70,10 @@ const stories = [
 
 export const StoryScreen = () => {
     return (
-        <section css={sectionStyle}>
+        <section
+            css={sectionStyle}
+            id={STORY_ANCHOR}
+        >
             {stories.map((storie) => {
                 return (
                     <div

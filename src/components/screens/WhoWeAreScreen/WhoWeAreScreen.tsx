@@ -8,6 +8,7 @@ import TwitterIcon from '../../../images/whoWeAre/twitter.svg';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { Title } from '../../ui/Title';
 import { Text } from '../../ui/Text';
+import { WHO_WE_ARE_ANCHOR } from '../../../const/urls';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
@@ -116,7 +117,10 @@ const persons = [
 
 export const WhoWeAreScreen = () => {
     return (
-        <section css={sectionStyle}>
+        <section
+            css={sectionStyle}
+            id={WHO_WE_ARE_ANCHOR}
+        >
             <Wrapper>
                 <Title style={css({ textAlign: 'center', paddingBottom: 100 })}>Who we are?</Title>
                 <div css={personsWrapperStyle}>

@@ -82,7 +82,7 @@ function IndexPage() {
             <AboutUsScreen />
             <GalleryScreen />
             <BenefitsScreen />
-            {/* <CharactersScreen /> */}
+            <CharactersScreen />
             <StoryScreen />
             <WhoWeAreScreen />
             <JoinUsScreen />

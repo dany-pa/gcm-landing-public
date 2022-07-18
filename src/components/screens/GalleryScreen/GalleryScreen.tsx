@@ -18,6 +18,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Title } from '../../ui/Title';
 import { Text } from '../../ui/Text';
 import { Button } from '../../ui/Button';
+import { GALLERY_ANCHOR } from '../../../const/urls';
 
 const settings = {
     dots: true,
@@ -53,7 +54,10 @@ const sectionStyle = css({
 export const GalleryScreen = () => {
     const [activeSlider, setActiveSlider] = useState(0);
     return (
-        <section css={sectionStyle}>
+        <section
+            css={sectionStyle}
+            id={GALLERY_ANCHOR}
+        >
             <Wrapper>
                 {/* <Swiper
                     spaceBetween={0}

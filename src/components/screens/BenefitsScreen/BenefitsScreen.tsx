@@ -10,7 +10,7 @@ import dropsIcon from '../../../images/benefits/drops.svg';
 import stackIcon from '../../../images/stack.png';
 import { Text } from '../../ui/Text';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
-import { Title } from '../../ui/Title';
+import { BENEFITS_ANCHOR } from '../../../const/urls';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
@@ -282,7 +282,10 @@ const wrapperStyle = css({
 
 export const BenefitsScreen = () => {
     return (
-        <section css={sectionStyle}>
+        <section
+            css={sectionStyle}
+            id={BENEFITS_ANCHOR}
+        >
             <Wrapper style={wrapperStyle}>
                 <div css={benefitWrapperStyle}>
                     {benefits.map((benefit) => {
