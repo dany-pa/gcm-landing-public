@@ -15,9 +15,7 @@ import { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Title } from '../../ui/Title';
-import { Text } from '../../ui/Text';
-import { Button } from '../../ui/Button';
+import { Title, Text, Button } from '../../ui';
 import { GALLERY_ANCHOR } from '../../../const/urls';
 
 const settings = {

@@ -1,8 +1,7 @@
 import { css } from '@emotion/react';
 import { COLOR_BACKGROUND, COLOR_SECONDARY } from '../../../const/colors';
 import { LogoIcon } from '../../icons';
-import { Button } from '../../ui/Button';
-import { Wrapper } from '../../ui/Wrapper';
+import { Wrapper, Button } from '../../ui';
 import City from '../../../images/city.png';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { ABOUT_US_ANCHOR } from '../../../const/urls';

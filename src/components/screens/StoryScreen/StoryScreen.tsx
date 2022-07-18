@@ -4,7 +4,7 @@ import BackgroundStory1 from '../../../images/story/storieBG_1.png';
 import BackgroundStory2 from '../../../images/story/storieBG_2.png';
 import BackgroundStory3 from '../../../images/story/storieBG_3.png';
 import BackgroundPanel from '../../../images/story/panel.png';
-import { Text } from '../../ui/Text';
+import { Text } from '../../ui';
 import { STORY_ANCHOR } from '../../../const/urls';
 
 const sectionStyle = css({

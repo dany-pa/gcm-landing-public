@@ -1,10 +1,9 @@
 import { css } from '@emotion/react';
 import { COLOR_BACKGROUND } from '../../../const/colors';
-import { Wrapper } from '../../ui/Wrapper';
+import { Wrapper, Text } from '../../ui';
 import firstCharacterBig from '../../../images/characters/1_big.png';
 import secondCharacterBig from '../../../images/characters/2_big.png';
 import thirdCharacterBig from '../../../images/characters/3_big.png';
-import { Text } from '../../ui/Text';
 import { BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { CHARACTERS_ANCHOR } from '../../../const/urls';
 

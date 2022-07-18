@@ -1,13 +1,11 @@
 import { css } from '@emotion/react';
 import { COLOR_BACKGROUND } from '../../../const/colors';
-import { Wrapper } from '../../ui/Wrapper';
 import AngryImg from '../../../images/whoWeAre/angry.png';
 import SannyImg from '../../../images/whoWeAre/sanny.png';
 import DanyImg from '../../../images/whoWeAre/dany.png';
 import TwitterIcon from '../../../images/whoWeAre/twitter.svg';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
-import { Title } from '../../ui/Title';
-import { Text } from '../../ui/Text';
+import { Wrapper, Title, Text } from '../../ui';
 import { WHO_WE_ARE_ANCHOR } from '../../../const/urls';
 
 const sectionStyle = css({

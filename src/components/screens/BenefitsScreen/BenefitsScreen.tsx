@@ -1,14 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { COLOR_BACKGROUND } from '../../../const/colors';
-import { Wrapper } from '../../ui/Wrapper';
+import { Wrapper, Text } from '../../ui';
 import SecuredByBitcoinIcon from '../../../images/benefits/securedByBitcoin.svg';
 import interactiveEvolutionIcon from '../../../images/benefits/interactiveEvolution.svg';
 import ownIPIcon from '../../../images/benefits/ownIP.svg';
 import universeWeBuildIcon from '../../../images/benefits/universeWeBuild.svg';
 import dropsIcon from '../../../images/benefits/drops.svg';
 import stackIcon from '../../../images/stack.png';
-import { Text } from '../../ui/Text';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { BENEFITS_ANCHOR } from '../../../const/urls';
 

@@ -6,9 +6,9 @@ import {
     GalleryScreen,
     StoryScreen,
     JoinUsScreen,
+    WhoWeAreScreen,
 } from '../components/screens';
 import { Footer } from '../components/Footer';
-import { WhoWeAreScreen } from '../components/screens/WhoWeAreScreen';
 
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../const/breakpoints';
 

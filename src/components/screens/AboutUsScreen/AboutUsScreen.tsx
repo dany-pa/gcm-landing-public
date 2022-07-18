@@ -1,11 +1,9 @@
 import { css } from '@emotion/react';
 import { COLOR_BACKGROUND, COLOR_SECONDARY, COLOR_WHITE } from '../../../const/colors';
-import { Wrapper } from '../../ui/Wrapper';
+import { Wrapper, Title, Text } from '../../ui';
 import AboutUsPanel from '../../../images/aboutUsPanel.png';
 import MobilePanelAboutUs from '../../../images/mobilePanelAboutUs.png';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
-import { Title } from '../../ui/Title';
-import { Text } from '../../ui/Text';
 import styled from '@emotion/styled';
 import { ABOUT_US_ANCHOR } from '../../../const/urls';
 
