@@ -7,17 +7,16 @@ interface Props {
 
 export const Wrapper: FC<PropsWithChildren<Props>> = ({ style, children }) => {
     const wrapperStyle = css({
-        paddingLeft: 186,
-        paddingRight: 76,
-
+        paddingLeft: 112,
+        paddingRight: 112,
         [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-            paddingLeft: 106,
-            paddingRight: 50,
+            paddingLeft: 100,
+            paddingRight: 100,
         },
 
         [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-            paddingLeft: 40,
-            paddingRight: 40,
+            paddingLeft: 35,
+            paddingRight: 35,
         },
     });
 

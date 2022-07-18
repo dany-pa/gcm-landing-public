@@ -1,0 +1,1 @@
+export { WhoWeAreScreen } from './WhoWeAreScreen';

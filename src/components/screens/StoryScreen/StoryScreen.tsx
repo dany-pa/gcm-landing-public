@@ -8,7 +8,6 @@ import { Text } from '../../ui/Text';
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
-    height: '100vh',
 });
 
 const sliderStyle = css({
@@ -37,7 +36,7 @@ const sliderWrapper = css({
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'center',
-    height: '100%',
+    height: '100vh',
     paddingBottom: '50px',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
