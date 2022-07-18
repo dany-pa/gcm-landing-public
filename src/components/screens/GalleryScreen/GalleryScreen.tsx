@@ -32,6 +32,11 @@ const activeImgWrapperStyle = css({
         backgroundColor: COLOR_PRIMARY,
         bottom: 0,
         left: 0,
+
+        [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+            margin: '0 auto',
+            right: 0,
+        },
     },
 });
 
@@ -39,12 +44,14 @@ const sectionStyle = css({
     backgroundColor: '#915FF4',
     padding: '65px 0',
 
-    '.swiper': {
-        marginRight: -100,
-    },
-
     '.swiper-button-prev, .swiper-button-next': {
         color: '#FFD9F7',
+    },
+});
+
+const imgWrapperStyle = css({
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        textAlign: 'center',
     },
 });
 
@@ -68,9 +75,15 @@ export const GalleryScreen = () => {
                         },
                         [BREAKPOINT_TABLET]: {
                             slidesPerView: 2,
+                            centeredSlides: true,
                         },
                         [BREAKPOINT_MOBILE]: {
-                            slidesPerView: 2,
+                            slidesPerView: 1,
+                            centeredSlides: true,
+                        },
+                        0: {
+                            slidesPerView: 1,
+                            centeredSlides: false,
                         },
                     }}
                 >
@@ -79,7 +92,7 @@ export const GalleryScreen = () => {
                             <SwiperSlide key={index}>
                                 {({ isActive, isVisible }) => {
                                     return (
-                                        <div css={isActive ? activeImgWrapperStyle : {}}>
+                                        <div css={[imgWrapperStyle, isActive ? activeImgWrapperStyle : {}]}>
                                             <img
                                                 css={[
                                                     imgStyle,
