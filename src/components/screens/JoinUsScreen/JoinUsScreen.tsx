@@ -6,7 +6,7 @@ import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints
 
 const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
-    paddingBottom: 100,
+    paddingBottom: 50,
 });
 
 const panelStyle = css({

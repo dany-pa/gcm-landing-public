@@ -7,6 +7,7 @@ import {
     StoryScreen,
     JoinUsScreen,
 } from '../components/screens';
+import { Footer } from '../components/Footer';
 import { WhoWeAreScreen } from '../components/screens/WhoWeAreScreen';
 
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../const/breakpoints';
@@ -85,6 +86,7 @@ function IndexPage() {
             <StoryScreen />
             <WhoWeAreScreen />
             <JoinUsScreen />
+            <Footer />
         </DefaultLayout>
     );
 }
