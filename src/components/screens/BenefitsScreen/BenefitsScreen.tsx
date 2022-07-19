@@ -43,6 +43,96 @@ const benefitWrapperStyle = css({
     },
 });
 
+const benefitStyle = css({
+    position: 'relative',
+    width: 207,
+    height: 412,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 182,
+        height: 362,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        height: 212,
+        marginBottom: 15,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 147,
+        height: 147,
+    },
+});
+
+const benefitInnerStyle = css({
+    position: 'absolute',
+    top: 0,
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+});
+
+const stackPanelStyle = css({
+    backgroundColor: '#5014BC',
+    width: '100%',
+    borderRadius: 40,
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    padding: '30px 30px 30px 84px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 555,
+        margin: '0 auto 30px auto',
+        position: 'relative',
+        paddingLeft: '64px',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 415,
+        margin: '0 auto 30px auto',
+        position: 'relative',
+        paddingLeft: '64px',
+    },
+});
+
+const stackIconStyle = css({
+    width: 290,
+    height: 290,
+
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 168,
+        height: 168,
+        position: 'absolute',
+        right: '-20px',
+        top: '-25px',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 136,
+        height: 136,
+    },
+});
+
+const wrapperStyle = css({
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        display: 'flex',
+        flexDirection: 'column-reverse',
+    },
+});
+
+const titleStyle = css({
+    marginBottom: 40,
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        marginBottom: 15,
+    },
+});
+
+const textStyle = css({
+    marginBottom: 30,
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        marginBottom: 15,
+    },
+});
 const benefits = [
     {
         id: 1,
@@ -67,7 +157,7 @@ const benefits = [
         style: css({
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 order: 1,
-                marginRight: 15,
+                marginRight: 10,
             },
         }),
     },
@@ -102,11 +192,11 @@ const benefits = [
                 height: 211,
                 order: 3,
                 flexDirection: 'row-reverse',
-                marginRight: 15,
+                marginRight: 10,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 241,
-                height: 157,
+                height: 147,
             },
         }),
     },
@@ -169,7 +259,7 @@ const benefits = [
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 241,
-                height: 157,
+                height: 147,
             },
         }),
     },
@@ -206,78 +296,11 @@ const benefits = [
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 408,
-                height: 157,
+                height: 147,
             },
         }),
     },
 ];
-
-const benefitStyle = css({
-    position: 'relative',
-    width: 207,
-    height: 412,
-    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        width: 182,
-        height: 362,
-    },
-
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        height: 212,
-        marginBottom: 15,
-    },
-    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 157,
-        height: 157,
-    },
-});
-
-const benefitInnerStyle = css({
-    position: 'absolute',
-    top: 0,
-    height: '100%',
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-});
-
-const stackPanelStyle = css({
-    backgroundColor: '#5014BC',
-    width: '100%',
-    borderRadius: 40,
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-    padding: '30px 30px 30px 84px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        width: 555,
-        margin: '0 auto 30px auto',
-        position: 'relative',
-        paddingLeft: '64px',
-    },
-});
-
-const stackIconStyle = css({
-    width: 290,
-    height: 290,
-
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        width: 168,
-        height: 168,
-        position: 'absolute',
-        right: '-20px',
-        top: '-25px',
-    },
-});
-
-const wrapperStyle = css({
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        display: 'flex',
-        flexDirection: 'column-reverse',
-    },
-});
 
 export const BenefitsScreen = () => {
     return (
@@ -313,10 +336,10 @@ export const BenefitsScreen = () => {
                 </div>
                 <div css={stackPanelStyle}>
                     <div css={{ marginRight: 50 }}>
-                        <Text style={css({ marginBottom: 40 })}>
+                        <Text style={titleStyle}>
                             <strong>Galactic Market is Built on Stacks.</strong>
                         </Text>
-                        <Text style={css({ marginBottom: 30 })}>
+                        <Text style={textStyle}>
                             Stacks is an open-source blockchain network
                             <br /> that leverages the security and capital
                             <br /> of Bitcoin or decentralized apps and smart
