@@ -2,7 +2,7 @@ import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../.
 import { Wrapper } from '../../ui/Wrapper';
 
 import { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
 // eslint-disable-next-line import/no-unresolved
@@ -30,53 +30,55 @@ export const GalleryScreen = () => {
             css={sectionStyle}
             id={GALLERY_ANCHOR}
         >
+            <ReactSwiper
+                slidesPerView={3}
+                modules={[Navigation]}
+                loop={true}
+                navigation
+                watchSlidesProgress={true}
+                breakpoints={{
+                    [BREAKPOINT_LAPTOP]: {
+                        slidesPerView: 3,
+                    },
+                    [BREAKPOINT_TABLET]: {
+                        slidesPerView: 2,
+                        centeredSlides: true,
+                    },
+                    [BREAKPOINT_MOBILE]: {
+                        slidesPerView: 1,
+                        centeredSlides: true,
+                    },
+                    0: {
+                        slidesPerView: 1,
+                        centeredSlides: false,
+                    },
+                }}
+                centerInsufficientSlides={true}
+                centeredSlides={true}
+                centeredSlidesBounds={true}
+            >
+                {SLIDES.map((slide, index) => {
+                    return (
+                        <SwiperSlide key={index}>
+                            {({ isActive, isVisible }) => {
+                                return (
+                                    <div css={[imgWrapperStyle, isActive ? activeImgWrapperStyle : {}]}>
+                                        <img
+                                            css={[
+                                                imgStyle,
+                                                isActive ? activeImgStyle : {},
+                                                isVisible ? activeSlideStyle : {},
+                                            ]}
+                                            src={slide}
+                                        />
+                                    </div>
+                                );
+                            }}
+                        </SwiperSlide>
+                    );
+                })}
+            </ReactSwiper>
             <Wrapper>
-                <Swiper
-                    slidesPerView={3}
-                    modules={[Navigation]}
-                    loop={true}
-                    navigation
-                    watchSlidesProgress={true}
-                    breakpoints={{
-                        [BREAKPOINT_LAPTOP]: {
-                            slidesPerView: 3,
-                        },
-                        [BREAKPOINT_TABLET]: {
-                            slidesPerView: 2,
-                            centeredSlides: true,
-                        },
-                        [BREAKPOINT_MOBILE]: {
-                            slidesPerView: 1,
-                            centeredSlides: true,
-                        },
-                        0: {
-                            slidesPerView: 1,
-                            centeredSlides: false,
-                        },
-                    }}
-                >
-                    {SLIDES.map((slide, index) => {
-                        return (
-                            <SwiperSlide key={index}>
-                                {({ isActive, isVisible }) => {
-                                    return (
-                                        <div css={[imgWrapperStyle, isActive ? activeImgWrapperStyle : {}]}>
-                                            <img
-                                                css={[
-                                                    imgStyle,
-                                                    isActive ? activeImgStyle : {},
-                                                    isVisible ? activeSlideStyle : {},
-                                                ]}
-                                                src={slide}
-                                            />
-                                        </div>
-                                    );
-                                }}
-                            </SwiperSlide>
-                        );
-                    })}
-                </Swiper>
-
                 <div css={wrapperStyle}>
                     <div css={innerStyle}>
                         <Title

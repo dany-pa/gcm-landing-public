@@ -7,20 +7,28 @@ export const imgStyle = css({
     height: 285,
     borderRadius: 13,
     position: 'relative',
+    transition: '0.3s',
+    margin: 115,
 });
 export const activeImgStyle = css({
+    width: 400,
+    height: 400,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
+    margin: 0,
+    position: 'relative',
+    right: -58,
+    // marginLeft: -55,
 });
 export const activeImgWrapperStyle = css({
     '&::after': {
         content: '""',
         position: 'absolute',
-        width: 285,
+        width: 400,
         height: 15,
         backgroundColor: COLOR_PRIMARY,
         bottom: 0,
-        left: 0,
+        left: 58,
 
         [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
             margin: '0 auto',
@@ -32,8 +40,19 @@ export const activeImgWrapperStyle = css({
 export const sectionStyle = css({
     padding: '65px 0',
 
+    '.swiper': {
+        // overflow: 'visible',
+    },
+    '.swiper-wrapper': {
+        alignItems: 'center',
+    },
+
     '.swiper-button-prev, .swiper-button-next': {
         color: '#FFD9F7',
+    },
+
+    '.swiper-button-next': {
+        right: 50,
     },
 });
 
