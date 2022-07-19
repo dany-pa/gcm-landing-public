@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE, BREAKPOINT_LAPTOP } from '../../../const/breakpoints';
-import { COLOR_SECONDARY, COLOR_BACKGROUND } from '../../../const/colors';
+import { COLOR_SECONDARY } from '../../../const/colors';
 
 export const logoIconWrapperStyle = css({
     width: 352,
@@ -70,7 +70,6 @@ export const titleStyle = css({
 export const sectionStyle = css({
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: COLOR_BACKGROUND,
     width: '100vw',
     overflow: 'hidden',
 });

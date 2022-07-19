@@ -2,10 +2,7 @@ import { FC, PropsWithChildren, useCallback, useState } from 'react';
 import { GlobalStyle } from '../../components/theme/GlobalStyles';
 import { Menu } from '../../components/Menu';
 import { Wrapper } from '../../components/ui/Wrapper';
-import { COLOR_BACKGROUND } from '../../const/colors';
-import { css } from '@emotion/react';
 import { DiscordIcon, TwitterIcon, MenuIcon } from '../../components/icons';
-import { BREAKPOINT_TABLET } from '../../const/breakpoints';
 import { MobileMenu } from '../../components/Menu/components/MobileMenu';
 import { MenuLinkType } from '../../types/general';
 import {
@@ -18,58 +15,16 @@ import {
     TWITTER_URL,
     WHO_WE_ARE_ANCHOR,
 } from '../../const/urls';
-const mainStyle = css({
-    backgroundColor: COLOR_BACKGROUND,
-    width: '100vw',
-    height: '200vh',
-    paddingTop: '40px',
-});
-
-const headerWrapperStyle = css({
-    display: 'flex',
-    alignItems: 'center',
-    flexWrap: 'nowrap',
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        display: 'none',
-    },
-});
-
-const iconsWrapperStyle = css({
-    display: 'flex',
-});
-
-const discordIconStyle = css({
-    marginRight: 35,
-    marginLeft: 110,
-});
-
-const menuWrapperStyle = css({
-    display: 'none',
-    justifyContent: 'flex-end',
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        display: 'flex',
-    },
-});
-
-const mobileMenuStyle = css({
-    display: 'none',
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        display: 'flex',
-    },
-});
-
-const menuIconStyle = css({
-    width: 40,
-    height: 25,
-});
-
-const menuButtonStyle = css({
-    backgroundColor: 'transparent',
-    border: 'none',
-    cursor: 'pointer',
-    position: 'fixed',
-    zIndex: 999,
-});
+import {
+    mainStyle,
+    headerWrapperStyle,
+    iconsWrapperStyle,
+    discordIconStyle,
+    menuWrapperStyle,
+    menuButtonStyle,
+    menuIconStyle,
+    mobileMenuStyle,
+} from './styles';
 
 const links: MenuLinkType[] = [
     { title: 'ABOUT US', anchor: ABOUT_US_ANCHOR },

@@ -1,9 +1,7 @@
 import { css } from '@emotion/react';
-import { COLOR_BACKGROUND } from '../../../const/colors';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 export const sectionStyle = css({
-    backgroundColor: COLOR_BACKGROUND,
     padding: '100px 0',
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         padding: '35px 0 60px 0',

@@ -1,10 +1,9 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_TABLET, BREAKPOINT_MOBILE } from '../../../const/breakpoints';
-import { COLOR_BACKGROUND, COLOR_WHITE, COLOR_SECONDARY } from '../../../const/colors';
+import { COLOR_WHITE, COLOR_SECONDARY } from '../../../const/colors';
 
 export const sectionStyle = css({
-    backgroundColor: COLOR_BACKGROUND,
     width: '100vw',
     overflow: 'hidden',
 });

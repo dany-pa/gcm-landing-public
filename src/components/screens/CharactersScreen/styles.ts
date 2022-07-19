@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
-import { COLOR_BACKGROUND } from '../../../const/colors';
 
 export const wrapperStyle = css({
     maxWidth: '100vw',
@@ -8,7 +7,6 @@ export const wrapperStyle = css({
 });
 
 export const sectionStyle = css({
-    backgroundColor: COLOR_BACKGROUND,
     paddingTop: 250,
     paddingBottom: 250,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {

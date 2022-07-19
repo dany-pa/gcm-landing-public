@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE } from '../../const/breakpoints';
-import { COLOR_BACKGROUND } from '../../const/colors';
 
 // eslint-disable-next-line import/no-duplicates
 import DesktopFooterImg from '../../images/footer.png';
@@ -8,10 +7,6 @@ import DesktopFooterImg from '../../images/footer.png';
 import TabletFooterImg from '../../images/footer.png';
 // eslint-disable-next-line import/no-duplicates
 import MobileFooterImg from '../../images/footer.png';
-
-export const footerStyle = css({
-    backgroundColor: COLOR_BACKGROUND,
-});
 
 export const footerImg = css({
     backgroundImage: `url(${DesktopFooterImg})`,

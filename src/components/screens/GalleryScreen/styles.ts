@@ -30,7 +30,6 @@ export const activeImgWrapperStyle = css({
 });
 
 export const sectionStyle = css({
-    backgroundColor: '#915FF4',
     padding: '65px 0',
 
     '.swiper-button-prev, .swiper-button-next': {

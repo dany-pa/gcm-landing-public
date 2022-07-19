@@ -1,9 +1,8 @@
 import { css } from '@emotion/react';
 import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE } from '../../../const/breakpoints';
-import { COLOR_BACKGROUND, COLOR_PRIMARY } from '../../../const/colors';
+import { COLOR_PRIMARY } from '../../../const/colors';
 
 export const sectionStyle = css({
-    backgroundColor: COLOR_BACKGROUND,
     paddingBottom: 50,
 });
 
