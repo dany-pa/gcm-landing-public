@@ -17,7 +17,7 @@ import { DefaultLayout } from '../layouts/DefaultLayout';
 function IndexPage() {
     return (
         <DefaultLayout>
-            <div
+            {/* <div
                 style={{
                     width: '100%',
                     height: '30px',
@@ -77,7 +77,7 @@ function IndexPage() {
                 >
                     MOBILE
                 </div>
-            </div>
+            </div> */}
             <MainScreen />
             <AboutUsScreen />
             <GalleryScreen />

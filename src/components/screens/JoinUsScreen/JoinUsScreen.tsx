@@ -9,6 +9,7 @@ import {
     iconsWrapperStyle,
     iconStyle,
 } from './styles';
+import { DISCORD_URL, TWITTER_URL } from '../../../const/urls';
 
 export const JoinUsScreen = () => {
     return (
@@ -22,13 +23,21 @@ export const JoinUsScreen = () => {
                     </p>
                 </div>
                 <div css={iconsWrapperStyle}>
-                    <a href="#">
+                    <a
+                        href={DISCORD_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img
                             src={DiscordIcon}
                             css={iconStyle}
                         />
                     </a>
-                    <a href="#">
+                    <a
+                        href={TWITTER_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img
                             src={TwitterIcon}
                             css={iconStyle}
