@@ -1,62 +1,29 @@
-import { css } from '@emotion/react';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
-import { COLOR_PRIMARY } from '../../../const/colors';
 import { Wrapper } from '../../ui/Wrapper';
-import img1 from '../../../images/carousel/img1.png';
-import img2 from '../../../images/carousel/img2.png';
-import img3 from '../../../images/carousel/img3.png';
 
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+// eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
+// eslint-disable-next-line import/no-unresolved
 import 'swiper/css/navigation';
 
 import { Title, Text, Button } from '../../ui';
 import { GALLERY_ANCHOR } from '../../../const/urls';
+import { SLIDES } from './const';
+import {
+    sectionStyle,
+    imgWrapperStyle,
+    activeImgWrapperStyle,
+    imgStyle,
+    activeImgStyle,
+    activeSlideStyle,
+    wrapperStyle,
+    innerStyle,
+    titleStyle,
+    textStyle,
+} from './styles';
 
-const imgStyle = css({
-    width: 285,
-    height: 285,
-    borderRadius: 13,
-    position: 'relative',
-});
-const activeImgStyle = css({
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-});
-const activeImgWrapperStyle = css({
-    '&::after': {
-        content: '""',
-        position: 'absolute',
-        width: 285,
-        height: 15,
-        backgroundColor: COLOR_PRIMARY,
-        bottom: 0,
-        left: 0,
-
-        [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-            margin: '0 auto',
-            right: 0,
-        },
-    },
-});
-
-const sectionStyle = css({
-    backgroundColor: '#915FF4',
-    padding: '65px 0',
-
-    '.swiper-button-prev, .swiper-button-next': {
-        color: '#FFD9F7',
-    },
-});
-
-const imgWrapperStyle = css({
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        textAlign: 'center',
-    },
-});
-
-const slides = [img1, img2, img3];
 export const GalleryScreen = () => {
     return (
         <section
@@ -88,7 +55,7 @@ export const GalleryScreen = () => {
                         },
                     }}
                 >
-                    {slides.map((slide, index) => {
+                    {SLIDES.map((slide, index) => {
                         return (
                             <SwiperSlide key={index}>
                                 {({ isActive, isVisible }) => {
@@ -98,11 +65,7 @@ export const GalleryScreen = () => {
                                                 css={[
                                                     imgStyle,
                                                     isActive ? activeImgStyle : {},
-                                                    isVisible
-                                                        ? {
-                                                              filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
-                                                          }
-                                                        : {},
+                                                    isVisible ? activeSlideStyle : {},
                                                 ]}
                                                 src={slide}
                                             />
@@ -114,18 +77,18 @@ export const GalleryScreen = () => {
                     })}
                 </Swiper>
 
-                <div css={{ display: 'flex' }}>
-                    <div css={{ marginLeft: 'auto' }}>
+                <div css={wrapperStyle}>
+                    <div css={innerStyle}>
                         <Title
                             type="secondary"
-                            style={css({ margin: '20px 0 30px 0' })}
+                            style={titleStyle}
                         >
                             A collection of 3,030 Characters <br /> welcoming you to The Market
                         </Title>
 
                         <Text
                             type="secondary"
-                            style={css({ marginBottom: '30px' })}
+                            style={textStyle}
                         >
                             Galactic Market is a place to unite everybody <br /> through gamification for different
                             stages
@@ -135,7 +98,7 @@ export const GalleryScreen = () => {
                         </Text>
                         <Text
                             type="secondary"
-                            style={css({ marginBottom: '30px' })}
+                            style={textStyle}
                         >
                             <strong>Imagination is a form of freedom after all!</strong>
                         </Text>

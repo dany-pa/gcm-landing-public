@@ -1,13 +1,7 @@
-import { css } from '@emotion/react';
 import { FC } from 'react';
 import { MenuLinkType } from '../../types/general';
 import { MenuLink } from '../ui/MenuLink';
-
-const navStyle = css({
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-});
+import { navStyle } from './styles';
 
 interface Props {
     links: MenuLinkType[];

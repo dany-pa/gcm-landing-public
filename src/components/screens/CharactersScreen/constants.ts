@@ -17,17 +17,23 @@ export const CHARACTERS = [
         style: css({
             width: 734,
             height: 950,
+            marginLeft: -130,
+            marginTop: -50,
             [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
                 width: 716,
                 height: 757,
+                marginLeft: -60,
+                marginTop: -70,
             },
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 644,
-                height: 644,
+                height: 567,
+                marginLeft: 0,
+                marginTop: 0,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 480,
-                height: 500,
+                height: 446,
             },
         }),
     },
@@ -39,6 +45,8 @@ export const CHARACTERS = [
         style: css({
             width: 663,
             height: 804,
+            marginLeft: -130,
+            marginTop: -30,
             [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
                 width: 731,
                 height: 731,
@@ -46,6 +54,8 @@ export const CHARACTERS = [
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 644,
                 height: 567,
+                marginLeft: 0,
+                marginTop: 0,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 480,
@@ -61,20 +71,22 @@ export const CHARACTERS = [
         style: css({
             width: 663,
             height: 830,
+            marginLeft: -95,
             [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
                 width: 655,
                 height: 731,
             },
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 644,
-                height: 500,
+                height: 567,
+                marginLeft: 0,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 480,
-                height: 440,
+                height: 446,
             },
         }),
     },
 ];
 
-export const SLIDES = [Mini_3, Mini_2, Mini_1];
+export const SLIDES = [Mini_1, Mini_2, Mini_3];

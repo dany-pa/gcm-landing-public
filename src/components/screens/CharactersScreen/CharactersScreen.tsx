@@ -2,6 +2,7 @@ import { Wrapper, Text } from '../../ui';
 import { CHARACTERS_ANCHOR } from '../../../const/urls';
 import { CHARACTERS, SLIDES } from './constants';
 import {
+    activeImgStyle,
     characterImgStyle,
     infoPanelStyle,
     sectionStyle,
@@ -9,34 +10,72 @@ import {
     slideStyle,
     textStyle,
     titleStyle,
+    wrapperStyle,
 } from './styles';
 
-import { Navigation, Controller } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// eslint-disable-next-line import/no-named-as-default
+import Swiper, { Controller } from 'swiper';
+import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
+// eslint-disable-next-line import/no-unresolved
 import 'swiper/css';
+// eslint-disable-next-line import/no-unresolved
 import 'swiper/css/navigation';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export const CharactersScreen = () => {
-    const [topSlider, setTopSlider] = useState(null);
+    const [topSlider, setTopSlider] = useState<Swiper | null>(null);
+    const [activeSlider, setActiveSlider] = useState(0);
+
+    const handleClickNext = useCallback(() => {
+        if (activeSlider === SLIDES.length - 1) return;
+        setActiveSlider(activeSlider + 1);
+    }, [activeSlider]);
+    const handleClickPrev = useCallback(() => {
+        if (activeSlider === 0) return;
+        setActiveSlider(activeSlider - 1);
+    }, [activeSlider]);
+
+    useEffect(() => {
+        const nextBtn = document.querySelector('.bottom-slider .swiper-button-next');
+        nextBtn?.addEventListener('click', handleClickNext);
+
+        const prevBtn = document.querySelector('.bottom-slider .swiper-button-prev');
+        prevBtn?.addEventListener('click', handleClickPrev);
+
+        return () => {
+            nextBtn?.removeEventListener('click', handleClickNext);
+            prevBtn?.removeEventListener('click', handleClickPrev);
+        };
+    }, [handleClickNext, handleClickPrev]);
+
+    const handleSliderClick = useCallback((index: number) => {
+        setActiveSlider(index);
+    }, []);
+
+    useEffect(() => {
+        if (!topSlider) return;
+        topSlider.slideTo(activeSlider);
+    }, [activeSlider, topSlider]);
+
     return (
         <section
             css={sectionStyle}
             id={CHARACTERS_ANCHOR}
         >
-            <Wrapper>
-                <Swiper
+            <Wrapper style={wrapperStyle}>
+                <ReactSwiper
                     slidesPerView={1}
                     watchSlidesProgress={true}
                     onSwiper={setTopSlider}
-                    enabled={false}
-                    loop={true}
-                    centeredSlides={true}
+                    enabled={true}
+                    loop={false}
+                    centeredSlides={false}
+                    allowTouchMove={false}
                 >
                     {CHARACTERS.map((character) => {
                         return (
                             <SwiperSlide key={character.id}>
-                                <div css={[slideStyle]}>
+                                <div css={slideStyle}>
                                     <div css={infoPanelStyle}>
                                         <Text
                                             type="secondary"
@@ -59,39 +98,29 @@ export const CharactersScreen = () => {
                             </SwiperSlide>
                         );
                     })}
-                </Swiper>
-                <Swiper
+                </ReactSwiper>
+                <ReactSwiper
                     className="bottom-slider"
                     slidesPerView={3}
-                    modules={[Navigation, Controller]}
-                    navigation
-                    watchSlidesProgress={true}
-                    controller={{ control: topSlider! }}
+                    modules={[Controller]}
+                    controller={{ control: topSlider ?? undefined }}
                     slideToClickedSlide
-                    centeredSlides={true}
+                    navigation
                 >
                     {SLIDES.map((slide, index) => {
                         return (
-                            <SwiperSlide key={index}>
-                                {({ isActive }) => {
-                                    return (
-                                        <img
-                                            src={slide}
-                                            css={[
-                                                slideImgStyle,
-                                                isActive
-                                                    ? {
-                                                          filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
-                                                      }
-                                                    : {},
-                                            ]}
-                                        />
-                                    );
-                                }}
+                            <SwiperSlide
+                                key={index}
+                                onClick={() => handleSliderClick(index)}
+                            >
+                                <img
+                                    src={slide}
+                                    css={[slideImgStyle, activeSlider === index ? activeImgStyle : {}]}
+                                />
                             </SwiperSlide>
                         );
                     })}
-                </Swiper>
+                </ReactSwiper>
             </Wrapper>
         </section>
     );

@@ -1,90 +1,21 @@
-import { css } from '@emotion/react';
-import { COLOR_BACKGROUND, COLOR_SECONDARY, COLOR_WHITE } from '../../../const/colors';
 import { Wrapper, Title, Text } from '../../ui';
 import AboutUsPanel from '../../../images/aboutUsPanel.png';
 import MobilePanelAboutUs from '../../../images/mobilePanelAboutUs.png';
-import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
-import styled from '@emotion/styled';
 import { ABOUT_US_ANCHOR } from '../../../const/urls';
-
-const sectionStyle = css({
-    backgroundColor: COLOR_BACKGROUND,
-    width: '100vw',
-    overflow: 'hidden',
-});
-
-const panelStyle = css({
-    position: 'relative',
-    mixBlendMode: 'normal',
-    width: 744,
-    height: 513,
-    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        width: 680,
-        height: 470,
-    },
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        width: 627,
-        height: 433,
-    },
-    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        display: 'none',
-    },
-});
-const mbilePanelStyle = css({
-    display: 'none',
-    width: 408,
-    height: 398,
-    mixBlendMode: 'normal',
-    opacity: '0.45',
-    position: 'relative',
-    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        display: 'block',
-    },
-});
-
-const AdvanceStyled = styled.div({
-    color: COLOR_WHITE,
-    fontSize: 30,
-    lineHeight: '55px',
-});
-
-const DividerStyled = styled.div({
-    backgroundColor: COLOR_WHITE,
-    height: '73px',
-    width: 3,
-});
-
-const advanceWrapperStyle = css({
-    backgroundColor: '#8E38C2',
-    padding: '10px 0',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-
-    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        padding: '5px 0',
-    },
-
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        display: 'none',
-    },
-});
-
-const AboutUsPanelWrapper = css({
-    position: 'relative',
-    color: COLOR_SECONDARY,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 150,
-    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        marginBottom: 50,
-    },
-});
-
-const AboutUsImgWrapper = css({
-    position: 'relative',
-});
+import {
+    sectionStyle,
+    aboutUsPanelWrapper,
+    aboutUsImgWrapper,
+    panelStyle,
+    mobilePanelStyle,
+    advanceWrapperStyle,
+    AdvanceStyled,
+    DividerStyled,
+    titleWrapperStyle,
+    titleStyle,
+    subtitleStyle,
+    textStyle,
+} from './styles';
 
 export const AboutUsScreen = () => {
     return (
@@ -93,38 +24,28 @@ export const AboutUsScreen = () => {
             id={ABOUT_US_ANCHOR}
         >
             <Wrapper>
-                <div css={AboutUsPanelWrapper}>
-                    <div css={AboutUsImgWrapper}>
+                <div css={aboutUsPanelWrapper}>
+                    <div css={aboutUsImgWrapper}>
                         <img
                             src={AboutUsPanel}
                             css={panelStyle}
                         />
                         <img
                             src={MobilePanelAboutUs}
-                            css={mbilePanelStyle}
+                            css={mobilePanelStyle}
                         />
                     </div>
-                    <div
-                        css={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            width: '100%',
-                            height: '100%',
-                            position: 'absolute',
-                        }}
-                    >
+                    <div css={titleWrapperStyle}>
                         <div>
                             <Title
                                 type="secondary"
-                                style={css({ marginBottom: 20 })}
+                                style={titleStyle}
                             >
                                 GALACTIC MARKET CATS
                             </Title>
                             <Text
                                 type="secondary"
-                                style={css({ marginBottom: 25 })}
+                                style={subtitleStyle}
                             >
                                 <strong>
                                     is more than just a pfp collection.
@@ -134,7 +55,7 @@ export const AboutUsScreen = () => {
                             </Text>
                             <Text
                                 type="secondary"
-                                style={css({ marginBottom: 25 })}
+                                style={textStyle}
                             >
                                 Many of us didn't have great experience
                                 <br /> with expressing creativity.

@@ -2,20 +2,56 @@ import { css } from '@emotion/react';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { COLOR_BACKGROUND } from '../../../const/colors';
 
+export const wrapperStyle = css({
+    maxWidth: '100vw',
+    marginRight: 0,
+});
+
 export const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
+    paddingTop: 250,
+    paddingBottom: 250,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        paddingBottom: 28,
+        paddingTop: 110,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        paddingTop: 140,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        paddingTop: 66,
+    },
 
     '.bottom-slider': {
         maxWidth: 690,
+        marginTop: -250,
         marginLeft: 0,
+        overflow: 'visible',
         [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
             maxWidth: 490,
+            marginTop: -190,
         },
         [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
             maxWidth: 370,
+            marginTop: -130,
+            marginLeft: 'auto',
         },
         [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
             maxWidth: 314,
+            marginTop: -90,
+        },
+
+        '.swiper-wrapper': {
+            alignItems: 'center',
+        },
+
+        '.swiper-button-prev': {
+            left: -45,
+        },
+        '.swiper-button-next': {
+            [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+                right: -5,
+            },
         },
     },
     '.swiper-button-prev,.swiper-button-next': {
@@ -24,6 +60,7 @@ export const sectionStyle = css({
 });
 
 export const infoPanelStyle = css({
+    width: 551,
     minWidth: 551,
     height: 547,
     padding: '0px 92px 0px 77px',
@@ -37,19 +74,22 @@ export const infoPanelStyle = css({
     justifyContent: 'center',
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 429,
         minWidth: 429,
         height: 429,
         padding: '0px 40px',
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 551,
         minWidth: 551,
         height: 263,
         alignItems: 'flex-start',
         marginBottom: '-30px',
-        padding: '35px 100px 40px 60px',
+        padding: '35px 130px 40px 60px',
         justifyContent: 'space-around',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 400,
         minWidth: 400,
         height: 217,
         padding: '29px 40px 0px 40px',
@@ -68,7 +108,7 @@ export const slideStyle = css({
 export const characterImgStyle = css({
     width: 700,
     height: 700,
-    objectFit: 'cover',
+    objectFit: 'contain',
 });
 
 export const titleStyle = css({
@@ -110,20 +150,48 @@ export const textStyle = css({
 });
 
 export const slideImgStyle = css({
+    transition: '0.3s',
+    margin: 25,
+    cursor: 'pointer',
     borderRadius: 20,
+    filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
     width: 145,
     height: 145,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 105,
         height: 105,
+        margin: 20,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         width: 70,
         height: 70,
+        margin: 26,
         borderRadius: 7,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         width: 60,
         height: 60,
+        margin: 20,
+    },
+});
+
+export const activeImgStyle = css({
+    width: 170,
+    height: 170,
+    margin: 0,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        margin: 0,
+        width: 125,
+        height: 125,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        margin: 0,
+        width: 96,
+        height: 96,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        margin: 0,
+        width: 80,
+        height: 80,
     },
 });
