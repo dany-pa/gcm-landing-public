@@ -2,11 +2,12 @@ import { css } from '@emotion/react';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { COLOR_PRIMARY } from '../../../const/colors';
 import { Wrapper } from '../../ui/Wrapper';
-import { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import img1 from '../../../images/carousel/img1.png';
 import img2 from '../../../images/carousel/img2.png';
 import img3 from '../../../images/carousel/img3.png';
+
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
