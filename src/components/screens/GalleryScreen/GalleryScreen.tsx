@@ -104,7 +104,7 @@ export const GalleryScreen = () => {
                         >
                             <strong>Imagination is a form of freedom after all!</strong>
                         </Text>
-                        <Button>VIEW MORE</Button>
+                        {/* <Button>VIEW MORE</Button> */}
                     </div>
                 </div>
             </Wrapper>
