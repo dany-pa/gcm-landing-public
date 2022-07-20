@@ -2,6 +2,8 @@ import { css, SerializedStyles } from '@emotion/react';
 import { FC } from 'react';
 import { COLOR_PRIMARY } from '../../../const/colors';
 
+import ScrollIntoView from 'react-scroll-into-view';
+
 interface Props {
     title: string;
     anchor: string;
@@ -21,19 +23,22 @@ export const MenuLink: FC<Props> = ({ title, anchor, color = COLOR_PRIMARY, styl
         borderRadius: 20,
         border: '1px solid transparent',
         whiteSpace: 'nowrap',
+        cursor: 'pointer',
 
         '&:hover': {
             borderColor: 'currentColor',
         },
     });
     return (
-        <a
-            css={[linkStyle, style]}
-            href={`#${anchor}`}
-            key={title}
-            onClick={onClick}
-        >
-            {title}
-        </a>
+        <ScrollIntoView selector={`#${anchor}`}>
+            <a
+                css={[linkStyle, style]}
+                // href={`#${anchor}`}
+                key={title}
+                onClick={onClick}
+            >
+                {title}
+            </a>
+        </ScrollIntoView>
     );
 };

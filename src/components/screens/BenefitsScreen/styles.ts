@@ -3,7 +3,17 @@ import styled from '@emotion/styled';
 import { BREAKPOINT_TABLET, BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE } from '../../../const/breakpoints';
 
 export const sectionStyle = css({
-    padding: '30px 0 0 0',
+    padding: '30px 0 155px 0',
+
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        paddingBottom: 55,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        paddingBottom: 70,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        paddingBottom: 33,
+    },
 });
 
 export const Benefit = styled.div(

@@ -6,6 +6,7 @@ import { COLOR_WHITE, COLOR_SECONDARY } from '../../../const/colors';
 export const sectionStyle = css({
     width: '100vw',
     overflow: 'hidden',
+    paddingTop: 50,
 });
 
 export const panelStyle = css({

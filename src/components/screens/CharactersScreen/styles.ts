@@ -7,17 +7,17 @@ export const wrapperStyle = css({
 });
 
 export const sectionStyle = css({
-    paddingTop: 250,
+    paddingTop: 125,
     paddingBottom: 250,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         paddingBottom: 28,
-        paddingTop: 110,
+        paddingTop: 55,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        paddingTop: 140,
+        paddingTop: 70,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        paddingTop: 66,
+        paddingTop: 33,
     },
 
     '.bottom-slider': {
