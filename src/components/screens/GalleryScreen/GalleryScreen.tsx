@@ -1,27 +1,18 @@
-import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { Wrapper } from '../../ui/Wrapper';
 
-import { Navigation } from 'swiper';
-import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
-// eslint-disable-next-line import/no-unresolved
-import 'swiper/css';
-// eslint-disable-next-line import/no-unresolved
-import 'swiper/css/navigation';
-
-import { Title, Text, Button } from '../../ui';
+import { Title, Text } from '../../ui';
 import { GALLERY_ANCHOR } from '../../../const/urls';
 import { SLIDES } from './const';
 import {
     sectionStyle,
     imgWrapperStyle,
-    activeImgWrapperStyle,
     imgStyle,
-    activeImgStyle,
-    activeSlideStyle,
-    wrapperStyle,
+    textWrapperStyle,
     innerStyle,
     titleStyle,
     textStyle,
+    wrapperStyle,
+    slideRowStyle,
 } from './styles';
 
 export const GalleryScreen = () => {
@@ -30,56 +21,28 @@ export const GalleryScreen = () => {
             css={sectionStyle}
             id={GALLERY_ANCHOR}
         >
-            <ReactSwiper
-                slidesPerView={3}
-                modules={[Navigation]}
-                loop={true}
-                navigation
-                watchSlidesProgress={true}
-                breakpoints={{
-                    [BREAKPOINT_LAPTOP]: {
-                        slidesPerView: 3,
-                    },
-                    [BREAKPOINT_TABLET]: {
-                        slidesPerView: 2,
-                        centeredSlides: true,
-                    },
-                    [BREAKPOINT_MOBILE]: {
-                        slidesPerView: 1,
-                        centeredSlides: true,
-                    },
-                    0: {
-                        slidesPerView: 1,
-                        centeredSlides: false,
-                    },
-                }}
-                centerInsufficientSlides={true}
-                centeredSlides={true}
-                centeredSlidesBounds={true}
-            >
-                {SLIDES.map((slide, index) => {
-                    return (
-                        <SwiperSlide key={index}>
-                            {({ isActive, isVisible }) => {
-                                return (
-                                    <div css={[imgWrapperStyle, isActive ? activeImgWrapperStyle : {}]}>
+            <Wrapper style={wrapperStyle}>
+                <div css={imgWrapperStyle}>
+                    {SLIDES.map((row, index) => {
+                        return (
+                            <div
+                                css={slideRowStyle}
+                                key={index}
+                            >
+                                {row.map((slide) => {
+                                    return (
                                         <img
-                                            css={[
-                                                imgStyle,
-                                                isActive ? activeImgStyle : {},
-                                                isVisible ? activeSlideStyle : {},
-                                            ]}
-                                            src={slide}
+                                            key={slide.id}
+                                            css={[imgStyle, slide.style]}
+                                            src={slide.img}
                                         />
-                                    </div>
-                                );
-                            }}
-                        </SwiperSlide>
-                    );
-                })}
-            </ReactSwiper>
-            <Wrapper>
-                <div css={wrapperStyle}>
+                                    );
+                                })}
+                            </div>
+                        );
+                    })}
+                </div>
+                <div css={textWrapperStyle}>
                     <div css={innerStyle}>
                         <Title
                             type="secondary"

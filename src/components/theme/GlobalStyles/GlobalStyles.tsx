@@ -22,6 +22,10 @@ export const GlobalStyle = () => {
             background-repeat: repeat-y;
             background-size: cover;
         }
+
+        strong {
+            font-weight: 700;
+        }
     `}
         />
     );

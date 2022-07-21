@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { BREAKPOINT_TABLET } from '../../../const/breakpoints';
+import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 import { COLOR_PRIMARY } from '../../../const/colors';
 
 export const imgStyle = css({
@@ -8,7 +8,15 @@ export const imgStyle = css({
     borderRadius: 13,
     position: 'relative',
     transition: '0.3s',
-    margin: 115,
+    filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 257,
+        height: 257,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 240,
+        height: 240,
+    },
 });
 export const activeImgStyle = css({
     width: 400,
@@ -18,7 +26,6 @@ export const activeImgStyle = css({
     margin: 0,
     position: 'relative',
     right: -58,
-    // marginLeft: -55,
 });
 export const activeImgWrapperStyle = css({
     '&::after': {
@@ -38,27 +45,23 @@ export const activeImgWrapperStyle = css({
 });
 
 export const sectionStyle = css({
-    padding: '65px 0',
+    padding: '65px 75px',
 
-    '.swiper': {
-        // overflow: 'visible',
-    },
-    '.swiper-wrapper': {
-        alignItems: 'center',
-    },
-
-    '.swiper-button-prev, .swiper-button-next': {
-        color: '#FFD9F7',
-    },
-
-    '.swiper-button-next': {
-        right: 50,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        paddingRight: 0,
+        paddingLeft: 0,
     },
 });
 
 export const imgWrapperStyle = css({
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        textAlign: 'center',
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        marginRight: 40,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        margin: '0 auto',
+        '> div:nth-child(1)': {
+            display: 'none',
+        },
     },
 });
 
@@ -66,7 +69,74 @@ export const activeSlideStyle = css({
     filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
 });
 
-export const wrapperStyle = css({ display: 'flex' });
-export const innerStyle = css({ marginLeft: 'auto' });
-export const titleStyle = css({ margin: '20px 0 30px 0' });
-export const textStyle = css({ marginBottom: '30px' });
+export const textWrapperStyle = css({ display: 'flex' });
+export const innerStyle = css({ marginRight: 'auto' });
+export const titleStyle = css({
+    margin: '20px 0 30px 0',
+    fontWeight: 700,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        fontSize: 25,
+        lineHeight: '30px',
+        marginBottom: 49,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        fontSize: 20,
+        lineHeight: '25px',
+        marginBottom: 25,
+    },
+});
+export const textStyle = css({
+    marginBottom: '30px',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        fontSize: 19,
+        lineHeight: '25px',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 14,
+        lineHeight: '20px',
+    },
+});
+export const wrapperStyle = css({
+    maxWidth: 'calc(285px * 3 + 40px)',
+    margin: '0 auto',
+
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        maxWidth: 'inherit',
+        display: 'flex',
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        flexWrap: 'wrap',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        justifyContent: 'center',
+    },
+});
+
+export const slideRowStyle = css({
+    margin: '10px 0',
+    'img:nth-child(2)': {
+        marginRight: 20,
+        marginLeft: 20,
+    },
+    display: 'flex',
+
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        'img:nth-child(3)': {
+            display: 'none',
+        },
+        'img:nth-child(2)': {
+            margin: 0,
+        },
+        'img:nth-child(1)': {
+            marginRight: 20,
+        },
+    },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        img: { display: 'none' },
+        'img:nth-child(1)': {
+            margin: 0,
+            display: 'block',
+        },
+    },
+});
