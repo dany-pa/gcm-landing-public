@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE } from '../../../const/breakpoints';
+import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE, BREAKPOINT_LAPTOP } from '../../../const/breakpoints';
 import { COLOR_PRIMARY } from '../../../const/colors';
 
 export const sectionStyle = css({
@@ -89,8 +89,12 @@ export const titleStyle = css({
     lineHeight: '35px',
     color: COLOR_PRIMARY,
     fontWeight: 900,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        fontSize: 40,
+        lineHeight: '35px',
+    },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        fontSize: 30,
+        fontSize: 25,
         lineHeight: '30px',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
