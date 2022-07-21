@@ -5,6 +5,9 @@ import BulletIcon from '../../../images/story/bullet.svg';
 
 export const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
+    '.swiper-pagination ': {
+        bottom: 90,
+    },
 
     '.swiper-pagination-bullet': {
         background: 'none',
