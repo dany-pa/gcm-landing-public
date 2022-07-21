@@ -9,7 +9,7 @@ export const PERSONS = [
         name: 'Angry Brother',
         position: 'Galactic Market Mewnder',
         text: 'Not angry by any means. A big fan of DeGenerative Art. Once Tried to mine BTC in the dorm.',
-        twitter: '#',
+        twitter: 'https://twitter.com/Angry_GMC',
     },
     {
         id: 2,
@@ -17,7 +17,6 @@ export const PERSONS = [
         name: 'Sunny Letters',
         position: 'Meowrtist',
         text: 'Love rockets and sweet Pocky. Dreams of fly to the Moon to make a graffiti in a moon crater.',
-        twitter: '#',
     },
     {
         id: 3,
@@ -25,6 +24,6 @@ export const PERSONS = [
         name: 'Dany Pa',
         position: 'Demeowloper',
         text: "Couldn't find the best ice cream, so decided to mint one. Hate eggs. Doesn't know that eggs are an ingredient for ice cream.",
-        twitter: '#',
+        twitter: 'https://twitter.com/dany999pa',
     },
 ];

@@ -30,6 +30,7 @@ export const WhoWeAreScreen = () => {
                             <div
                                 key={person.id}
                                 css={personStyle}
+                                className="person"
                             >
                                 <img
                                     src={person.img}
@@ -37,19 +38,24 @@ export const WhoWeAreScreen = () => {
                                 />
 
                                 <div css={personText}>
-                                    <div css={titlePersonStyle}>
+                                    <div
+                                        css={titlePersonStyle}
+                                        className="titlePerson"
+                                    >
                                         <Text style={nameStyle}>
                                             <strong>{person.name}</strong>
                                         </Text>
                                         <Text>{person.position}</Text>
-                                        <a
-                                            href={person.twitter}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            css={twitterIconStyle}
-                                        >
-                                            <img src={TwitterIcon} />
-                                        </a>
+                                        {person.twitter && (
+                                            <a
+                                                href={person.twitter}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                css={twitterIconStyle}
+                                            >
+                                                <img src={TwitterIcon} />
+                                            </a>
+                                        )}
                                     </div>
                                     <Text
                                         type="secondary"

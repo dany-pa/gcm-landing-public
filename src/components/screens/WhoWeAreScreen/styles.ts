@@ -57,8 +57,9 @@ export const personText = css({
     padding: '15px 55px 30px 40px',
     height: 'calc(100% - 288px)',
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     flexDirection: 'column',
+
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         padding: '25px 55px 30px 35px',
     },
@@ -89,6 +90,10 @@ export const personImgStyle = css({
 export const personsWrapperStyle = css({
     display: 'flex',
     justifyContent: 'space-between',
+
+    '.person:nth-child(1) .titlePerson': {
+        marginBottom: 25,
+    },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         flexDirection: 'column',
     },
@@ -115,10 +120,25 @@ export const twitterIconStyle = css({
     },
 });
 
-export const titleStyle = css({ textAlign: 'center', paddingBottom: 100 });
-export const titlePersonStyle = css({ position: 'relative' });
+export const titleStyle = css({
+    textAlign: 'center',
+    paddingBottom: 100,
+    fontSize: 50,
+    lineHeight: '60px',
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        fontSize: 25,
+        lineHeight: '35px',
+        paddingBottom: 30,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        fontSize: 30,
+    },
+});
+export const titlePersonStyle = css({ position: 'relative', marginBottom: 50 });
 export const nameStyle = css({ paddingBottom: 5 });
 export const personTextStyle = css({
+    fontSize: 20,
+    lineHeight: '20px',
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         fontSize: 12,
     },
