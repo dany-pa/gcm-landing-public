@@ -1,26 +1,31 @@
 import { css } from '@emotion/react';
-import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE } from '../../const/breakpoints';
+import { BREAKPOINT_TABLET } from '../../const/breakpoints';
 
-// eslint-disable-next-line import/no-duplicates
-import DesktopFooterImg from '../../images/footer.png';
-// eslint-disable-next-line import/no-duplicates
-import TabletFooterImg from '../../images/footer.png';
-// eslint-disable-next-line import/no-duplicates
-import MobileFooterImg from '../../images/footer.png';
-
-export const footerImg = css({
-    backgroundImage: `url(${DesktopFooterImg})`,
-    backgroundPosition: 'center bottom',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    width: '100%',
-    height: 900,
+export const imgStyle = css({ maxWidth: '100vw', margin: '0 auto', display: 'block' });
+export const desktopImgStyle = css({
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        backgroundImage: `url(${TabletFooterImg})`,
-        height: 652,
+        display: 'none',
     },
-    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        backgroundImage: `url(${MobileFooterImg})`,
-        height: 500,
+});
+export const mobileImgStyle = css({
+    display: 'none',
+    minWidth: '100vw',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        display: 'block',
+    },
+});
+
+export const copyrightStyle = css({
+    color: '#2EA5ED',
+    position: 'absolute',
+    bottom: 45,
+    zIndex: 999,
+    width: '100vw',
+    textAlign: 'center',
+    fontSize: 12,
+    lineHeight: '14px',
+    fontWeight: 700,
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        bottom: 25,
     },
 });
