@@ -50,6 +50,9 @@ export const sectionStyle = css({
             [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
                 right: -5,
             },
+            [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+                right: -25,
+            },
         },
     },
     '.swiper-button-prev,.swiper-button-next': {
