@@ -134,7 +134,13 @@ export const titleStyle = css({
         fontSize: 30,
     },
 });
-export const titlePersonStyle = css({ position: 'relative', marginBottom: 50 });
+export const titlePersonStyle = css({
+    position: 'relative',
+    marginBottom: 50,
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        marginBottom: 15,
+    },
+});
 export const nameStyle = css({ paddingBottom: 5 });
 export const personTextStyle = css({
     fontSize: 20,
