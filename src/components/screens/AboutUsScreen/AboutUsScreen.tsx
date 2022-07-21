@@ -15,6 +15,7 @@ import {
     titleStyle,
     subtitleStyle,
     textStyle,
+    advanceNumberStyle,
 } from './styles';
 
 export const AboutUsScreen = () => {
@@ -72,11 +73,11 @@ export const AboutUsScreen = () => {
             </Wrapper>
             <div css={advanceWrapperStyle}>
                 <AdvanceStyled>
-                    <strong>3030</strong> nft collection
+                    <strong css={advanceNumberStyle}>3030</strong> nft collection
                 </AdvanceStyled>
                 <DividerStyled />
                 <AdvanceStyled>
-                    <strong>3</strong> unique cherecters
+                    <strong css={advanceNumberStyle}>3</strong> unique cherecters
                 </AdvanceStyled>
                 <DividerStyled />
                 <AdvanceStyled>infinite universe</AdvanceStyled>

@@ -90,8 +90,13 @@ export const titleWrapperStyle = css({
     width: '100%',
     height: '100%',
     position: 'absolute',
+
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        paddingLeft: 45,
+    },
 });
 
 export const titleStyle = css({ marginBottom: 20 });
 export const subtitleStyle = css({ marginBottom: 25 });
 export const textStyle = css({ marginBottom: 25 });
+export const advanceNumberStyle = css({ fontWeight: 900 });
