@@ -1,8 +1,9 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { FC } from 'react';
-import { COLOR_PRIMARY } from '../../../const/colors';
+import { COLOR_BACKGROUND, COLOR_PRIMARY, COLOR_WHITE } from '../../../const/colors';
 
 import ScrollIntoView from 'react-scroll-into-view';
+import { BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 interface Props {
     title: string;
@@ -17,23 +18,35 @@ export const MenuLink: FC<Props> = ({ title, anchor, color = COLOR_PRIMARY, styl
         color: color,
         fontSize: 16,
         lineHeight: '43px',
-        padding: '0 10px',
+        padding: '5px 10px',
         textDecoration: 'none',
         transition: '.3s',
         borderRadius: 20,
         border: '1px solid transparent',
         whiteSpace: 'nowrap',
         cursor: 'pointer',
+        fontWeight: 400,
 
         '&:hover': {
-            borderColor: 'currentColor',
+            borderColor: COLOR_PRIMARY,
+            color: COLOR_WHITE,
+        },
+
+        [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+            fontSize: 25,
+            lineHeight: '30px',
+            fontWeight: 500,
+
+            '&:hover': {
+                borderColor: COLOR_BACKGROUND,
+                color: COLOR_BACKGROUND,
+            },
         },
     });
     return (
         <ScrollIntoView selector={`#${anchor}`}>
             <a
                 css={[linkStyle, style]}
-                // href={`#${anchor}`}
                 key={title}
                 onClick={onClick}
             >

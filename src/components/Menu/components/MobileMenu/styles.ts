@@ -1,12 +1,12 @@
 import { css } from '@emotion/react';
 import { BREAKPOINT_MOBILE } from '../../../../const/breakpoints';
-import { COLOR_SECONDARY, COLOR_BACKGROUND } from '../../../../const/colors';
+import { COLOR_BACKGROUND } from '../../../../const/colors';
 
 export const wrapperStyle = css({
     padding: '40px 0 70px 0',
     width: '100vw',
     height: '100vh',
-    backgroundColor: COLOR_SECONDARY,
+    backgroundColor: '#2EA5ED',
     position: 'fixed',
     top: 0,
     zIndex: 99,
@@ -30,9 +30,10 @@ export const linkStyle = css({
     textAlign: 'center',
     borderRadius: 32,
     padding: '10px 5px',
+    display: 'block',
     lineHeight: '30px',
     fontSize: 25,
-    marginBottom: 30,
+    marginBottom: 20,
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         marginBottom: 10,
     },
