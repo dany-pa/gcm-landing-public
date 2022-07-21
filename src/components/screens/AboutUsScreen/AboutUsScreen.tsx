@@ -1,5 +1,5 @@
 import { Wrapper, Title, Text } from '../../ui';
-import AboutUsPanel from '../../../images/aboutUsPanel.png';
+import AboutUsPanel from '../../../images/webp/aboutUsPanel.webp';
 import MobilePanelAboutUs from '../../../images/mobilePanelAboutUs.png';
 import { ABOUT_US_ANCHOR } from '../../../const/urls';
 import {

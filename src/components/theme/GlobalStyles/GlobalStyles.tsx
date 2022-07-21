@@ -1,5 +1,5 @@
 import { css, Global } from '@emotion/react';
-import BackgroundImg from '../../../images/background.png';
+import BackgroundImg from '../../../images/webp/background.webp';
 import '@fontsource/montserrat/variable.css';
 
 export const GlobalStyle = () => {

@@ -1,7 +1,7 @@
 import { COLOR_SECONDARY } from '../../../const/colors';
 import { LogoIcon } from '../../icons';
 import { Wrapper, Button } from '../../ui';
-import City from '../../../images/city.png';
+import City from '../../../images/webp/city.webp';
 import { ABOUT_US_ANCHOR } from '../../../const/urls';
 import { sectionStyle, wrapperStyle, logoIconWrapperStyle, buttonStyle, cityImgStyle, titleStyle } from './styles';
 

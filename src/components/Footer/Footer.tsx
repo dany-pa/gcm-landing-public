@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { desktopImgStyle, imgStyle, mobileImgStyle, copyrightStyle } from './styles';
-import DesktopFooterImg from '../../images/footer.png';
-import MobileFooterImg from '../../images/footerMobile.png';
+import DesktopFooterImg from '../../images/webp/footer.webp';
+import MobileFooterImg from '../../images/webp/footerMobile.webp';
 
 export const Footer: FC = () => {
     return (
