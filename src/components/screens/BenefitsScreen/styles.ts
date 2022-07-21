@@ -37,8 +37,7 @@ export const benefitWrapperStyle = css({
     display: 'flex',
     justifyContent: 'space-between',
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        flexWrap: 'wrap',
-        justifyContent: 'center',
+        display: 'block',
     },
 });
 
@@ -52,12 +51,9 @@ export const benefitStyle = css({
     },
 
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        height: 212,
+        height: 140,
+        width: '100%',
         marginBottom: 15,
-    },
-    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 147,
-        height: 147,
     },
 });
 
@@ -70,6 +66,11 @@ export const benefitInnerStyle = css({
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'space-around',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between',
+        padding: '0 50px',
+    },
 });
 
 export const stackPanelStyle = css({
@@ -99,11 +100,15 @@ export const stackIconStyle = css({
     width: 290,
     height: 290,
 
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 264,
+        height: 264,
+    },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         width: 168,
         height: 168,
         position: 'absolute',
-        right: '-20px',
+        right: '-35px',
         top: '-25px',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
@@ -112,15 +117,13 @@ export const stackIconStyle = css({
     },
 });
 
-export const wrapperStyle = css({
-    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        display: 'flex',
-        flexDirection: 'column-reverse',
-    },
-});
-
 export const titleStyle = css({
-    marginBottom: 40,
+    marginBottom: 48,
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        marginBottom: 25,
+        fontSize: 19,
+        lineHeight: '20px',
+    },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         marginBottom: 15,
     },
@@ -128,9 +131,29 @@ export const titleStyle = css({
 
 export const textStyle = css({
     marginBottom: 30,
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        marginBottom: 25,
+        fontSize: 19,
+    },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         marginBottom: 15,
     },
 });
 
 export const benefitTextStyle = css({ textAlign: 'center' });
+
+export const benefitIconStyle = css({
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: '20%',
+    },
+});
+
+export const stackInnerPanelStyle = css({
+    marginRight: 50,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        marginRight: 25,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        marginRight: 40,
+    },
+});

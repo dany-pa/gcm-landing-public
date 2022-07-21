@@ -1,9 +1,8 @@
-import { Wrapper, Text } from '../../ui';
+import { Wrapper, Text, Title } from '../../ui';
 import stackIcon from '../../../images/stack.png';
 import { BENEFITS_ANCHOR } from '../../../const/urls';
 import {
     sectionStyle,
-    wrapperStyle,
     benefitWrapperStyle,
     benefitStyle,
     Benefit,
@@ -13,6 +12,7 @@ import {
     textStyle,
     stackIconStyle,
     benefitTextStyle,
+    stackInnerPanelStyle,
 } from './styles';
 import { BENEFITS } from './const';
 
@@ -22,16 +22,16 @@ export const BenefitsScreen = () => {
             css={sectionStyle}
             id={BENEFITS_ANCHOR}
         >
-            <Wrapper style={wrapperStyle}>
+            <Wrapper>
                 <div css={benefitWrapperStyle}>
                     {BENEFITS.map((benefit) => {
                         return (
                             <div
-                                css={[benefitStyle, benefit.style]}
+                                css={[benefitStyle]}
                                 key={benefit.id}
                             >
                                 <Benefit />
-                                <div css={[benefitInnerStyle, benefit.innerStyle]}>
+                                <div css={[benefitInnerStyle]}>
                                     <img
                                         src={benefit.icon}
                                         alt=""
@@ -49,10 +49,10 @@ export const BenefitsScreen = () => {
                     })}
                 </div>
                 <div css={stackPanelStyle}>
-                    <div css={{ marginRight: 50 }}>
-                        <Text style={titleStyle}>
+                    <div css={stackInnerPanelStyle}>
+                        <Title style={titleStyle}>
                             <strong>Galactic Market is Built on Stacks.</strong>
-                        </Text>
+                        </Title>
                         <Text style={textStyle}>
                             Stacks is an open-source blockchain network
                             <br /> that leverages the security and capital
@@ -64,10 +64,16 @@ export const BenefitsScreen = () => {
                             <br /> of great creative and mindful people.
                         </Text>
                     </div>
-                    <img
-                        src={stackIcon}
-                        css={stackIconStyle}
-                    />
+                    <a
+                        href="https://www.stacks.co/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <img
+                            src={stackIcon}
+                            css={stackIconStyle}
+                        />
+                    </a>
                 </div>
             </Wrapper>
         </section>

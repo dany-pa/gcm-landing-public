@@ -19,8 +19,8 @@ export const BENEFITS = [
                 height: 129,
             },
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-                width: 119,
-                height: 112,
+                width: 123,
+                height: 116,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 89,
@@ -29,7 +29,6 @@ export const BENEFITS = [
         }),
         style: css({
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-                order: 1,
                 marginRight: 10,
             },
         }),
@@ -46,8 +45,8 @@ export const BENEFITS = [
                 height: 96,
             },
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-                width: 102,
-                height: 141,
+                width: 120,
+                height: 95,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 76,
@@ -63,7 +62,6 @@ export const BENEFITS = [
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 324,
                 height: 211,
-                order: 3,
                 flexDirection: 'row-reverse',
                 marginRight: 10,
             },
@@ -85,19 +83,15 @@ export const BENEFITS = [
                 height: 115,
             },
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-                width: 124,
-                height: 98,
+                width: 96,
+                height: 113,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 92,
                 height: 73,
             },
         }),
-        style: css({
-            [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-                order: 4,
-            },
-        }),
+        style: {},
     },
     {
         id: 4,
@@ -111,8 +105,8 @@ export const BENEFITS = [
                 height: 134,
             },
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-                width: 79,
-                height: 93,
+                width: 93,
+                height: 135,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 59,
@@ -128,7 +122,6 @@ export const BENEFITS = [
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 324,
                 height: 211,
-                order: 1,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 241,
@@ -148,8 +141,8 @@ export const BENEFITS = [
                 height: 130,
             },
             [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-                width: 125,
-                height: 125,
+                width: 112,
+                height: 112,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 93,
@@ -165,7 +158,6 @@ export const BENEFITS = [
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 549,
                 height: 211,
-                order: 5,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 408,
