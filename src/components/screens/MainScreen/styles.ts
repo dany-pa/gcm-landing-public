@@ -49,10 +49,11 @@ export const titleStyle = css({
     lineHeight: '55px',
     textAlign: 'center',
     position: 'relative',
-    top: -180,
+    top: -280,
     order: 3,
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        top: -180,
         fontSize: 45,
     },
 
@@ -76,6 +77,7 @@ export const sectionStyle = css({
     flexDirection: 'column',
     width: '100vw',
     overflow: 'hidden',
+    marginBottom: -150,
 });
 
 export const wrapperStyle = css({

@@ -13,7 +13,7 @@ export const MainScreen = () => {
                     <LogoIcon color={COLOR_SECONDARY} />
                 </div>
                 <a href={`#${ABOUT_US_ANCHOR}`}>
-                    <Button style={buttonStyle}>VIEW MORE</Button>
+                    <Button style={buttonStyle}>MINT</Button>
                 </a>
             </Wrapper>
             <img
