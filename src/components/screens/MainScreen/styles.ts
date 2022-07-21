@@ -34,6 +34,9 @@ export const cityImgStyle = css({
 });
 
 export const buttonStyle = css({
+    width: 170,
+    height: 50,
+    padding: 0,
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         display: 'none',
     },
@@ -42,6 +45,7 @@ export const buttonStyle = css({
 export const titleStyle = css({
     color: COLOR_SECONDARY,
     fontSize: 50,
+    fontWeight: 700,
     lineHeight: '55px',
     textAlign: 'center',
     position: 'relative',
