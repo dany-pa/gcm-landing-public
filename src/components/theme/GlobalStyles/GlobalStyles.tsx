@@ -1,5 +1,6 @@
 import { css, Global } from '@emotion/react';
 import BackgroundImg from '../../../images/background.png';
+import '@fontsource/montserrat';
 
 export const GlobalStyle = () => {
     return (
@@ -9,7 +10,7 @@ export const GlobalStyle = () => {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial'; /*какой на самом деле должен быть?*/
+            font-family: 'Montserrat';
         }
 
         body{
