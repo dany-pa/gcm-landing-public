@@ -4,6 +4,11 @@ import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../.
 export const wrapperStyle = css({
     maxWidth: '100vw',
     marginRight: 0,
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        maxWidth: '100vw',
+        width: '100vw',
+        margin: '0 auto',
+    },
 });
 
 export const sectionStyle = css({
@@ -35,8 +40,8 @@ export const sectionStyle = css({
             marginLeft: 'auto',
         },
         [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-            maxWidth: 314,
-            marginTop: -90,
+            maxWidth: 265,
+            marginTop: -50,
         },
 
         '.swiper-wrapper': {
@@ -57,6 +62,9 @@ export const sectionStyle = css({
     },
     '.swiper-button-prev,.swiper-button-next': {
         color: '#FFD9F7',
+        [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+            display: 'none',
+        },
     },
 });
 
@@ -90,11 +98,14 @@ export const infoPanelStyle = css({
         justifyContent: 'space-around',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 400,
-        minWidth: 400,
-        height: 217,
-        padding: '29px 40px 0px 40px',
-        justifyContent: 'flex-start',
+        width: 320,
+        minWidth: 320,
+        maxWidth: 320,
+        height: 214,
+        padding: '0 0 0 25px',
+        justifyContent: 'center',
+        margin: '0 auto',
+        borderRadius: 25,
     },
 });
 
@@ -110,6 +121,9 @@ export const characterImgStyle = css({
     width: 700,
     height: 700,
     objectFit: 'contain',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        transform: 'scale(1.3)',
+    },
 });
 
 export const titleStyle = css({
@@ -129,7 +143,8 @@ export const titleStyle = css({
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         marginBottom: 20,
         fontSize: 14,
-        lineHeight: '20px',
+        lineHeight: '16px',
+        width: '70%',
     },
 });
 
@@ -146,7 +161,7 @@ export const textStyle = css({
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         fontSize: 14,
-        lineHeight: '17px',
+        lineHeight: '16px',
     },
 });
 
@@ -170,9 +185,9 @@ export const slideImgStyle = css({
         borderRadius: 7,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 60,
-        height: 60,
-        margin: 20,
+        width: 66,
+        height: 66,
+        margin: 10,
     },
 });
 
@@ -192,7 +207,7 @@ export const activeImgStyle = css({
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         margin: 0,
-        width: 80,
-        height: 80,
+        width: 88,
+        height: 88,
     },
 });
