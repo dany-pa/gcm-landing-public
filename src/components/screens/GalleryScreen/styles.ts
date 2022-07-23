@@ -58,10 +58,9 @@ export const imgWrapperStyle = css({
         marginRight: 40,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        margin: '0 auto',
-        '> div:nth-child(1)': {
-            display: 'none',
-        },
+        maxWidth: '100%',
+        margin: 0,
+        display: 'flex',
     },
 });
 
@@ -84,6 +83,12 @@ export const titleStyle = css({
         lineHeight: '25px',
         marginBottom: 25,
     },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 18,
+        lineHeight: '25px',
+        marginBottom: 50,
+        marginTop: 40,
+    },
 });
 export const textStyle = css({
     marginBottom: '30px',
@@ -92,8 +97,9 @@ export const textStyle = css({
         lineHeight: '25px',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        fontSize: 14,
-        lineHeight: '20px',
+        fontSize: 12,
+        lineHeight: '16px',
+        marginTop: -30,
     },
 });
 export const wrapperStyle = css({
@@ -133,10 +139,7 @@ export const slideRowStyle = css({
     },
 
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        img: { display: 'none' },
-        'img:nth-child(1)': {
-            margin: 0,
-            display: 'block',
-        },
+        flexWrap: 'wrap',
+        img: { display: 'block !important', width: 152, height: 152, margin: '0 0 13px 0 !important' },
     },
 });
