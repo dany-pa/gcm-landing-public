@@ -50,6 +50,9 @@ export const personStyle = css({
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         height: 191,
+        width: 378,
+        marginRight: 'auto',
+        marginLeft: 'auto',
     },
 });
 
@@ -67,6 +70,9 @@ export const personText = css({
         height: 'auto',
         padding: '15px 50px 15px 0',
         justifyContent: 'space-around',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        paddingRight: 30,
     },
 });
 
@@ -147,5 +153,6 @@ export const personTextStyle = css({
     lineHeight: '20px',
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         fontSize: 12,
+        lineHeight: '14px',
     },
 });
