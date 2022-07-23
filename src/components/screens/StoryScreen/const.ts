@@ -1,6 +1,6 @@
-import BackgroundStory1 from '../../../images/story/storieBG_1.png';
-import BackgroundStory2 from '../../../images/story/storieBG_2.png';
-import BackgroundStory3 from '../../../images/story/storieBG_3.png';
+import BackgroundStory1 from '../../../images/webp/storieBG_1.webp';
+import BackgroundStory2 from '../../../images/webp/storieBG_2.webp';
+import BackgroundStory3 from '../../../images/webp/storieBG_3.webp';
 
 export const STORIES = [
     {

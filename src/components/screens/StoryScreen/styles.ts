@@ -2,11 +2,15 @@ import { css } from '@emotion/react';
 import { COLOR_BACKGROUND, COLOR_WHITE } from '../../../const/colors';
 import BackgroundPanel from '../../../images/story/panel.png';
 import BulletIcon from '../../../images/story/bullet.svg';
+import { BREAKPOINT_MOBILE } from '../../../const/breakpoints';
 
 export const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
     '.swiper-pagination ': {
         bottom: 90,
+        [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+            bottom: 70,
+        },
     },
 
     '.swiper-pagination-bullet': {
@@ -17,6 +21,10 @@ export const sectionStyle = css({
         width: 20,
         height: 20,
         opacity: 1,
+        [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+            width: 16,
+            height: 16,
+        },
     },
 
     '.swiper-pagination-bullet-active': {
@@ -24,6 +32,10 @@ export const sectionStyle = css({
         backgroundColor: COLOR_WHITE,
         width: 20,
         height: 20,
+        [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+            width: 16,
+            height: 16,
+        },
     },
 });
 
@@ -39,6 +51,11 @@ export const sliderStyle = css({
     justifyContent: 'center',
     alignItems: 'flex-start',
     paddingTop: '30px',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 351,
+        height: 181,
+        paddingTop: 15,
+    },
 });
 
 export const sliderInnerStyle = css({
@@ -47,6 +64,9 @@ export const sliderInnerStyle = css({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: '80%',
+    },
 });
 
 export const sliderWrapper = css({
