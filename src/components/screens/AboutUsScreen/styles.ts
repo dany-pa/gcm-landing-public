@@ -35,6 +35,8 @@ export const mobilePanelStyle = css({
     position: 'relative',
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         display: 'block',
+        width: 325,
+        height: 361,
     },
 });
 
@@ -94,9 +96,32 @@ export const titleWrapperStyle = css({
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         paddingLeft: 45,
     },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        paddingLeft: 28,
+    },
 });
 
-export const titleStyle = css({ marginBottom: 20 });
-export const subtitleStyle = css({ marginBottom: 25 });
-export const textStyle = css({ marginBottom: 25 });
+export const titleStyle = css({
+    marginBottom: 20,
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        lineHeight: '14px',
+        marginBottom: 20,
+    },
+});
+export const subtitleStyle = css({
+    marginBottom: 25,
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 12,
+        marginBottom: 20,
+        lineHeight: '16px',
+    },
+});
+export const textStyle = css({
+    marginBottom: 25,
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 12,
+        marginBottom: 20,
+        lineHeight: '16px',
+    },
+});
 export const advanceNumberStyle = css({ fontWeight: 900 });
