@@ -13,8 +13,10 @@ import {
     stackIconStyle,
     benefitTextStyle,
     stackInnerPanelStyle,
+    textFirstStyle,
 } from './styles';
 import { BENEFITS } from './const';
+import { css } from '@emotion/react';
 
 export const BenefitsScreen = () => {
     return (
@@ -53,13 +55,13 @@ export const BenefitsScreen = () => {
                         <Title style={titleStyle}>
                             <strong>Galactic Market is Built on Stacks.</strong>
                         </Title>
-                        <Text style={textStyle}>
+                        <Text style={css([textStyle, textFirstStyle])}>
                             Stacks is an open-source blockchain network
                             <br /> that leverages the security and capital
                             <br /> of Bitcoin or decentralized apps and smart
                             <br /> contracts.
                         </Text>
-                        <Text>
+                        <Text style={textStyle}>
                             And what's more important, a great community
                             <br /> of great creative and mindful people.
                         </Text>

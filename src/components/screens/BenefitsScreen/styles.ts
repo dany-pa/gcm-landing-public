@@ -99,10 +99,10 @@ export const stackPanelStyle = css({
         paddingLeft: '64px',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 320,
-        margin: '0 auto 30px auto',
-        position: 'relative',
-        paddingLeft: '64px',
+        width: '100%',
+        flexDirection: 'column',
+        borderRadius: 26,
+        padding: '19px 27px',
     },
 });
 
@@ -122,8 +122,9 @@ export const stackIconStyle = css({
         top: '-25px',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 136,
-        height: 136,
+        width: 79,
+        height: 79,
+        position: 'static',
     },
 });
 
@@ -136,18 +137,28 @@ export const titleStyle = css({
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         marginBottom: 15,
-        fontSize: 14,
+        fontSize: 20,
+    },
+});
+
+export const textFirstStyle = css({
+    marginBottom: 30,
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        marginBottom: 25,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        marginBottom: 15,
     },
 });
 
 export const textStyle = css({
-    marginBottom: 30,
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        marginBottom: 25,
         fontSize: 19,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        marginBottom: 15,
+        marginBottom: 20,
+        fontSize: 12,
+        lineHeight: '16px',
     },
 });
 
@@ -155,6 +166,7 @@ export const benefitTextStyle = css({
     textAlign: 'center',
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         textAlign: 'left',
+        fontSize: 14,
     },
 });
 
@@ -171,5 +183,8 @@ export const stackInnerPanelStyle = css({
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         marginRight: 40,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        marginRight: 0,
     },
 });
