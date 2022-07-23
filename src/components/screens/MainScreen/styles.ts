@@ -13,9 +13,9 @@ export const logoIconWrapperStyle = css({
         height: 272,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        marginTop: 25,
-        width: 285,
-        height: 193,
+        marginTop: 117,
+        width: 217,
+        height: 147,
     },
 });
 

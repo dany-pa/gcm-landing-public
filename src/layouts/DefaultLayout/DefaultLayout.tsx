@@ -73,6 +73,23 @@ export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
                     </Wrapper>
                     {!isShowMenu ? (
                         <Wrapper style={menuWrapperStyle}>
+                            <div css={iconsWrapperStyle}>
+                                <a
+                                    href={DISCORD_URL}
+                                    target="_blank"
+                                    css={discordIconStyle}
+                                    rel="noreferrer"
+                                >
+                                    <DiscordIcon />
+                                </a>
+                                <a
+                                    href={TWITTER_URL}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <TwitterIcon />
+                                </a>
+                            </div>
                             <button
                                 css={menuButtonStyle}
                                 onClick={handleOpenMenuClick}

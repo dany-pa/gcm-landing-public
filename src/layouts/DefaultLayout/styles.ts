@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { BREAKPOINT_TABLET } from '../../const/breakpoints';
+import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../const/breakpoints';
 
 export const mainStyle = css({
     width: '100vw',
@@ -18,11 +18,22 @@ export const headerWrapperStyle = css({
 
 export const iconsWrapperStyle = css({
     display: 'flex',
+
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        display: 'none',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'flex',
+    },
 });
 
 export const discordIconStyle = css({
     marginRight: 35,
     marginLeft: 110,
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        marginRight: 35,
+        marginLeft: 0,
+    },
 });
 
 export const menuWrapperStyle = css({
@@ -30,6 +41,13 @@ export const menuWrapperStyle = css({
     justifyContent: 'flex-end',
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         display: 'flex',
+        position: 'fixed',
+        zIndex: 999,
+        width: '100%',
+        justifyContent: 'flex-end',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        justifyContent: 'space-between',
     },
 });
 
@@ -49,6 +67,4 @@ export const menuButtonStyle = css({
     backgroundColor: 'transparent',
     border: 'none',
     cursor: 'pointer',
-    position: 'fixed',
-    zIndex: 999,
 });

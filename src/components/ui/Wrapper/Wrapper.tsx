@@ -22,9 +22,9 @@ export const Wrapper: FC<PropsWithChildren<Props>> = ({ style, children }) => {
         },
 
         [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-            maxWidth: 400,
-            marginLeft: 'calc((100vw - 400px) / 2)',
-            marginRight: 'calc((100vw - 400px) / 2)',
+            maxWidth: 320,
+            marginLeft: 'calc((100vw - 320px) / 2)',
+            marginRight: 'calc((100vw - 320px) / 2)',
         },
     });
 

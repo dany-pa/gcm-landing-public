@@ -89,7 +89,7 @@ export const stackPanelStyle = css({
         paddingLeft: '64px',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 415,
+        width: 320,
         margin: '0 auto 30px auto',
         position: 'relative',
         paddingLeft: '64px',
