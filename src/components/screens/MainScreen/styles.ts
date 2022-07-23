@@ -30,6 +30,7 @@ export const cityImgStyle = css({
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         width: '172vw',
         marginLeft: '-20vw',
+        order: 2,
     },
 });
 
@@ -68,7 +69,10 @@ export const titleStyle = css({
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         fontSize: 20,
         lineHeight: '25px',
-        marginTop: 20,
+        marginTop: 0,
+        order: 3,
+        position: 'relative',
+        top: -100,
     },
 });
 
@@ -78,6 +82,9 @@ export const sectionStyle = css({
     width: '100vw',
     overflow: 'hidden',
     marginBottom: -150,
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        marginBottom: -80,
+    },
 });
 
 export const wrapperStyle = css({
