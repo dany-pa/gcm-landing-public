@@ -27,11 +27,11 @@ export const BenefitsScreen = () => {
                     {BENEFITS.map((benefit) => {
                         return (
                             <div
-                                css={[benefitStyle]}
+                                css={benefitStyle}
                                 key={benefit.id}
                             >
                                 <Benefit />
-                                <div css={[benefitInnerStyle]}>
+                                <div css={benefitInnerStyle}>
                                     <img
                                         src={benefit.icon}
                                         alt=""

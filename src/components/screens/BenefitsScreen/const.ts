@@ -23,8 +23,8 @@ export const BENEFITS = [
                 height: 116,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-                width: 89,
-                height: 84,
+                width: 113,
+                height: 107,
             },
         }),
         style: css({
@@ -49,8 +49,8 @@ export const BENEFITS = [
                 height: 95,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-                width: 76,
-                height: 105,
+                width: 107,
+                height: 85,
             },
         }),
         innerStyle: css({
@@ -88,7 +88,7 @@ export const BENEFITS = [
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 92,
-                height: 73,
+                height: 108,
             },
         }),
         style: {},
@@ -109,8 +109,8 @@ export const BENEFITS = [
                 height: 135,
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-                width: 59,
-                height: 70,
+                width: 93,
+                height: 129,
             },
         }),
         innerStyle: css({

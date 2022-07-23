@@ -29,6 +29,9 @@ export const Benefit = styled.div(
         [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
             borderRadius: 32,
         },
+        [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+            borderRadius: 23,
+        },
     })
 );
 
@@ -55,6 +58,10 @@ export const benefitStyle = css({
         width: '100%',
         marginBottom: 15,
     },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        height: 134,
+    },
 });
 
 export const benefitInnerStyle = css({
@@ -70,6 +77,9 @@ export const benefitInnerStyle = css({
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
         padding: '0 50px',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        padding: '0 25px',
     },
 });
 
@@ -126,6 +136,7 @@ export const titleStyle = css({
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         marginBottom: 15,
+        fontSize: 14,
     },
 });
 
@@ -140,7 +151,12 @@ export const textStyle = css({
     },
 });
 
-export const benefitTextStyle = css({ textAlign: 'center' });
+export const benefitTextStyle = css({
+    textAlign: 'center',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        textAlign: 'left',
+    },
+});
 
 export const benefitIconStyle = css({
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
