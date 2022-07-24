@@ -4,7 +4,7 @@ import { BREAKPOINT_LAPTOP, BREAKPOINT_TABLET, BREAKPOINT_MOBILE } from '../../.
 import { COLOR_WHITE, COLOR_SECONDARY } from '../../../const/colors';
 
 export const sectionStyle = css({
-    width: '100vw',
+    width: '100%',
     overflow: 'hidden',
     paddingTop: 50,
 });

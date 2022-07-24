@@ -89,7 +89,7 @@ export const titleStyle = css({
 export const sectionStyle = css({
     display: 'flex',
     flexDirection: 'column',
-    width: '100vw',
+    width: '100%',
     overflow: 'hidden',
     marginBottom: -150,
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
