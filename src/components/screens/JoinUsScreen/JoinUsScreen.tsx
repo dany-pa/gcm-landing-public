@@ -8,13 +8,20 @@ import {
     textStyle,
     iconsWrapperStyle,
     iconStyle,
+    bubbleStyle_1,
+    bubbleStyle_2,
+    bubbleStyle_3,
 } from './styles';
 import { DISCORD_URL, TWITTER_URL } from '../../../const/urls';
+import { Bubble } from '../../Bubble';
 
 export const JoinUsScreen = () => {
     return (
         <section css={sectionStyle}>
             <div css={panelStyle}>
+                <Bubble style={bubbleStyle_1} />
+                <Bubble style={bubbleStyle_2} />
+                <Bubble style={bubbleStyle_3} />
                 <div css={textWrapperStyle}>
                     <h3 css={titleStyle}>JOIN US NOW!</h3>
                     <p css={textStyle}>

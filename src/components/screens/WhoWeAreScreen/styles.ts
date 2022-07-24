@@ -4,7 +4,7 @@ import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../.
 export const sectionStyle = css({
     padding: '100px 0',
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        padding: '35px 0 60px 0',
+        padding: '35px 0 100px 0',
     },
 });
 
@@ -160,7 +160,7 @@ export const personTextStyle = css({
         lineHeight: '20px',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        fontSize: 16,
-        lineHeight: '14px',
+        fontSize: 12,
+        lineHeight: '16px',
     },
 });
