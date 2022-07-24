@@ -119,7 +119,6 @@ export const infoPanelStyle = css({
 export const slideStyle = css({
     position: 'relative',
     display: 'flex',
-    overflow: 'hidden',
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         flexWrap: 'wrap',
     },

@@ -5,7 +5,6 @@ import { COLOR_WHITE, COLOR_SECONDARY } from '../../../const/colors';
 
 export const sectionStyle = css({
     width: '100%',
-    overflow: 'hidden',
     paddingTop: 50,
 });
 
@@ -125,3 +124,101 @@ export const textStyle = css({
     },
 });
 export const advanceNumberStyle = css({ fontWeight: 900 });
+
+export const bubbleStyle_1 = css({
+    top: -60,
+    left: 80,
+    width: 174,
+    height: 174,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 156,
+        height: 156,
+        top: -80,
+        left: 50,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 142,
+        height: 142,
+        left: 0,
+        top: -160,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 88,
+        height: 88,
+        left: 'calc(-1 * (100vw - 320px) / 2 - 44px)',
+        top: -70,
+    },
+});
+export const bubbleStyle_2 = css({
+    top: -130,
+    left: -20,
+    width: 124,
+    height: 124,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 86,
+        height: 86,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        display: 'none',
+    },
+});
+export const bubbleStyle_3 = css({
+    bottom: -90,
+    left: '50%',
+    width: 84,
+    height: 84,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 62,
+        height: 62,
+        left: '100%',
+        bottom: 0,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 92,
+        height: 92,
+        bottom: -60,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'none',
+    },
+});
+export const bubbleStyle_4 = css({
+    right: 190,
+    width: 110,
+    height: 110,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 90,
+        height: 90,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        right: 0,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 88,
+        height: 88,
+        bottom: -100,
+    },
+});
+export const bubbleStyle_5 = css({
+    right: 265,
+    top: 150,
+    width: 74,
+    height: 74,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 62,
+        height: 62,
+        right: 'initial',
+        top: 'initial',
+        left: 200,
+        bottom: 150,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        left: 'initial',
+        right: 80,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 48,
+        height: 48,
+        bottom: -25,
+    },
+});

@@ -1,6 +1,7 @@
 import { Wrapper, Title, Text } from '../../ui';
 import AboutUsPanel from '../../../images/webp/aboutUsPanel.webp';
 import MobilePanelAboutUs from '../../../images/mobilePanelAboutUs.png';
+
 import { ABOUT_US_ANCHOR } from '../../../const/urls';
 import {
     sectionStyle,
@@ -16,7 +17,13 @@ import {
     subtitleStyle,
     textStyle,
     advanceNumberStyle,
+    bubbleStyle_1,
+    bubbleStyle_2,
+    bubbleStyle_3,
+    bubbleStyle_4,
+    bubbleStyle_5,
 } from './styles';
+import { Bubble } from '../../Bubble';
 
 export const AboutUsScreen = () => {
     return (
@@ -37,6 +44,11 @@ export const AboutUsScreen = () => {
                         />
                     </div>
                     <div css={titleWrapperStyle}>
+                        <Bubble style={bubbleStyle_1} />
+                        <Bubble style={bubbleStyle_2} />
+                        <Bubble style={bubbleStyle_3} />
+                        <Bubble style={bubbleStyle_4} />
+                        <Bubble style={bubbleStyle_5} />
                         <div>
                             <Title
                                 type="secondary"
