@@ -4,10 +4,11 @@ import { STORY_ANCHOR } from '../../../const/urls';
 import { sliderWrapper, sliderStyle, sliderInnerStyle, sectionStyle } from './styles';
 import { STORIES } from './const';
 
-import { Pagination } from 'swiper';
+import { Pagination, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 export const StoryScreen = () => {
     return (
@@ -18,10 +19,11 @@ export const StoryScreen = () => {
             <Swiper
                 slidesPerView={1}
                 loop={true}
-                modules={[Pagination]}
+                modules={[Pagination, Navigation]}
                 pagination={{
                     clickable: true,
                 }}
+                navigation
                 watchSlidesProgress={true}
             >
                 {STORIES.map((storie) => {

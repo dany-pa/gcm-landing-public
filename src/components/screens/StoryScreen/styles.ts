@@ -2,7 +2,8 @@ import { css } from '@emotion/react';
 import { COLOR_BACKGROUND, COLOR_WHITE } from '../../../const/colors';
 import BackgroundPanel from '../../../images/story/panel.png';
 import BulletIcon from '../../../images/story/bullet.svg';
-import { BREAKPOINT_MOBILE } from '../../../const/breakpoints';
+import ArrowIcon from '../../../images/arrow.svg';
+import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 export const sectionStyle = css({
     backgroundColor: COLOR_BACKGROUND,
@@ -36,6 +37,35 @@ export const sectionStyle = css({
             width: 16,
             height: 16,
         },
+    },
+
+    '.swiper-button-prev, .swiper-button-next': {
+        height: '100%',
+        top: 22,
+        right: 0,
+        width: 80,
+        transition: '0.3s',
+        '&:after': {
+            width: 26,
+            height: 41,
+            backgroundImage: `url(${ArrowIcon})`,
+            content: '""',
+        },
+        [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+            display: 'none',
+        },
+    },
+    '.swiper-button-prev:hover, .swiper-button-next:hover': {
+        backgroundColor: 'rgba(217,217,217, 0.25)',
+    },
+    '.swiper-button-prev,': {
+        left: 0,
+        '&:after': {
+            transform: 'rotate(180deg)',
+        },
+    },
+    '.swiper-button-next': {
+        right: 0,
     },
 });
 
