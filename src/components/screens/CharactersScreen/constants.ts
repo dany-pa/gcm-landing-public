@@ -28,8 +28,7 @@ export const CHARACTERS = [
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 644,
                 height: 567,
-                marginLeft: 0,
-                marginTop: 0,
+                margin: '0 auto',
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 480,
@@ -54,8 +53,7 @@ export const CHARACTERS = [
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 644,
                 height: 567,
-                marginLeft: 0,
-                marginTop: 0,
+                margin: '0 auto',
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 480,
@@ -79,7 +77,7 @@ export const CHARACTERS = [
             [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
                 width: 644,
                 height: 567,
-                marginLeft: 0,
+                margin: '0 auto',
             },
             [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
                 width: 480,

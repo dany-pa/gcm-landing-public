@@ -26,16 +26,16 @@ export const sectionStyle = css({
     },
 
     '.bottom-slider': {
-        maxWidth: 690,
+        maxWidth: 490,
         marginTop: -250,
         marginLeft: 0,
         overflow: 'visible',
         [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-            maxWidth: 490,
+            maxWidth: 415,
             marginTop: -190,
         },
         [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-            maxWidth: 370,
+            maxWidth: 320,
             marginTop: -130,
             marginLeft: 'auto',
         },
@@ -61,10 +61,8 @@ export const sectionStyle = css({
         },
     },
     '.swiper-button-prev,.swiper-button-next': {
-        color: '#FFD9F7',
-        [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-            display: 'none',
-        },
+        // color: '#FFD9F7',
+        display: 'none',
     },
 });
 
@@ -168,21 +166,19 @@ export const textStyle = css({
 
 export const slideImgStyle = css({
     transition: '0.3s',
-    margin: 25,
+    margin: 15,
     cursor: 'pointer',
     borderRadius: 20,
     filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
-    width: 145,
-    height: 145,
+    width: 114,
+    height: 114,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 105,
         height: 105,
-        margin: 20,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         width: 70,
         height: 70,
-        margin: 26,
         borderRadius: 7,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
@@ -193,8 +189,8 @@ export const slideImgStyle = css({
 });
 
 export const activeImgStyle = css({
-    width: 170,
-    height: 170,
+    width: 134,
+    height: 134,
     margin: 0,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         margin: 0,
