@@ -2,8 +2,18 @@ import { css } from '@emotion/react';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 export const wrapperStyle = css({
-    maxWidth: '100vw',
+    maxWidth: '100%',
+    width: '100%',
     marginRight: 0,
+
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        maxWidth: '100%',
+        width: '100%',
+        marginRight: 0,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        maxWidth: 550,
+    },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         maxWidth: '100vw',
         width: '100vw',
@@ -67,10 +77,10 @@ export const sectionStyle = css({
 });
 
 export const infoPanelStyle = css({
-    width: 551,
-    minWidth: 551,
-    height: 547,
-    padding: '0px 92px 0px 77px',
+    width: 494,
+    minWidth: 494,
+    height: 469,
+    padding: '0px 35px 0px 35px',
     background:
         'linear-gradient(180deg, rgba(153, 224, 241, 0.25) 0%, rgba(182, 232, 245, 0.175) 28.13%, rgba(221, 244, 250, 0.2) 56.77%, rgba(246, 252, 253, 0.225) 77.6%, rgba(255, 255, 255, 0.25) 97.4%)',
     boxShadow: ' 0px 4px 4px rgba(0, 0, 0, 0.25)',
@@ -117,9 +127,17 @@ export const slideStyle = css({
 });
 
 export const characterImgStyle = css({
-    width: 700,
-    height: 700,
+    width: 952,
+    height: 952,
+    marginLeft: -210,
+    marginTop: -100,
     objectFit: 'contain',
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 731,
+        height: 731,
+        marginTop: -40,
+        marginLeft: -120,
+    },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         transform: 'scale(1.3)',
     },
