@@ -14,6 +14,10 @@ export const GlobalStyle = () => {
             font-weight: 500;
         }
 
+        html{
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
         body{
             overflow-x: hidden;
             overflow-y: auto;

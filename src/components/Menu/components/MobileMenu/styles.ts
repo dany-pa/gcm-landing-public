@@ -16,7 +16,8 @@ export const wrapperStyle = css({
     justifyContent: 'space-between',
 
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        padding: '20px 0',
+        padding: '40px 0 0 0',
+        justifyContent: 'flex-start',
     },
 });
 
@@ -39,8 +40,17 @@ export const linkStyle = css({
     },
 });
 
+export const iconsHeaderWrapperStyle = css({
+    display: 'none',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'flex',
+    },
+});
 export const iconsWrapperStyle = css({
     display: 'flex',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'none',
+    },
 });
 
 export const twitterIconStyle = css({
@@ -61,13 +71,24 @@ export const iconStyle = css({
     },
 });
 
+export const headerWrapperStyle = css({
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        paddingBottom: 100,
+        justifyContent: 'space-between',
+    },
+});
+
+export const discordStyle = css({
+    marginRight: 35,
+});
+
 export const closeButtonStyle = css({
     border: 'none',
     backgroundColor: 'transparent',
     cursor: 'pointer',
-    position: 'fixed',
-    right: 22,
-    top: 20,
     width: 41,
     height: 41,
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
@@ -80,7 +101,8 @@ export const logoIconStyle = css({
     width: 291,
     height: 197,
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 193,
-        height: 131,
+        width: 217,
+        height: 147,
+        marginBottom: 40,
     },
 });
