@@ -170,8 +170,11 @@ export const benefitTextStyle = css({
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         height: 108,
     },
-    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         textAlign: 'left',
+        height: 'auto',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         fontSize: 14,
     },
 });

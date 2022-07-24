@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 export const wrapperStyle = css({
+    position: 'relative',
     marginRight: 0,
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
@@ -20,17 +21,16 @@ export const wrapperStyle = css({
 });
 
 export const sectionStyle = css({
-    paddingTop: 125,
+    paddingTop: 350,
     paddingBottom: 250,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         paddingBottom: 28,
-        paddingTop: 55,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         paddingTop: 70,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        paddingTop: 33,
+        paddingTop: 100,
     },
 
     '.bottom-slider': {
@@ -222,5 +222,96 @@ export const activeImgStyle = css({
         margin: 0,
         width: 88,
         height: 88,
+    },
+});
+
+export const bubbleStyle_1 = css({
+    width: 114,
+    height: 114,
+    top: -250,
+    left: 'calc(250px - (114px / 2))',
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 84,
+        height: 84,
+        top: 'calc(-1 * (84px + 70px))',
+        left: 'calc(429px - (429px / 3))',
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 104,
+        height: 104,
+        top: 'calc(-1 * (104px + 15px))',
+        left: 20,
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 102,
+        height: 102,
+        top: 'calc(-102px - 50px / 2)',
+        left: 0,
+    },
+});
+export const bubbleStyle_2 = css({
+    width: 92,
+    height: 92,
+    top: 'calc((92px + 68px) * -1)',
+    left: 70,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 64,
+        height: 64,
+        left: 'calc(429px /2)',
+        top: 'calc(-1 * (64px + 5px))',
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 78,
+        height: 78,
+        right: 20,
+        left: 'initial',
+        top: 'calc(263px / 2 - 78px)',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 63,
+        height: 63,
+        top: 'calc(214px / 2 - (63px / 2))',
+        right: 'calc(320px - 63px)',
+    },
+});
+export const bubbleStyle_3 = css({
+    width: 114,
+    height: 114,
+    left: 250,
+    top: -130,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 100,
+        height: 100,
+        left: 'calc(429px - 100px)',
+        top: 'calc(-1 * (100px / 2))',
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        width: 125,
+        height: 125,
+        right: -40,
+        left: 'initial',
+        top: 'calc(263px - 40px)',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 74,
+        height: 74,
+        top: 'calc(214px - 74px /2)',
+        right: 0,
+    },
+});
+export const bubbleStyle_4 = css({
+    width: 64,
+    height: 64,
+    right: 584,
+    top: 'calc(469px - 64px - 20px)',
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        display: 'none',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'block',
+        width: 56,
+        height: 56,
+        top: 'calc(214px + 74px / 2)',
+        right: 74,
     },
 });

@@ -3,6 +3,10 @@ import { CHARACTERS_ANCHOR } from '../../../const/urls';
 import { CHARACTERS, SLIDES } from './constants';
 import {
     activeImgStyle,
+    bubbleStyle_1,
+    bubbleStyle_2,
+    bubbleStyle_3,
+    bubbleStyle_4,
     characterImgStyle,
     infoPanelStyle,
     sectionStyle,
@@ -21,6 +25,7 @@ import 'swiper/css';
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css/navigation';
 import { useCallback, useEffect, useState } from 'react';
+import { Bubble } from '../../Bubble';
 
 export const CharactersScreen = () => {
     const [topSlider, setTopSlider] = useState<Swiper | null>(null);
@@ -63,6 +68,10 @@ export const CharactersScreen = () => {
             id={CHARACTERS_ANCHOR}
         >
             <Wrapper style={wrapperStyle}>
+                <Bubble style={bubbleStyle_1} />
+                <Bubble style={bubbleStyle_2} />
+                <Bubble style={bubbleStyle_3} />
+                <Bubble style={bubbleStyle_4} />
                 <ReactSwiper
                     slidesPerView={1}
                     watchSlidesProgress={true}
