@@ -37,6 +37,8 @@ export const personStyle = css({
         'linear-gradient(180deg, rgba(153, 224, 241, 0.25) 0%, rgba(182, 232, 245, 0.175) 30.21%, rgba(221, 244, 250, 0.2) 64.06%, rgba(246, 252, 253, 0.225) 81.25%, rgba(255, 255, 255, 0.25) 100%)',
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     borderRadius: '53px 53px 32px 32px',
+    display: 'flex',
+    flexDirection: 'column',
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 324,
         height: 581,
@@ -47,6 +49,7 @@ export const personStyle = css({
         display: 'flex',
         borderRadius: '15px',
         marginBottom: 32,
+        flexDirection: 'row',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         height: 191,
@@ -57,19 +60,30 @@ export const personStyle = css({
 });
 
 export const personText = css({
-    padding: '15px 55px 30px 40px',
+    padding: '15px 35px 30px 35px',
     height: 'calc(100% - 288px)',
     display: 'flex',
     justifyContent: 'flex-start',
     flexDirection: 'column',
+    border: '2px solid rgb(153 224 241 / 25%)',
+    borderRadius: 32,
+    borderTop: 'none',
+    borderTopRightRadius: 0,
+    borderTopLeftRadius: 0,
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        padding: '25px 55px 30px 35px',
+        padding: '25px 25px 25px 25px',
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         height: 'auto',
         padding: '15px 50px 15px 0',
         justifyContent: 'space-around',
+        paddingLeft: 30,
+        border: '2px solid rgb(153 224 241 / 25%)',
+        borderLeft: 0,
+        borderRadius: 15,
+        borderTopLeftRadius: 0,
+        borderBottomLeftRadius: 0,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         paddingRight: 30,
@@ -85,7 +99,6 @@ export const personImgStyle = css({
         height: '100%',
         objectFit: 'cover',
         borderRadius: '15px 0 0 15px',
-        marginRight: 30,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         width: 172,
@@ -142,7 +155,7 @@ export const titleStyle = css({
 });
 export const titlePersonStyle = css({
     position: 'relative',
-    marginBottom: 50,
+    marginBottom: 40,
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         marginBottom: 15,
     },
@@ -150,9 +163,13 @@ export const titlePersonStyle = css({
 export const nameStyle = css({ paddingBottom: 5 });
 export const personTextStyle = css({
     fontSize: 20,
-    lineHeight: '20px',
+    lineHeight: '25px',
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        fontSize: 16,
+        lineHeight: '20px',
+    },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        fontSize: 12,
+        fontSize: 16,
         lineHeight: '14px',
     },
 });

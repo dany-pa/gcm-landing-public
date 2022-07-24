@@ -17,6 +17,7 @@ export const GlobalStyle = () => {
         html{
             max-width: 100vw;
             overflow-x: hidden;
+            overflow-y: overlay;
         }
         body{
             overflow-x: hidden;

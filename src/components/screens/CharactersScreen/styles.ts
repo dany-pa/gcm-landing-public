@@ -81,6 +81,7 @@ export const infoPanelStyle = css({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    border: '2px solid #99E0F140',
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 429,

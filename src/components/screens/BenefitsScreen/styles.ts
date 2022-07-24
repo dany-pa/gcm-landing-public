@@ -21,6 +21,7 @@ export const Benefit = styled.div(
         width: '100%',
         height: '100%',
         borderRadius: 20,
+        border: '1px solid #99E0F14D',
         background:
             'linear-gradient(180deg, rgba(153, 224, 241, 0.3) 0%, rgba(182, 232, 245, 0.21) 35.94%, rgba(221, 244, 250, 0.24) 63.54%, rgba(246, 252, 253, 0.27) 80.73%, rgba(255, 255, 255, 0.3) 100%)',
         transform: 'rotate(-180deg)',
@@ -72,7 +73,8 @@ export const benefitInnerStyle = css({
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    paddingTop: 50,
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
@@ -164,6 +166,10 @@ export const textStyle = css({
 
 export const benefitTextStyle = css({
     textAlign: 'center',
+    height: 121,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        height: 108,
+    },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         textAlign: 'left',
         fontSize: 14,
