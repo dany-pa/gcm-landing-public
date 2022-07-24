@@ -7,6 +7,11 @@ export const logoIconWrapperStyle = css({
     height: 239,
     marginTop: 90,
     marginBottom: 40,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        marginTop: 25,
+        width: 335,
+        height: 227,
+    },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         margin: '100px auto 0 auto',
         width: 401,
@@ -24,6 +29,9 @@ export const cityImgStyle = css({
     marginTop: 70,
     marginLeft: -5,
     order: 2,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        marginTop: -50,
+    },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         order: 3,
     },

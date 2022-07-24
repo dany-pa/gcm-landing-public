@@ -1,10 +1,12 @@
 import { css } from '@emotion/react';
-import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../const/breakpoints';
+import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../const/breakpoints';
 
 export const mainStyle = css({
     width: '100vw',
-    height: '200vh',
     paddingTop: '40px',
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        paddingTop: 25,
+    },
 });
 
 export const headerWrapperStyle = css({
