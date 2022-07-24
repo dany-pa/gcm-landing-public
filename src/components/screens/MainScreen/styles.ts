@@ -38,6 +38,8 @@ export const buttonStyle = css({
     width: 170,
     height: 50,
     padding: 0,
+    fontSize: 20,
+    lineHeight: '24px',
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         display: 'none',
     },

@@ -1,15 +1,16 @@
 import { css, SerializedStyles } from '@emotion/react';
 import { FC, PropsWithChildren } from 'react';
-import { BREAKPOINT_LAPTOP } from '../../../const/breakpoints';
+import { BREAKPOINT_MOBILE } from '../../../const/breakpoints';
 
 const buttonStyle = css({
     backgroundColor: '#0DB7E8',
     color: '#FFFFFF',
     border: 'none',
-    padding: '15px 45px',
+    width: 174,
+    height: 52,
     borderRadius: 24,
-    fontSize: 20,
-    lineHeight: '24px',
+    fontSize: 12,
+    lineHeight: '14px',
     fontWeight: 700,
     cursor: 'pointer',
     transition: '0.3s',
@@ -22,9 +23,9 @@ const buttonStyle = css({
         boxShadow: '0 0 0 1px #00C6FF, inset 0 0 0px 5px #5f5fce',
     },
 
-    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        fontSize: 12,
-        lineHeight: '15px',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 118,
+        height: 35,
     },
 });
 

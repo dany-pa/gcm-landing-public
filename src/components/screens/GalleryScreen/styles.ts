@@ -50,6 +50,10 @@ export const sectionStyle = css({
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         paddingRight: 0,
         paddingLeft: 0,
+        paddingBottom: 150,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        paddingBottom: 65,
     },
 });
 
@@ -68,7 +72,12 @@ export const activeSlideStyle = css({
     filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
 });
 
-export const textWrapperStyle = css({ display: 'flex' });
+export const textWrapperStyle = css({
+    display: 'flex',
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        alignItems: 'center',
+    },
+});
 export const innerStyle = css({ marginRight: 'auto' });
 export const titleStyle = css({
     margin: '20px 0 30px 0',
@@ -105,6 +114,7 @@ export const textStyle = css({
 export const wrapperStyle = css({
     maxWidth: 'calc(285px * 3 + 40px)',
     margin: '0 auto',
+    position: 'relative',
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         maxWidth: 'inherit',
@@ -119,7 +129,7 @@ export const wrapperStyle = css({
 });
 
 export const slideRowStyle = css({
-    margin: '10px 0',
+    margin: '20px 0',
     'img:nth-child(2)': {
         marginRight: 20,
         marginLeft: 20,
@@ -141,5 +151,16 @@ export const slideRowStyle = css({
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         flexWrap: 'wrap',
         img: { display: 'block !important', width: 152, height: 152, margin: '0 0 13px 0 !important' },
+    },
+});
+
+export const buttonStyle = css({
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        position: 'absolute',
+        left: 205,
+        bottom: -90,
+    },
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        position: 'static',
     },
 });

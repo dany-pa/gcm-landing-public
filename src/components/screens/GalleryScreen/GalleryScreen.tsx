@@ -1,6 +1,6 @@
 import { Wrapper } from '../../ui/Wrapper';
 
-import { Title, Text } from '../../ui';
+import { Title, Text, Button } from '../../ui';
 import { GALLERY_ANCHOR } from '../../../const/urls';
 import { SLIDES } from './const';
 import {
@@ -13,6 +13,7 @@ import {
     textStyle,
     wrapperStyle,
     slideRowStyle,
+    buttonStyle,
 } from './styles';
 
 export const GalleryScreen = () => {
@@ -67,7 +68,7 @@ export const GalleryScreen = () => {
                         >
                             <strong>Imagination is a form of freedom after all!</strong>
                         </Text>
-                        {/* <Button>VIEW MORE</Button> */}
+                        <Button style={buttonStyle}>VIEW MORE</Button>
                     </div>
                 </div>
             </Wrapper>
