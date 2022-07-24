@@ -16,6 +16,7 @@ export const CHARACTERS = [
         icon: firstCharacterBig,
         style: css({
             marginTop: -90,
+            marginLeft: -100,
             [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
                 width: 716,
                 height: 767,

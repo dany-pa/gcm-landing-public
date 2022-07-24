@@ -7,24 +7,21 @@ interface Props {
 
 export const Wrapper: FC<PropsWithChildren<Props>> = ({ style, children }) => {
     const wrapperStyle = css({
+        minWidth: 1070,
         maxWidth: 1070,
-        marginLeft: 'calc((100vw - 1070px) / 2)',
-        marginRight: 'calc((100vw - 1070px) / 2)',
+        margin: '0 auto',
         [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+            minWidth: 950,
             maxWidth: 950,
-            marginLeft: 'calc((100vw - 950px) / 2)',
-            marginRight: 'calc((100vw - 950px) / 2)',
         },
         [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
             maxWidth: 550,
-            marginLeft: 'calc((100vw - 550px) / 2)',
-            marginRight: 'calc((100vw - 550px) / 2)',
+            minWidth: 550,
         },
 
         [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
             maxWidth: 320,
-            marginLeft: 'calc((100vw - 320px) / 2)',
-            marginRight: 'calc((100vw - 320px) / 2)',
+            minWidth: 320,
         },
     });
 

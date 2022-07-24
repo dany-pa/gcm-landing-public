@@ -13,6 +13,11 @@ export const GlobalStyle = () => {
                     font-family: 'MontserratVariable', sans-serif;
                     font-weight: 500;
                 }
+                html{
+                    max-width: 100vw;
+                    overflow-x: hidden;
+                    overflow-y: overlay;
+                }
 
                 body{
                     overflow-x: hidden;
@@ -25,16 +30,16 @@ export const GlobalStyle = () => {
                     background-position: center;
                     background-repeat: repeat-y;
                     background-size: cover;
-                    max-width: 1280px;
                     margin: 0 auto;
                 }
 
-                @media (min-width: 1300px) {
+                @media (min-width: 1400px) {
                     main {
                         box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.7);
                         border-radius: 34px;
                         margin-top: 60px;
                         margin-bottom: 60px;
+                        max-width: 1280px;
                     }
                 },
 

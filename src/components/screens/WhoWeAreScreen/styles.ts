@@ -9,24 +9,15 @@ export const sectionStyle = css({
 });
 
 export const wrapperStyle = css({
-    maxWidth: 1050,
-    marginLeft: 'calc((100vw - 1050px) / 2)',
-    marginRight: 'calc((100vw - 1050px) / 2)',
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         maxWidth: 1000,
-        marginLeft: 'calc((100vw - 1000px) / 2)',
-        marginRight: 'calc((100vw - 1000px) / 2)',
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         maxWidth: 550,
-        marginLeft: 'calc((100vw - 550px) / 2)',
-        marginRight: 'calc((100vw - 550px) / 2)',
     },
 
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         maxWidth: 400,
-        marginLeft: 'calc((100vw - 400px) / 2)',
-        marginRight: 'calc((100vw - 400px) / 2)',
     },
 });
 

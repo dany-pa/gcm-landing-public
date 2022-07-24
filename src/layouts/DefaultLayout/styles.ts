@@ -45,6 +45,8 @@ export const menuWrapperStyle = css({
         display: 'flex',
         position: 'fixed',
         zIndex: 999,
+        left: 0,
+        right: 0,
         width: '100%',
         justifyContent: 'flex-end',
     },

@@ -2,17 +2,15 @@ import { css } from '@emotion/react';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 export const wrapperStyle = css({
-    maxWidth: '100%',
-    width: '100%',
     marginRight: 0,
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        maxWidth: '100%',
-        width: '100%',
+        marginLeft: 'calc((100vw - 950px) / 2)',
         marginRight: 0,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         maxWidth: 550,
+        margin: '0 auto',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         maxWidth: '100vw',
@@ -121,6 +119,7 @@ export const infoPanelStyle = css({
 export const slideStyle = css({
     position: 'relative',
     display: 'flex',
+    overflow: 'hidden',
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         flexWrap: 'wrap',
     },
@@ -129,7 +128,7 @@ export const slideStyle = css({
 export const characterImgStyle = css({
     width: 952,
     height: 952,
-    marginLeft: -210,
+    marginLeft: -150,
     marginTop: -100,
     objectFit: 'contain',
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {

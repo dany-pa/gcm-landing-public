@@ -20,7 +20,7 @@ export const copyrightStyle = css({
     position: 'absolute',
     bottom: 45,
     zIndex: 999,
-    width: '100vw',
+    width: '100%',
     textAlign: 'center',
     fontSize: 12,
     lineHeight: '14px',

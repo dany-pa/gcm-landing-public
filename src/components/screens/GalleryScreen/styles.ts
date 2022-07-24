@@ -113,11 +113,11 @@ export const textStyle = css({
 });
 export const wrapperStyle = css({
     maxWidth: 'calc(285px * 3 + 40px)',
+    minWidth: 'calc(285px * 3 + 40px)',
     margin: '0 auto',
     position: 'relative',
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        maxWidth: 'inherit',
         display: 'flex',
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {

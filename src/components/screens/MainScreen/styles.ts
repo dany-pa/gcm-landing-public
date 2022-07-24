@@ -25,12 +25,12 @@ export const logoIconWrapperStyle = css({
 });
 
 export const cityImgStyle = css({
-    width: '100vw',
+    width: 'calc(100% + 25px)',
     marginTop: 70,
-    marginLeft: -5,
+    marginLeft: -10,
     order: 2,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        marginTop: -50,
+        marginTop: -0,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         order: 3,
