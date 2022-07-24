@@ -88,6 +88,8 @@ export const infoPanelStyle = css({
     alignItems: 'center',
     justifyContent: 'center',
     border: '2px solid #99E0F140',
+    backdropFilter: 'blur(5px)',
+    zIndex: 6,
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 429,
@@ -129,6 +131,7 @@ export const characterImgStyle = css({
     height: 952,
     marginLeft: -150,
     marginTop: -100,
+    zIndex: 7,
     objectFit: 'contain',
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 731,
@@ -279,6 +282,7 @@ export const bubbleStyle_3 = css({
     height: 114,
     left: 250,
     top: -130,
+    zIndex: 7,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 100,
         height: 100,

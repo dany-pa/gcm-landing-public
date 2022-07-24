@@ -81,6 +81,8 @@ export const aboutUsPanelWrapper = css({
 
 export const aboutUsImgWrapper = css({
     position: 'relative',
+    backdropFilter: 'blur(5px)',
+    zIndex: 5,
 });
 
 export const titleWrapperStyle = css({
@@ -130,6 +132,7 @@ export const bubbleStyle_1 = css({
     left: 80,
     width: 174,
     height: 174,
+    zIndex: 6,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 156,
         height: 156,
@@ -220,5 +223,10 @@ export const bubbleStyle_5 = css({
         width: 48,
         height: 48,
         bottom: -25,
+        zIndex: 6,
     },
+});
+
+export const textWrapperStyle = css({
+    zIndex: 6,
 });

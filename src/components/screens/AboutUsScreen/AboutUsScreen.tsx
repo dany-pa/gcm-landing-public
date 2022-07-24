@@ -22,6 +22,7 @@ import {
     bubbleStyle_3,
     bubbleStyle_4,
     bubbleStyle_5,
+    textWrapperStyle,
 } from './styles';
 import { Bubble } from '../../Bubble';
 
@@ -49,7 +50,7 @@ export const AboutUsScreen = () => {
                         <Bubble style={bubbleStyle_3} />
                         <Bubble style={bubbleStyle_4} />
                         <Bubble style={bubbleStyle_5} />
-                        <div>
+                        <div css={textWrapperStyle}>
                             <Title
                                 type="secondary"
                                 style={titleStyle}
