@@ -60,6 +60,7 @@ export const advanceWrapperStyle = css({
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         padding: '5px 0',
+        display: 'none',
     },
 
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {

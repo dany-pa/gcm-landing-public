@@ -24,6 +24,7 @@ export const sectionStyle = css({
     paddingTop: 350,
     paddingBottom: 250,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        paddingTop: 70,
         paddingBottom: 28,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {

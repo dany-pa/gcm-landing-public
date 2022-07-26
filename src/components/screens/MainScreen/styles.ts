@@ -64,7 +64,7 @@ export const titleStyle = css({
     order: 3,
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        top: -180,
+        top: -240,
         fontSize: 45,
     },
 
