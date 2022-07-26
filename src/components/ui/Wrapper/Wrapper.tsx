@@ -25,5 +25,12 @@ export const Wrapper: FC<PropsWithChildren<Props>> = ({ style, children }) => {
         },
     });
 
-    return <div css={[wrapperStyle, style]}>{children}</div>;
+    return (
+        <div
+            css={[wrapperStyle, style]}
+            className="wrapper"
+        >
+            {children}
+        </div>
+    );
 };

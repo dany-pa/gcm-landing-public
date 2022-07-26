@@ -13,6 +13,7 @@ function MintPage() {
         <DefaultLayout
             isMintPage={true}
             links={links}
+            isShowLogo={true}
         >
             {<MintScreen />}
         </DefaultLayout>

@@ -75,7 +75,28 @@ export const menuButtonStyle = css({
 });
 
 export const headerMintStyle = css({
-    position: 'absolute',
-    right: 0,
-    left: 0,
+    [`@media (min-width: ${BREAKPOINT_TABLET}px)`]: {
+        position: 'absolute',
+        right: 0,
+        left: 0,
+
+        '.iconsWrapper': {
+            paddingTop: 21,
+        },
+
+        '.link': {
+            lineHeight: 'normal',
+            marginTop: 10,
+        },
+
+        '.nav': {
+            alignItems: 'flex-start',
+        },
+        '.wrapper': {
+            minWidth: 1170,
+            maxWidth: 1170,
+            padding: '0 15px',
+            alignItems: 'flex-start',
+        },
+    },
 });

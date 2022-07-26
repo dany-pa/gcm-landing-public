@@ -22,9 +22,15 @@ import { MENU_LINKS } from '../../const/general';
 interface Props {
     isMintPage?: boolean;
     links?: MenuLinkType[];
+    isShowLogo?: boolean;
 }
 
-export const DefaultLayout: FC<PropsWithChildren<Props>> = ({ children, isMintPage = false, links = MENU_LINKS }) => {
+export const DefaultLayout: FC<PropsWithChildren<Props>> = ({
+    children,
+    isMintPage = false,
+    links = MENU_LINKS,
+    isShowLogo = false,
+}) => {
     const [isShowMenu, setIsShowMenu] = useState(false);
 
     const handleCloseClick = useCallback(() => {
@@ -41,8 +47,14 @@ export const DefaultLayout: FC<PropsWithChildren<Props>> = ({ children, isMintPa
             <main css={mainStyle}>
                 <header css={isMintPage ? headerMintStyle : {}}>
                     <Wrapper style={headerWrapperStyle}>
-                        <Menu links={links} />
-                        <div css={iconsWrapperStyle}>
+                        <Menu
+                            links={links}
+                            isShowLogo={isShowLogo}
+                        />
+                        <div
+                            css={iconsWrapperStyle}
+                            className="iconsWrapper"
+                        >
                             <a
                                 href={DISCORD_URL}
                                 target="_blank"

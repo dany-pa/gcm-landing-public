@@ -54,6 +54,7 @@ export const MenuLink: FC<Props> = ({ title, link, color = COLOR_PRIMARY, style,
         <a
             css={[linkStyle, style]}
             onClick={onClick}
+            className="link"
         >
             {title}
         </a>
@@ -67,7 +68,7 @@ export const MenuLink: FC<Props> = ({ title, link, color = COLOR_PRIMARY, style,
                 <Link
                     to={link}
                     css={[linkStyle, style]}
-                    className="test"
+                    className="link"
                 >
                     {title}
                 </Link>
