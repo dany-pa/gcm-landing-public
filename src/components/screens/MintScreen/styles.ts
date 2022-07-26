@@ -301,7 +301,7 @@ export const inputTextStyle = css({
         fontSize: 10,
         lineHeight: '12px',
         paddingTop: 10,
-        paddingLeft: 20,
+        paddingLeft: 25,
     },
 
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
@@ -376,6 +376,9 @@ export const totalWrapperStyle = css({
         marginTop: 5,
         marginLeft: 20,
     },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        marginTop: 25,
+    },
 });
 
 export const centerWrapperStyle = css({
@@ -403,5 +406,11 @@ export const mintPanelInnerRightStyle = css({
     flexDirection: 'column',
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         textAlign: 'center',
+    },
+});
+
+export const hideOnMobile = css({
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'none',
     },
 });

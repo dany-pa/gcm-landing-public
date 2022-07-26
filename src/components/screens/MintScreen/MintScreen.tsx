@@ -2,6 +2,7 @@ import {
     buttonStyle,
     centerWrapperStyle,
     desktopMintPanelImgStyle,
+    hideOnMobile,
     inputButtonStyle,
     inputStyle,
     inputTextStyle,
@@ -81,7 +82,7 @@ export const MintScreen = () => {
                     <div css={mintPanelInnerRightStyle}>
                         <div css={titleStyle}>
                             Take your
-                            <br /> Galactic
+                            <br css={hideOnMobile} /> Galactic
                             <br /> Market Cat
                         </div>
                         <div css={textStyle}>
