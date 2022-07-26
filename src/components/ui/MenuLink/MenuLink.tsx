@@ -1,19 +1,21 @@
 import { css, SerializedStyles } from '@emotion/react';
-import { FC } from 'react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { FC } from 'react';
 import { COLOR_BACKGROUND, COLOR_PRIMARY, COLOR_WHITE } from '../../../const/colors';
 
 import ScrollIntoView from 'react-scroll-into-view';
 import { BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
+import { Link } from 'gatsby';
 
 interface Props {
     title: string;
-    anchor: string;
+    link: string;
     color?: string;
     style?: SerializedStyles;
     onClick?: () => void;
 }
 
-export const MenuLink: FC<Props> = ({ title, anchor, color = COLOR_PRIMARY, style, onClick }) => {
+export const MenuLink: FC<Props> = ({ title, link, color = COLOR_PRIMARY, style, onClick }) => {
     const linkStyle = css({
         color: color,
         fontSize: 16,
@@ -47,15 +49,29 @@ export const MenuLink: FC<Props> = ({ title, anchor, color = COLOR_PRIMARY, styl
             lineHeight: '30px',
         },
     });
+
+    const linkElement = () => (
+        <a
+            css={[linkStyle, style]}
+            onClick={onClick}
+        >
+            {title}
+        </a>
+    );
+
     return (
-        <ScrollIntoView selector={`#${anchor}`}>
-            <a
-                css={[linkStyle, style]}
-                key={title}
-                onClick={onClick}
-            >
-                {title}
-            </a>
-        </ScrollIntoView>
+        <>
+            {link.startsWith('#') ? (
+                <ScrollIntoView selector={link}>{linkElement()}</ScrollIntoView>
+            ) : (
+                <Link
+                    to={link}
+                    css={[linkStyle, style]}
+                    className="test"
+                >
+                    {title}
+                </Link>
+            )}
+        </>
     );
 };

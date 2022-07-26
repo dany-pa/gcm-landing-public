@@ -14,7 +14,7 @@ export const Menu: FC<Props> = ({ links }) => {
                 return (
                     <MenuLink
                         title={link.title}
-                        anchor={link.anchor}
+                        link={link.link}
                         key={link.title}
                     />
                 );
