@@ -5,16 +5,7 @@ import { Wrapper } from '../../components/ui/Wrapper';
 import { DiscordIcon, TwitterIcon, MenuIcon } from '../../components/icons';
 import { MobileMenu } from '../../components/Menu/components/MobileMenu';
 import { MenuLinkType } from '../../types/general';
-import {
-    ABOUT_US_ANCHOR,
-    BENEFITS_ANCHOR,
-    CHARACTERS_ANCHOR,
-    DISCORD_URL,
-    GALLERY_ANCHOR,
-    STORY_ANCHOR,
-    TWITTER_URL,
-    WHO_WE_ARE_ANCHOR,
-} from '../../const/urls';
+import { DISCORD_URL, TWITTER_URL } from '../../const/urls';
 import {
     mainStyle,
     headerWrapperStyle,
@@ -26,21 +17,14 @@ import {
     mobileMenuStyle,
     headerMintStyle,
 } from './styles';
-
-const links: MenuLinkType[] = [
-    { title: 'ABOUT US', anchor: ABOUT_US_ANCHOR },
-    { title: 'GALLERY', anchor: GALLERY_ANCHOR },
-    { title: 'BENEFITS', anchor: BENEFITS_ANCHOR },
-    { title: 'CHARACTERS', anchor: CHARACTERS_ANCHOR },
-    { title: 'STORY', anchor: STORY_ANCHOR },
-    { title: 'WHO WE ARE', anchor: WHO_WE_ARE_ANCHOR },
-];
+import { MENU_LINKS } from '../../const/general';
 
 interface Props {
     isMintPage?: boolean;
+    links?: MenuLinkType[];
 }
 
-export const DefaultLayout: FC<PropsWithChildren<Props>> = ({ children, isMintPage = false }) => {
+export const DefaultLayout: FC<PropsWithChildren<Props>> = ({ children, isMintPage = false, links = MENU_LINKS }) => {
     const [isShowMenu, setIsShowMenu] = useState(false);
 
     const handleCloseClick = useCallback(() => {
