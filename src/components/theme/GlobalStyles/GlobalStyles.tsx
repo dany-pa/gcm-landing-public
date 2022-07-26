@@ -33,7 +33,7 @@ export const GlobalStyle = () => {
                     margin: 0 auto;
                 }
 
-                @media (min-width: 1550px) {
+                @media (min-width: 1600px) {
                     main {
                         box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.7);
                         border-radius: 34px;
