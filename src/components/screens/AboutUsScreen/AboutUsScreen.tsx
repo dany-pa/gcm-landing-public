@@ -63,8 +63,10 @@ export const AboutUsScreen = () => {
                             >
                                 <strong>
                                     is more than just a pfp collection.
-                                    <br /> It is a character for the free universe,
-                                    <br /> the world, the story we build together.
+                                    <br className="hideOnLaptop showOnTablet" /> It is a character
+                                    <br className="hideOnDesktop hideOnTablet" /> for the free universe,
+                                    <br className="hideOnLaptop showOnTablet" /> the world, the story we
+                                    <br className="hideOnDesktop hideOnTablet" /> build together.
                                 </strong>
                             </Text>
                             <Text
@@ -74,11 +76,17 @@ export const AboutUsScreen = () => {
                                 Many of us didn't have great experience
                                 <br /> with expressing creativity.
                             </Text>
-                            <Text type="secondary">
+                            <Text
+                                type="secondary"
+                                style={textStyle}
+                            >
                                 <strong>GM Cats NFT</strong> serves as a pass to a community
-                                <br /> of people whosupport each other's creative vision.
-                                <br /> The Market with noboundaries for Imagination
-                                <br /> can be created only together.
+                                <br className="hideOnMobile" /> of people whosupport each other's creative vision.{' '}
+                                <br className="hideOnTablet showOnMobile" />
+                                <br className="hideOnDesktop hideOnLaptop showOnMobile" />
+                                The Market with noboundaries for Imagination
+                                <br className="hideOnTablet" />
+                                can be created only together.
                             </Text>
                         </div>
                     </div>

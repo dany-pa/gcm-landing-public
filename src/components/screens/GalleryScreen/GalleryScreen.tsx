@@ -49,24 +49,42 @@ export const GalleryScreen = () => {
                             type="secondary"
                             style={titleStyle}
                         >
-                            A collection of 3,030 Characters <br /> welcoming you to The Market
+                            A collection of 3,030 Characters <br className="hideOnLaptop showOnTablet" /> welcoming{' '}
+                            <br className="hideOnDesktop hideOnTablet" /> you to The Market
                         </Title>
 
                         <Text
                             type="secondary"
                             style={textStyle}
                         >
-                            Galactic Market is a place to unite everybody <br /> through gamification for different
+                            Galactic Market is a place
+                            <br className="hideOnDesktop hideOnTablet" /> to unite everybody{' '}
+                            <br className="hideOnLaptop showOnTablet" /> through{' '}
+                            <br className="hideOnDesktop hideOnTablet" />
+                            gamification for different <br className="hideOnDesktop hideOnTablet" />
                             stages
                             <br />
-                            of a project, questing, defining your <strong>Character</strong>
-                            <br /> design, lore and more imaginable and <br /> unimaginable things we discover together.
+                            of a project, questing, <br className="hideOnDesktop hideOnTablet" /> defining your{' '}
+                            <br className="hideOnDesktop hideOnLaptop showOnTablet" />
+                            <strong>Character</strong>
+                            <br className="hideOnTablet" /> design, lore and more{' '}
+                            <br className="hideOnDesktop hideOnTablet" /> imaginable{' '}
+                            <br className="hideOnDesktop hideOnLaptop showOnTablet" /> and{' '}
+                            <br className="hideOnTablet" /> unimaginable things we
+                            <br className="hideOnDesktop hideOnTablet" /> discover{' '}
+                            <br className="hideOnDesktop hideOnLaptop showOnTablet" />
+                            together.
+                            <br className="hideOnDesktop hideOnLaptop showOnMobile" />
+                            <br className="hideOnDesktop hideOnLaptop showOnMobile" />
                         </Text>
                         <Text
                             type="secondary"
                             style={textStyle}
                         >
-                            <strong>Imagination is a form of freedom after all!</strong>
+                            <strong>
+                                Imagination is a form
+                                <br className="hideOnDesktop hideOnTablet" /> of freedom after all!
+                            </strong>
                         </Text>
                         <Button style={buttonStyle}>VIEW MORE</Button>
                     </div>
