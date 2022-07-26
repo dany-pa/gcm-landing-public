@@ -2,7 +2,7 @@ import { Wrapper, Title, Text } from '../../ui';
 import AboutUsPanel from '../../../images/webp/aboutUsPanel.webp';
 import MobilePanelAboutUs from '../../../images/mobilePanelAboutUs.png';
 
-import { ABOUT_US_ANCHOR } from '../../../const/urls';
+import { ABOUT_US_SCREEN_ID } from '../../../const/urls';
 import {
     sectionStyle,
     aboutUsPanelWrapper,
@@ -30,7 +30,7 @@ export const AboutUsScreen = () => {
     return (
         <section
             css={sectionStyle}
-            id={ABOUT_US_ANCHOR}
+            id={ABOUT_US_SCREEN_ID}
         >
             <Wrapper>
                 <div css={aboutUsPanelWrapper}>

@@ -1,6 +1,6 @@
 import { Wrapper, Text, Title } from '../../ui';
 import stackIcon from '../../../images/stack.png';
-import { BENEFITS_ANCHOR } from '../../../const/urls';
+import { BENEFITS_SCREEN_ID } from '../../../const/urls';
 import {
     sectionStyle,
     benefitWrapperStyle,
@@ -22,7 +22,7 @@ export const BenefitsScreen = () => {
     return (
         <section
             css={sectionStyle}
-            id={BENEFITS_ANCHOR}
+            id={BENEFITS_SCREEN_ID}
         >
             <Wrapper>
                 <div css={benefitWrapperStyle}>

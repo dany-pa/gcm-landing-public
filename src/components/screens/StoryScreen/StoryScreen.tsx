@@ -1,5 +1,5 @@
 import { Text } from '../../ui';
-import { STORY_ANCHOR } from '../../../const/urls';
+import { STORY_SCREEN_ID } from '../../../const/urls';
 
 import { sliderWrapper, sliderStyle, sliderInnerStyle, sectionStyle } from './styles';
 import { STORIES } from './const';
@@ -14,7 +14,7 @@ export const StoryScreen = () => {
     return (
         <section
             css={sectionStyle}
-            id={STORY_ANCHOR}
+            id={STORY_SCREEN_ID}
         >
             <Swiper
                 slidesPerView={1}

@@ -2,7 +2,7 @@ import { COLOR_SECONDARY } from '../../../const/colors';
 import { LogoIcon } from '../../icons';
 import { Wrapper, Button } from '../../ui';
 import City from '../../../images/webp/city.webp';
-import { ABOUT_US_ANCHOR } from '../../../const/urls';
+import { ABOUT_US_SCREEN_ID } from '../../../const/urls';
 import { sectionStyle, wrapperStyle, logoIconWrapperStyle, buttonStyle, cityImgStyle, titleStyle } from './styles';
 
 export const MainScreen = () => {
@@ -12,7 +12,7 @@ export const MainScreen = () => {
                 <div css={logoIconWrapperStyle}>
                     <LogoIcon color={COLOR_SECONDARY} />
                 </div>
-                <a href={`#${ABOUT_US_ANCHOR}`}>
+                <a href={`#${ABOUT_US_SCREEN_ID}`}>
                     <Button style={buttonStyle}>MINT</Button>
                 </a>
             </Wrapper>

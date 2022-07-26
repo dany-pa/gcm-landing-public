@@ -1,5 +1,5 @@
 import { Wrapper, Text } from '../../ui';
-import { CHARACTERS_ANCHOR } from '../../../const/urls';
+import { CHARACTERS_SCREEN_ID } from '../../../const/urls';
 import { CHARACTERS, SLIDES } from './constants';
 import {
     activeImgStyle,
@@ -65,7 +65,7 @@ export const CharactersScreen = () => {
     return (
         <section
             css={sectionStyle}
-            id={CHARACTERS_ANCHOR}
+            id={CHARACTERS_SCREEN_ID}
         >
             <Wrapper style={wrapperStyle}>
                 <Bubble style={bubbleStyle_1} />

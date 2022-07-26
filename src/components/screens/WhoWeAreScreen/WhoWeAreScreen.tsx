@@ -1,6 +1,6 @@
 import TwitterIcon from '../../../images/whoWeAre/twitter.svg';
 import { Wrapper, Title, Text } from '../../ui';
-import { WHO_WE_ARE_ANCHOR } from '../../../const/urls';
+import { WHO_WE_ARE_SCREEN_ID } from '../../../const/urls';
 import {
     nameStyle,
     personImgStyle,
@@ -20,7 +20,7 @@ export const WhoWeAreScreen = () => {
     return (
         <section
             css={sectionStyle}
-            id={WHO_WE_ARE_ANCHOR}
+            id={WHO_WE_ARE_SCREEN_ID}
         >
             <Wrapper style={wrapperStyle}>
                 <Title style={titleStyle}>Who we are?</Title>

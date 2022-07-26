@@ -1,7 +1,7 @@
 import { Wrapper } from '../../ui/Wrapper';
 
 import { Title, Text, Button } from '../../ui';
-import { GALLERY_ANCHOR } from '../../../const/urls';
+import { GALLERY_SCREEN_ID } from '../../../const/urls';
 import { SLIDES } from './const';
 import {
     sectionStyle,
@@ -20,7 +20,7 @@ export const GalleryScreen = () => {
     return (
         <section
             css={sectionStyle}
-            id={GALLERY_ANCHOR}
+            id={GALLERY_SCREEN_ID}
         >
             <Wrapper style={wrapperStyle}>
                 <div css={imgWrapperStyle}>
