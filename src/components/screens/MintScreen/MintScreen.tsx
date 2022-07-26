@@ -11,6 +11,8 @@ import {
     mintPanelInnerLeftStyle,
     mintPanelInnerRightStyle,
     mintPanelStyle,
+    minusBtnStyle,
+    plusBtnStyle,
     pricePanelStyle,
     sectionStyle,
     textStyle,
@@ -23,7 +25,8 @@ import MintIMG from '../../../images/mintImg.png';
 import MinusImg from '../../../images/minus.svg';
 import PlusImg from '../../../images/plus.svg';
 import { Button } from '../../ui';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import { PRICE_ONE_NFT } from '../../../const/general';
 
 export const MintScreen = () => {
     const [mintCount, setMintCount] = useState(0);
@@ -35,6 +38,15 @@ export const MintScreen = () => {
     const handleClickMinus = useCallback(() => {
         if (mintCount === 0) return;
         setMintCount(mintCount - 1);
+    }, [mintCount]);
+
+    const totalPrice = useMemo(() => {
+        return mintCount * PRICE_ONE_NFT;
+    }, [mintCount]);
+
+    const isDisabledMintBtn = useMemo(() => {
+        console.log(mintCount);
+        return mintCount === 0;
     }, [mintCount]);
 
     return (
@@ -72,7 +84,7 @@ export const MintScreen = () => {
                             <div css={inputWrapperStyle}>
                                 <div css={{ display: 'flex' }}>
                                     <button
-                                        css={inputButtonStyle}
+                                        css={[inputButtonStyle, minusBtnStyle]}
                                         onClick={handleClickMinus}
                                     >
                                         <img
@@ -87,7 +99,7 @@ export const MintScreen = () => {
                                         disabled
                                     />
                                     <button
-                                        css={inputButtonStyle}
+                                        css={[inputButtonStyle, plusBtnStyle]}
                                         onClick={handleClickPlus}
                                     >
                                         <img
@@ -103,11 +115,16 @@ export const MintScreen = () => {
                                     <strong>Total</strong>
                                 </div>
                                 <div css={pricePanelStyle}>
-                                    <strong>80 </strong> STX
+                                    <strong>{totalPrice} </strong> STX
                                 </div>
                             </div>
                         </div>
-                        <Button style={buttonStyle}>MINT</Button>
+                        <Button
+                            style={buttonStyle}
+                            disabled={isDisabledMintBtn}
+                        >
+                            MINT
+                        </Button>
                     </div>
                 </div>
             </div>

@@ -23,6 +23,11 @@ const buttonStyle = css({
         boxShadow: '0 0 0 1px #00C6FF, inset 0 0 0px 5px #5f5fce',
     },
 
+    '&:disabled': {
+        opacity: '0.5',
+        cursor: 'not-allowed',
+    },
+
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         width: 118,
         height: 35,
@@ -31,8 +36,16 @@ const buttonStyle = css({
 
 interface Props {
     style?: SerializedStyles;
+    disabled?: boolean;
 }
 
-export const Button: FC<PropsWithChildren<Props>> = ({ children, style }) => {
-    return <button css={[buttonStyle, style]}>{children}</button>;
+export const Button: FC<PropsWithChildren<Props>> = ({ children, style, disabled = false }) => {
+    return (
+        <button
+            css={[buttonStyle, style]}
+            disabled={disabled}
+        >
+            {children}
+        </button>
+    );
 };
