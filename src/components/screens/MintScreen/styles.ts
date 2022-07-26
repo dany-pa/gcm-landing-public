@@ -41,12 +41,18 @@ export const mintPanelBodyStyle = css({
     height: '100%',
     display: 'flex',
     padding: '50px 0 50px 50px',
+
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         padding: '30px 0 30px 30px',
     },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        flexDirection: 'column',
+        padding: '25px 0 40px 0',
+    },
 });
 
-export const mintPanelImgStyle = css({
+export const desktopMintPanelImgStyle = css({
     boxShadow: '0px 10px 10px rgba(0, 0, 0, 0.25)',
     borderRadius: 76,
     width: 974,
@@ -61,6 +67,22 @@ export const mintPanelImgStyle = css({
         width: 650,
         height: 340,
         borderRadius: 54,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'none',
+    },
+});
+
+export const mobileMintPanelImgStyle = css({
+    display: 'none',
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'block',
+        boxShadow: '0px 10px 10px rgba(0, 0, 0, 0.25)',
+        borderRadius: 47,
+        width: 315,
+        height: 600,
     },
 });
 
@@ -79,6 +101,12 @@ export const mintImgStyle = css({
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         width: 224,
         height: 224,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 207,
+        height: 207,
+        borderRadius: 25,
     },
 });
 
@@ -104,6 +132,17 @@ export const mintPanelInnerLeftStyle = css({
         marginTop: 0,
         marginRight: 80,
     },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        margin: '0 auto',
+        height: 'auto',
+        paddingBottom: 40,
+        '.mintedText': {
+            paddingLeft: 0,
+            paddingTop: 20,
+            margin: '0 auto',
+        },
+    },
 });
 
 export const titleStyle = css({
@@ -118,6 +157,12 @@ export const titleStyle = css({
         fontSize: 20,
         lineHeight: '25px',
         paddingBottom: 10,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 18,
+        lineHeight: '20px',
+        paddingBottom: 15,
     },
 });
 
@@ -140,6 +185,11 @@ export const textStyle = css({
         fontSize: 14,
         lineHeight: '17px',
     },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 12,
+        lineHeight: '15px',
+    },
 });
 
 export const buttonStyle = css({
@@ -149,6 +199,9 @@ export const buttonStyle = css({
     lineHeight: '25px',
     fontWeight: 700,
     marginTop: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
 
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         width: 100,
@@ -157,6 +210,14 @@ export const buttonStyle = css({
         lineHeight: '17px',
         padding: 0,
         marginBottom: 20,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 92,
+        height: 28,
+        fontSize: 11,
+        lineHeight: '14px',
+        margin: '35px auto 0 auto',
     },
 });
 
@@ -222,6 +283,11 @@ export const inputStyle = css({
         fontSize: 18,
         lineHeight: '22px',
     },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 14,
+        lineHeight: '17px',
+    },
 });
 
 export const inputTextStyle = css({
@@ -236,6 +302,12 @@ export const inputTextStyle = css({
         lineHeight: '12px',
         paddingTop: 10,
         paddingLeft: 20,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 8,
+        lineHeight: '10px',
+        paddingLeft: 0,
     },
 });
 
@@ -254,6 +326,11 @@ export const textTotalStyle = css({
         fontSize: 11,
         lineHeight: '14px',
         marginRight: 5,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        fontSize: 8,
+        lineHeight: '10px',
     },
 });
 
@@ -279,6 +356,11 @@ export const pricePanelStyle = css({
         fontSize: 11,
         lineHeight: '14px',
     },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        width: 76,
+        height: 22,
+    },
 });
 
 export const totalWrapperStyle = css({
@@ -301,15 +383,25 @@ export const centerWrapperStyle = css({
     alignItems: 'flex-start',
     justifyContent: 'center',
     paddingTop: 70,
+
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         paddingTop: 70,
     },
+
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         paddingTop: 35,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        flexDirection: 'column',
+        alignItems: 'center',
     },
 });
 
 export const mintPanelInnerRightStyle = css({
     display: 'flex',
     flexDirection: 'column',
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        textAlign: 'center',
+    },
 });

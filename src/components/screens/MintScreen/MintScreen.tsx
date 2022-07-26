@@ -1,17 +1,18 @@
 import {
     buttonStyle,
     centerWrapperStyle,
+    desktopMintPanelImgStyle,
     inputButtonStyle,
     inputStyle,
     inputTextStyle,
     inputWrapperStyle,
     mintImgStyle,
     mintPanelBodyStyle,
-    mintPanelImgStyle,
     mintPanelInnerLeftStyle,
     mintPanelInnerRightStyle,
     mintPanelStyle,
     minusBtnStyle,
+    mobileMintPanelImgStyle,
     plusBtnStyle,
     pricePanelStyle,
     sectionStyle,
@@ -21,6 +22,7 @@ import {
     totalWrapperStyle,
 } from './styles';
 import MintPanelIMG from '../../../images/mintPanel.png';
+import MobileMintPanelIMG from '../../../images/mobileMintPanel.png';
 import MintIMG from '../../../images/mintImg.png';
 import MinusImg from '../../../images/minus.svg';
 import PlusImg from '../../../images/plus.svg';
@@ -53,8 +55,13 @@ export const MintScreen = () => {
         <section css={sectionStyle}>
             <div css={mintPanelStyle}>
                 <img
-                    css={mintPanelImgStyle}
+                    css={desktopMintPanelImgStyle}
                     src={MintPanelIMG}
+                    alt=""
+                />
+                <img
+                    css={mobileMintPanelImgStyle}
+                    src={MobileMintPanelIMG}
                     alt=""
                 />
                 <div css={mintPanelBodyStyle}>
