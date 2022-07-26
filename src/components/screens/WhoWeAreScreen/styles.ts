@@ -44,7 +44,7 @@ export const personStyle = css({
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         height: 191,
-        width: 378,
+        width: 360,
         marginRight: 'auto',
         marginLeft: 'auto',
     },
