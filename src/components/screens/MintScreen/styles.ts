@@ -8,6 +8,7 @@ export const sectionStyle = css({
     width: '100%',
     height: 'calc(100vh - (60px * 2))',
     marginTop: -40,
+    maxHeight: 980,
     marginLeft: 'auto',
     marginRight: 'auto',
     borderRadius: 34,
@@ -22,6 +23,9 @@ export const sectionStyle = css({
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         marginTop: -25,
+        borderRadius: 0,
+        height: '100vh',
+        maxHeight: '100vh',
     },
 });
 
@@ -44,20 +48,40 @@ export const mintPanelImgStyle = css({
     borderRadius: 76,
     width: 974,
     height: 500,
+
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 920,
+        height: 475,
+    },
 });
 
 export const mintImgStyle = css({
     boxShadow: '0px 4px 4px 0px #00000040',
     borderRadius: 34,
+    width: 335,
+    height: 335,
+
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 317,
+        height: 317,
+    },
 });
 
 export const mintPanelInnerLeftStyle = css({
-    paddingRight: 115,
+    marginRight: 115,
     display: 'flex',
     flexDirection: 'column',
+    height: '100%',
+
     '.mintedText': {
         paddingLeft: 30,
         marginTop: 'auto',
+    },
+
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        '.mintedText': {
+            paddingLeft: 40,
+        },
     },
 });
 
@@ -78,6 +102,11 @@ export const textStyle = css({
     textTransform: 'uppercase',
     strong: {
         fontWeight: 700,
+    },
+
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        fontSize: 22,
+        lineHeight: '26px',
     },
 });
 
@@ -131,6 +160,10 @@ export const textTotalStyle = css({
     fontSize: 14,
     lineHeight: '17px',
     marginRight: 10,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        fontSize: 12,
+        lineHeight: '15px',
+    },
 });
 
 export const pricePanelStyle = css({
@@ -145,6 +178,10 @@ export const pricePanelStyle = css({
     strong: {
         marginRight: 5,
     },
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        width: 80,
+        height: 30,
+    },
 });
 
 export const totalWrapperStyle = css({
@@ -153,6 +190,9 @@ export const totalWrapperStyle = css({
     justifyContent: 'center',
     marginTop: 8,
     marginLeft: 50,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        marginLeft: 60,
+    },
 });
 
 export const centerWrapperStyle = css({
@@ -160,6 +200,9 @@ export const centerWrapperStyle = css({
     alignItems: 'flex-start',
     justifyContent: 'center',
     paddingTop: 70,
+    [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
+        paddingTop: 70,
+    },
 });
 
 export const mintPanelInnerRightStyle = css({
