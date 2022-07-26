@@ -1,6 +1,7 @@
 import { css, Global } from '@emotion/react';
 import BackgroundImg from '../../../images/webp/background.webp';
 import '@fontsource/montserrat/variable.css';
+import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 export const GlobalStyle = () => {
     return (
@@ -33,6 +34,41 @@ export const GlobalStyle = () => {
                     background-size: cover;
                     margin: 0 auto;
                 }
+
+               
+                @media (max-width: ${BREAKPOINT_MOBILE}px) {
+                    .hideOnMobile{
+                        display: none;
+                    }
+                }
+
+                @media (min-width: ${BREAKPOINT_MOBILE}px) {
+                    .hideOnTablet{
+                        display: none;
+                    }
+                    .hideOnMobile{
+                        display: block;
+                    }
+                }
+
+                @media (min-width: ${BREAKPOINT_TABLET}px) {
+                    .hideOnLaptop{
+                        display: none;
+                    }
+                    .hideOnTablet{
+                        display: block;
+                    }
+                }
+
+                @media (min-width: ${BREAKPOINT_LAPTOP}px) {
+                    .hideOnDesktop{
+                        display: none;
+                    }
+                    .hideOnLaptop{
+                        display: block;
+                    }
+                }
+                
 
                 @media (min-width: 1600px) {
                     main {
