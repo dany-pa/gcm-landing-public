@@ -52,6 +52,7 @@ export const menuWrapperStyle = css({
         justifyContent: 'flex-end',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        position: 'absolute',
         justifyContent: 'space-between',
     },
 });
@@ -72,6 +73,11 @@ export const menuButtonStyle = css({
     backgroundColor: 'transparent',
     border: 'none',
     cursor: 'pointer',
+
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        position: 'fixed',
+        right: 'calc((100vw - 320px) / 2)',
+    },
 });
 
 export const headerMintStyle = css({
