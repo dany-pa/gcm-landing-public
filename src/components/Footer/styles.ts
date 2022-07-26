@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { BREAKPOINT_TABLET } from '../../const/breakpoints';
 
-export const imgStyle = css({ maxWidth: '100vw', margin: '0 auto', display: 'block' });
+export const imgStyle = css({ maxWidth: '100%', width: '100%', margin: '0 auto', display: 'block' });
 export const desktopImgStyle = css({
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         display: 'none',
