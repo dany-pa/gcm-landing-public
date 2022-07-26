@@ -1,0 +1,1 @@
+export { MintScreen } from './MintScreen';

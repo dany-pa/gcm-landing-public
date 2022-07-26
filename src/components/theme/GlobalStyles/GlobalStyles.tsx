@@ -14,6 +14,7 @@ export const GlobalStyle = () => {
                     font-weight: 500;
                 }
                 html{
+                    min-height: 100vh;
                     max-width: 100vw;
                     overflow-x: hidden;
                     overflow-y: overlay;

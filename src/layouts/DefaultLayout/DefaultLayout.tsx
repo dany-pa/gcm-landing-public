@@ -24,6 +24,7 @@ import {
     menuButtonStyle,
     menuIconStyle,
     mobileMenuStyle,
+    headerMintStyle,
 } from './styles';
 
 const links: MenuLinkType[] = [
@@ -35,7 +36,11 @@ const links: MenuLinkType[] = [
     { title: 'WHO WE ARE', anchor: WHO_WE_ARE_ANCHOR },
 ];
 
-export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
+interface Props {
+    isMintPage?: boolean;
+}
+
+export const DefaultLayout: FC<PropsWithChildren<Props>> = ({ children, isMintPage = false }) => {
     const [isShowMenu, setIsShowMenu] = useState(false);
 
     const handleCloseClick = useCallback(() => {
@@ -50,7 +55,7 @@ export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
         <div>
             <GlobalStyle />
             <main css={mainStyle}>
-                <header>
+                <header css={isMintPage ? headerMintStyle : {}}>
                     <Wrapper style={headerWrapperStyle}>
                         <Menu links={links} />
                         <div css={iconsWrapperStyle}>

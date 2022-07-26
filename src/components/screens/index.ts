@@ -6,3 +6,4 @@ export { GalleryScreen } from './GalleryScreen';
 export { StoryScreen } from './StoryScreen';
 export { JoinUsScreen } from './JoinUsScreen';
 export { WhoWeAreScreen } from './WhoWeAreScreen';
+export { MintScreen } from './MintScreen';

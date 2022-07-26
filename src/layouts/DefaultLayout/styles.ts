@@ -4,6 +4,7 @@ import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../c
 export const mainStyle = css({
     width: '100vw',
     paddingTop: '40px',
+    position: 'relative',
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         paddingTop: 25,
     },
@@ -71,4 +72,10 @@ export const menuButtonStyle = css({
     backgroundColor: 'transparent',
     border: 'none',
     cursor: 'pointer',
+});
+
+export const headerMintStyle = css({
+    position: 'absolute',
+    right: 0,
+    left: 0,
 });
