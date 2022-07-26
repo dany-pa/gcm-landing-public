@@ -60,11 +60,10 @@ export const titleStyle = css({
     lineHeight: '55px',
     textAlign: 'center',
     position: 'relative',
-    top: -280,
+    top: -240,
     order: 3,
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        top: -240,
         fontSize: 45,
     },
 

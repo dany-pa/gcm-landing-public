@@ -21,7 +21,7 @@ export const wrapperStyle = css({
 });
 
 export const sectionStyle = css({
-    paddingTop: 350,
+    paddingTop: 150,
     paddingBottom: 250,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         paddingTop: 70,
@@ -256,8 +256,9 @@ export const bubbleStyle_1 = css({
 export const bubbleStyle_2 = css({
     width: 92,
     height: 92,
-    top: 'calc((92px + 68px) * -1)',
+    top: 'calc(-1 * (92px - 92px / 2))',
     left: 70,
+    zIndex: 6,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         width: 64,
         height: 64,

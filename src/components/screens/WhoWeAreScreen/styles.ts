@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { BREAKPOINT_LAPTOP, BREAKPOINT_MOBILE, BREAKPOINT_TABLET } from '../../../const/breakpoints';
 
 export const sectionStyle = css({
-    padding: '100px 0',
+    padding: '100px 0 300px 0',
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
         padding: '35px 0 100px 0',
     },
