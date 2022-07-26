@@ -34,6 +34,7 @@ export const cityImgStyle = css({
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         order: 3,
+        marginTop: 90,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         width: '172vw',

@@ -6,6 +6,9 @@ import { COLOR_WHITE, COLOR_SECONDARY } from '../../../const/colors';
 export const sectionStyle = css({
     width: '100%',
     paddingTop: 50,
+    [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
+        paddingTop: 100,
+    },
 });
 
 export const panelStyle = css({
