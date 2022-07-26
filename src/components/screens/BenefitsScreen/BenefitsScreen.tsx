@@ -57,13 +57,13 @@ export const BenefitsScreen = () => {
                         </Title>
                         <Text style={css([textStyle, textFirstStyle])}>
                             Stacks is an open-source blockchain network
-                            <br /> that leverages the security and capital
-                            <br /> of Bitcoin or decentralized apps and smart
-                            <br /> contracts.
+                            <br className="hideOnTablet" /> that leverages the security and capital
+                            <br className="hideOnTablet" /> of Bitcoin or decentralized apps and smart
+                            <br className="hideOnTablet" /> contracts.
                         </Text>
                         <Text style={textStyle}>
                             And what's more important, a great community
-                            <br /> of great creative and mindful people.
+                            <br className="hideOnTablet" /> of great creative and mindful people.
                         </Text>
                     </div>
                     <a

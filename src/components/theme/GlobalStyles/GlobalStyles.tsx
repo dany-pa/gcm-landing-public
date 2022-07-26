@@ -35,39 +35,42 @@ export const GlobalStyle = () => {
                     margin: 0 auto;
                 }
 
-               
-                @media (max-width: ${BREAKPOINT_MOBILE}px) {
-                    .hideOnMobile{
-                        display: none;
-                    }
-                }
-
-                @media (min-width: ${BREAKPOINT_MOBILE}px) {
-                    .hideOnTablet{
-                        display: none;
-                    }
-                    .hideOnMobile{
-                        display: block;
-                    }
-                }
-
-                @media (min-width: ${BREAKPOINT_TABLET}px) {
-                    .hideOnLaptop{
-                        display: none;
-                    }
-                    .hideOnTablet{
-                        display: block;
-                    }
-                }
-
                 @media (min-width: ${BREAKPOINT_LAPTOP}px) {
                     .hideOnDesktop{
                         display: none;
                     }
-                    .hideOnLaptop{
+                    .showOnDesktop{
                         display: block;
                     }
                 }
+               
+                @media (max-width: ${BREAKPOINT_LAPTOP}px) {
+                    .hideOnLaptop{
+                        display: none;
+                    }
+                    .showOnLaptop{
+                        display: block;
+                    }
+                }
+                @media (max-width: ${BREAKPOINT_TABLET}px) {
+                    .hideOnTablet{
+                        display: none;
+                    }
+                    .showOnTablet{
+                        display: block;
+                    }
+                }
+                @media (max-width: ${BREAKPOINT_MOBILE}px) {
+                    .hideOnMobile{
+                        display: none;
+                    }
+                    .showOnMobile{
+                        display: block;
+                    }
+                }
+
+
+
                 
 
                 @media (min-width: 1600px) {
