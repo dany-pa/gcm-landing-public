@@ -29,7 +29,7 @@ export const GlobalStyle = () => {
 
                 main{
                     background-image: url(${BackgroundImg});
-                    background-position: center;
+                    background-position: top;
                     background-repeat: repeat-y;
                     background-size: cover;
                     margin: 0 auto;

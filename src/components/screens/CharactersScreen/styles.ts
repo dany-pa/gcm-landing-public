@@ -271,6 +271,7 @@ export const bubbleStyle_2 = css({
         right: 20,
         left: 'initial',
         top: 'calc(263px / 2 - 78px)',
+        zIndex: 0,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
         width: 63,

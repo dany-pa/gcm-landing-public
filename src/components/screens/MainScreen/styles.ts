@@ -25,20 +25,17 @@ export const logoIconWrapperStyle = css({
 });
 
 export const cityImgStyle = css({
-    width: 'calc(100% + 25px)',
+    width: '100%',
     marginTop: 70,
-    marginLeft: -10,
     order: 2,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        marginTop: -0,
+        marginTop: -80,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
         order: 3,
         marginTop: 90,
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: '172vw',
-        marginLeft: '-20vw',
         order: 2,
     },
 });
@@ -77,6 +74,7 @@ export const titleStyle = css({
     },
 
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'none',
         fontSize: 20,
         lineHeight: '25px',
         marginTop: 0,
