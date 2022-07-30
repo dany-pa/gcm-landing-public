@@ -51,7 +51,6 @@ export const MintScreen = () => {
     }, [mintCount]);
 
     const isDisabledMintBtn = useMemo(() => {
-        console.log(mintCount);
         return mintCount === 0;
     }, [mintCount]);
 
