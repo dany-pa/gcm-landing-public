@@ -73,7 +73,7 @@ export const AboutUsScreen = () => {
                                 type="secondary"
                                 style={textStyle}
                             >
-                                Many of us didn't have great experience
+                                Many of us didn&apos;t have great experience
                                 <br /> with expressing creativity.
                             </Text>
                             <Text
@@ -81,7 +81,7 @@ export const AboutUsScreen = () => {
                                 style={textStyle}
                             >
                                 <strong>GM Cats NFT</strong> serves as a pass to a community
-                                <br className="hideOnMobile" /> of people whosupport each other's creative vision.{' '}
+                                <br className="hideOnMobile" /> of people whosupport each other&apos;s creative vision.{' '}
                                 <br className="hideOnTablet showOnMobile" />
                                 <br className="hideOnDesktop hideOnLaptop showOnMobile" />
                                 The Market with noboundaries for Imagination

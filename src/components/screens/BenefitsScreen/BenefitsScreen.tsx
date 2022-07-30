@@ -62,7 +62,7 @@ export const BenefitsScreen = () => {
                             <br className="hideOnTablet" /> contracts.
                         </Text>
                         <Text style={textStyle}>
-                            And what's more important, a great community
+                            And what&apos;s more important, a great community
                             <br className="hideOnTablet" /> of great creative and mindful people.
                         </Text>
                     </div>
