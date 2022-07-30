@@ -1,3 +1,5 @@
+import { AppConfig, UserSession, showConnect } from '@stacks/connect';
+
 import {
     buttonStyle,
     centerWrapperStyle,
@@ -30,16 +32,17 @@ import PlusImg from '../../../images/plus.svg';
 import { Button } from '../../ui';
 import { useCallback, useMemo, useState } from 'react';
 import { PRICE_ONE_NFT } from '../../../const/general';
+import { COLOR_WHITE } from '../../../const/colors';
 
 export const MintScreen = () => {
-    const [mintCount, setMintCount] = useState(0);
+    const [mintCount, setMintCount] = useState(1);
 
     const handleClickPlus = useCallback(() => {
         setMintCount(mintCount + 1);
     }, [mintCount]);
 
     const handleClickMinus = useCallback(() => {
-        if (mintCount === 0) return;
+        if (mintCount === 1) return;
         setMintCount(mintCount - 1);
     }, [mintCount]);
 
@@ -51,6 +54,33 @@ export const MintScreen = () => {
         console.log(mintCount);
         return mintCount === 0;
     }, [mintCount]);
+
+    const [stxAddress, setStxAddress] = useState<string | undefined>(undefined);
+    const [userSession, setUserSession] = useState<UserSession | undefined>(undefined);
+    const createSession = useCallback(() => {
+        const appConfig = new AppConfig(['store_write']);
+        const session = new UserSession({ appConfig });
+        setUserSession(session);
+    }, []);
+
+    const handleMintClick = useCallback(() => {
+        createSession();
+
+        if (stxAddress) {
+            return;
+        }
+
+        showConnect({
+            appDetails: {
+                name: 'Galactic Market Cats',
+                icon: window.location.origin + '/favicon.ico',
+            },
+            onFinish: (response) => {
+                setStxAddress(response.authResponsePayload.profile.stxAddress.testnet);
+            },
+            userSession: userSession,
+        });
+    }, [createSession, stxAddress, userSession]);
 
     return (
         <section css={sectionStyle}>
@@ -101,7 +131,7 @@ export const MintScreen = () => {
                                         />
                                     </button>
                                     <input
-                                        type="number"
+                                        type="text"
                                         css={inputStyle}
                                         value={mintCount}
                                         disabled
@@ -130,11 +160,13 @@ export const MintScreen = () => {
                         <Button
                             style={buttonStyle}
                             disabled={isDisabledMintBtn}
+                            onClick={handleMintClick}
                         >
                             MINT
                         </Button>
                     </div>
                 </div>
+                <div css={{ color: COLOR_WHITE }}>{stxAddress}</div>
             </div>
         </section>
     );

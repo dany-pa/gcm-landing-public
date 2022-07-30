@@ -37,13 +37,15 @@ const buttonStyle = css({
 interface Props {
     style?: SerializedStyles;
     disabled?: boolean;
+    onClick?: () => void;
 }
 
-export const Button: FC<PropsWithChildren<Props>> = ({ children, style, disabled = false }) => {
+export const Button: FC<PropsWithChildren<Props>> = ({ children, style, disabled = false, onClick }) => {
     return (
         <button
             css={[buttonStyle, style]}
             disabled={disabled}
+            onClick={onClick}
         >
             {children}
         </button>
