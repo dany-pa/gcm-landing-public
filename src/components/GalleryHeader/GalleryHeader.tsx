@@ -14,16 +14,26 @@ interface Props {
 export const GalleryHeader: FC<Props> = (props) => {
     const gallery = props.data.gallery.nodes;
 
-    const [width, setWidth] = useState<number>(window.innerWidth);
+    const isBrowser = typeof window !== 'undefined';
+
+    const [width, setWidth] = useState(() => {
+        if (isBrowser) {
+            return window.innerWidth;
+        }
+    });
 
     function handleWindowSizeChange() {
-        setWidth(window.innerWidth);
+        if (isBrowser) {
+            setWidth(window.innerWidth);
+        }
     }
     useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
-        };
+        if (isBrowser) {
+            window.addEventListener('resize', handleWindowSizeChange);
+            return () => {
+                window.removeEventListener('resize', handleWindowSizeChange);
+            };
+        }
     }, []);
 
     const isMobile = width <= BREAKPOINT_MOBILE;
