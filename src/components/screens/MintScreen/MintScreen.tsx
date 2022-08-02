@@ -24,7 +24,7 @@ import {
 } from './styles';
 import MintPanelIMG from '../../../images/mintPanel.png';
 import MobileMintPanelIMG from '../../../images/mobileMintPanel.png';
-import MintIMG from '../../../images/mintIMG.png';
+import MintIMG from '../../../images/mintImg.png';
 import MinusImg from '../../../images/minus.svg';
 import PlusImg from '../../../images/plus.svg';
 import { Button } from '../../ui';
