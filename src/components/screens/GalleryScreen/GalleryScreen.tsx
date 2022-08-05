@@ -1,5 +1,6 @@
 import { Wrapper } from '../../ui/Wrapper';
 
+import { navigate } from 'gatsby';
 import { Title, Text, Button } from '../../ui';
 import { GALLERY_SCREEN_ID } from '../../../const/urls';
 import { SLIDES } from './const';
@@ -86,7 +87,12 @@ export const GalleryScreen = () => {
                                 <br className="hideOnDesktop hideOnTablet" /> of freedom after all!
                             </strong>
                         </Text>
-                        <Button style={buttonStyle}>VIEW MORE</Button>
+                        <Button
+                            style={buttonStyle}
+                            onClick={() => navigate(`/gallery/`)}
+                        >
+                            VIEW MORE
+                        </Button>
                     </div>
                 </div>
             </Wrapper>
