@@ -127,4 +127,4 @@ export const itemStyle = css({
     },
 });
 
-export const buttonStyle = css({ margin: '0 auto', marginTop: 120, marginBottom: 88 });
+export const buttonStyle = css({ margin: '44px 15px 88px' });
