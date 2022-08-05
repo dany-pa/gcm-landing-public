@@ -1,27 +1,8 @@
 import { MENU_LINKS } from '../const/general';
 import { GalleryHeader } from '../components/GalleryHeader';
 import { DefaultLayout } from '../layouts/DefaultLayout';
-import { graphql } from 'gatsby';
 
-export const query = graphql`
-    query {
-      gallery: allFile(
-        filter: {
-          extension: { eq: "png" }
-          absolutePath: { regex: "/gallery/" }
-        }
-      ) {
-        nodes {
-          id
-          childImageSharp {
-            gatsbyImageData(width: 640)
-          }
-        }
-      }
-    }
-  `;
-
-function GalleryPage({ data }) {
+function GalleryPage() {
     const links = MENU_LINKS.map((link) => ({
         ...link,
         link: `/${link.link}`,
@@ -33,7 +14,7 @@ function GalleryPage({ data }) {
             links={links}
             isShowLogo={true}
         >
-            <GalleryHeader data={data} />
+            <GalleryHeader />
         </DefaultLayout>
     );
 }

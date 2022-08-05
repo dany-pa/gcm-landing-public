@@ -1,18 +1,32 @@
-import { SerializedStyles } from '@emotion/react';
 import { wrapperStyle, headerStyle, titleStyle, containerStyle, imageStyle, itemStyle, buttonStyle } from './styles';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { useStaticQuery, graphql } from 'gatsby';
 import Manekineko from '../../images/Maneki-neko.png';
 import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE, BREAKPOINT_LAPTOP } from '../../const/breakpoints';
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '../../components/ui';
 
-interface Props {
-    style?: SerializedStyles;
-    data: { gallery: { nodes: [] } };
-}
-
-export const GalleryHeader: FC<Props> = (props) => {
-    const gallery = props.data.gallery.nodes;
+export const GalleryHeader = () => {
+    // gallery.nodes as images
+    const {
+        gallery: { nodes: images },
+    } = useStaticQuery(graphql`
+    query {
+      gallery: allFile(
+        filter: {
+          extension: { eq: "png" }
+          absolutePath: { regex: "/gallery/" }
+        }
+      ) {
+        nodes {
+          id
+          childImageSharp {
+            gatsbyImageData(width: 640)
+          }
+        }
+      }
+    }
+  `);
 
     const isBrowser = typeof window !== 'undefined';
 
@@ -53,22 +67,14 @@ export const GalleryHeader: FC<Props> = (props) => {
     };
 
     const max = 100;
-    const [images, setImages] = useState([]);
-    const [limit, setLimit] = useState(() => imageCount());
 
-    const fetchImages = () => {
-        setImages(gallery);
-    };
+    const [limit, setLimit] = useState(() => imageCount());
 
     const handleShowMoreImages = () => {
         if (limit <= max) {
             setLimit(limit + imageCount());
         }
     };
-
-    useEffect(() => {
-        fetchImages();
-    });
 
     return (
         <div css={wrapperStyle}>
