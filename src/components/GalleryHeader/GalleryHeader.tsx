@@ -1,11 +1,11 @@
 import { wrapperStyle, headerStyle, titleStyle, containerStyle, imageStyle, itemStyle, buttonStyle } from './styles';
 import { GatsbyImage, getImage, IGatsbyImageData, ImageDataLike } from 'gatsby-plugin-image';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, navigate } from 'gatsby';
 import Manekineko from '../../images/Maneki-neko.png';
 import ArrowDownImg from '../../images/arrowDown.svg';
 import ArrowUpImg from '../../images/arrowUp.svg';
 import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE, BREAKPOINT_LAPTOP } from '../../const/breakpoints';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '../../components/ui';
 
 export const GalleryHeader = () => {
@@ -39,19 +39,49 @@ query {
         }
     });
 
+    const useElementOnScreen = (options) => {
+        const containerRef = useRef(null);
+        const [isVisible, setIsVisible] = useState(false);
+
+        const callbackFunction = (entries) => {
+            const [entry] = entries;
+            setIsVisible(entry.isIntersecting);
+        };
+
+        useEffect(() => {
+            const observer = new IntersectionObserver(callbackFunction, options);
+            if (containerRef.current) observer.observe(containerRef.current);
+
+            return () => {
+                if (containerRef.current) observer.unobserve(containerRef.current);
+            };
+        }, [containerRef, options]);
+
+        return [containerRef, isVisible];
+    };
+
+    const [containerRef, isVisible] = useElementOnScreen({ root: null, rootMargin: '0px', threshold: 0.5 });
+
+    const handleShowMoreImages = () => {
+        if (limit <= max) {
+            if (isVisible) setLimit(limit + imageCount());
+        }
+    };
+
     function handleWindowSizeChange() {
         if (isBrowser) {
             setWidth(window.innerWidth);
         }
     }
     useEffect(() => {
+        handleShowMoreImages();
         if (isBrowser) {
             window.addEventListener('resize', handleWindowSizeChange);
             return () => {
                 window.removeEventListener('resize', handleWindowSizeChange);
             };
         }
-    }, []);
+    }, [isVisible]);
 
     const isMobile = width <= BREAKPOINT_MOBILE;
     const isTablet = width <= BREAKPOINT_TABLET;
@@ -72,12 +102,6 @@ query {
     const max = 100;
 
     const [limit, setLimit] = useState(() => imageCount());
-
-    const handleShowMoreImages = () => {
-        if (limit <= max) {
-            setLimit(limit + imageCount());
-        }
-    };
 
     return (
         <div css={wrapperStyle}>
@@ -103,7 +127,7 @@ query {
                     </div>
                 ))}
             </div>
-            <div
+            {/* <div
                 style={{
                     width: 170,
                     margin: '0 auto',
@@ -119,14 +143,6 @@ query {
                         paddingBottom: 7,
                     }}
                 >{`You’ve viewed ${limit < 100 ? limit : 100} of ${max} nft’s`}</p>
-                {/* <label htmlFor="file">Downloading progress:</label>
-                <progress
-                    id="file"
-                    value={limit < 100 ? limit : 100}
-                    max={max}
-                >
-                    2%
-                </progress> */}
                 <div
                     style={{
                         background: '#D9D9D9',
@@ -140,8 +156,9 @@ query {
                         }}
                     ></div>
                 </div>
-            </div>
+            </div> */}
             <div
+                ref={containerRef}
                 id="#bottom"
                 style={{
                     display: 'flex',
@@ -150,8 +167,7 @@ query {
                     margin: '0 auto',
                 }}
             >
-                <a href="#top">
-                    {' '}
+                {/* <a href="#top">
                     <img
                         style={{
                             paddingTop: '2px',
@@ -159,20 +175,28 @@ query {
                         src={ArrowUpImg}
                         alt="Navigation Up"
                     />
-                </a>
+                </a> */}
+                {limit >= max ? (
+                    <Button
+                        style={buttonStyle}
+                        onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}
+                    >
+                        Move to Top
+                    </Button>
+                ) : null}
 
-                <Button
+                {/* <Button
                     onClick={handleShowMoreImages}
                     style={buttonStyle}
                 >
                     View More
-                </Button>
-                <a href="#bottom">
+                </Button> */}
+                {/* <a href="#bottom">
                     <img
                         src={ArrowDownImg}
                         alt="Navigation Down"
                     />
-                </a>
+                </a> */}
             </div>
         </div>
     );
