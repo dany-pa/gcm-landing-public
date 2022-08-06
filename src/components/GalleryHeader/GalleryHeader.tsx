@@ -89,7 +89,7 @@ query {
 
     const imageCount = () => {
         if (isMobile) {
-            return 6;
+            return 12;
         } else if (isTablet) {
             return 4;
         } else if (isLaptop) {
@@ -159,7 +159,6 @@ query {
             </div> */}
             <div
                 ref={containerRef}
-                id="#bottom"
                 style={{
                     display: 'flex',
                     alignItems: 'baseline',
