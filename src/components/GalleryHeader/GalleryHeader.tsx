@@ -3,6 +3,8 @@ import { GatsbyImage, getImage, IGatsbyImageData, ImageDataLike } from 'gatsby-p
 import { useStaticQuery, graphql, navigate } from 'gatsby';
 import Manekineko from '../../images/Maneki-neko.png';
 import ArrowDownImg from '../../images/arrowDown.svg';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 import ArrowUpImg from '../../images/arrowUp.svg';
 import { BREAKPOINT_TABLET, BREAKPOINT_MOBILE, BREAKPOINT_LAPTOP } from '../../const/breakpoints';
 import { useState, useEffect, useRef } from 'react';
@@ -23,7 +25,7 @@ query {
         gatsbyImageData(
           width: 640
           placeholder: DOMINANT_COLOR
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }
@@ -111,6 +113,7 @@ query {
                     src={Manekineko}
                     alt="Manekineko image"
                 />
+
                 <h2 css={[titleStyle]}>What kind of Cat are you today?</h2>
             </div>
             <div
@@ -118,13 +121,13 @@ query {
                 css={[containerStyle]}
             >
                 {images.slice(0, limit).map((img) => (
-                    <div key={img.id}>
+                    <Zoom key={img.id}>
                         <GatsbyImage
                             css={[itemStyle]}
                             alt={'Gallery Image'}
                             image={getImage(img)}
                         />
-                    </div>
+                    </Zoom>
                 ))}
             </div>
             {/* <div

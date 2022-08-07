@@ -39,6 +39,7 @@
         "react": "^18.1.0",
         "react-dom": "^18.1.0",
         "react-helmet": "^6.1.0",
+        "react-medium-image-zoom": "^5.0.1",
         "react-responsive-carousel": "^3.2.23",
         "react-scroll-into-view": "^1.12.0",
         "react-slick": "^0.29.0",
