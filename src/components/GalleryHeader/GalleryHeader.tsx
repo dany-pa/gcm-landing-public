@@ -120,7 +120,8 @@ query {
                 id="#top"
                 css={[containerStyle]}
             >
-                {images.slice(0, limit).map((img) => (
+                {images.map((img) => (
+                    //.slice(0, limit)
                     <Zoom key={img.id}>
                         <GatsbyImage
                             css={[itemStyle]}
@@ -178,14 +179,21 @@ query {
                         alt="Navigation Up"
                     />
                 </a> */}
-                {limit >= max ? (
+                {/* {limit >= max ? (
                     <Button
                         style={buttonStyle}
                         onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}
                     >
                         Move to Top
                     </Button>
-                ) : null}
+                ) : null} */}
+
+                <Button
+                    style={buttonStyle}
+                    onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                    Move to Top
+                </Button>
 
                 {/* <Button
                     onClick={handleShowMoreImages}
