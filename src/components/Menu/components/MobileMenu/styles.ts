@@ -76,7 +76,7 @@ export const headerWrapperStyle = css({
     display: 'flex',
     justifyContent: 'flex-end',
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        paddingBottom: 100,
+        paddingBottom: 40,
         justifyContent: 'space-between',
     },
 });
@@ -101,8 +101,8 @@ export const logoIconStyle = css({
     width: 291,
     height: 197,
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 217,
+        width: 167,
         height: 147,
-        marginBottom: 40,
+        marginBottom: 10,
     },
 });

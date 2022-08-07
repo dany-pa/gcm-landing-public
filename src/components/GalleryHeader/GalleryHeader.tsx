@@ -60,7 +60,7 @@ query {
         return [containerRef, isVisible];
     };
 
-    const [containerRef, isVisible] = useElementOnScreen({ root: null, rootMargin: '0px', threshold: 0.5 });
+    const [containerRef, isVisible] = useElementOnScreen({ root: null, rootMargin: '0px', threshold: 0.1 });
 
     const handleShowMoreImages = () => {
         if (limit <= max) {
