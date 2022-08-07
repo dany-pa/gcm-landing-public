@@ -33,77 +33,77 @@ query {
 }
   `);
 
-    const isBrowser = typeof window !== 'undefined';
+    // const isBrowser = typeof window !== 'undefined';
 
-    const [width, setWidth] = useState(() => {
-        if (isBrowser) {
-            return window.innerWidth;
-        }
-    });
+    // const [width, setWidth] = useState(() => {
+    //     if (isBrowser) {
+    //         return window.innerWidth;
+    //     }
+    // });
 
-    const useElementOnScreen = (options) => {
-        const containerRef = useRef(null);
-        const [isVisible, setIsVisible] = useState(false);
+    // const useElementOnScreen = (options) => {
+    //     const containerRef = useRef(null);
+    //     const [isVisible, setIsVisible] = useState(false);
 
-        const callbackFunction = (entries) => {
-            const [entry] = entries;
-            setIsVisible(entry.isIntersecting);
-        };
+    //     const callbackFunction = (entries) => {
+    //         const [entry] = entries;
+    //         setIsVisible(entry.isIntersecting);
+    //     };
 
-        useEffect(() => {
-            const observer = new IntersectionObserver(callbackFunction, options);
-            if (containerRef.current) observer.observe(containerRef.current);
+    //     useEffect(() => {
+    //         const observer = new IntersectionObserver(callbackFunction, options);
+    //         if (containerRef.current) observer.observe(containerRef.current);
 
-            return () => {
-                if (containerRef.current) observer.unobserve(containerRef.current);
-            };
-        }, [containerRef, options]);
+    //         return () => {
+    //             if (containerRef.current) observer.unobserve(containerRef.current);
+    //         };
+    //     }, [containerRef, options]);
 
-        return [containerRef, isVisible];
-    };
+    //     return [containerRef, isVisible];
+    // };
 
-    const [containerRef, isVisible] = useElementOnScreen({ root: null, rootMargin: '0px', threshold: 0.1 });
+    // const [containerRef, isVisible] = useElementOnScreen({ root: null, rootMargin: '0px', threshold: 0.1 });
 
-    const handleShowMoreImages = () => {
-        if (limit <= max) {
-            if (isVisible) setLimit(limit + imageCount());
-        }
-    };
+    // const handleShowMoreImages = () => {
+    //     if (limit <= max) {
+    //         if (isVisible) setLimit(limit + imageCount());
+    //     }
+    // };
 
-    function handleWindowSizeChange() {
-        if (isBrowser) {
-            setWidth(window.innerWidth);
-        }
-    }
-    useEffect(() => {
-        handleShowMoreImages();
-        if (isBrowser) {
-            window.addEventListener('resize', handleWindowSizeChange);
-            return () => {
-                window.removeEventListener('resize', handleWindowSizeChange);
-            };
-        }
-    }, [isVisible]);
+    // function handleWindowSizeChange() {
+    //     if (isBrowser) {
+    //         setWidth(window.innerWidth);
+    //     }
+    // }
+    // useEffect(() => {
+    //     handleShowMoreImages();
+    //     if (isBrowser) {
+    //         window.addEventListener('resize', handleWindowSizeChange);
+    //         return () => {
+    //             window.removeEventListener('resize', handleWindowSizeChange);
+    //         };
+    //     }
+    // }, [isVisible]);
 
-    const isMobile = width <= BREAKPOINT_MOBILE;
-    const isTablet = width <= BREAKPOINT_TABLET;
-    const isLaptop = width <= BREAKPOINT_LAPTOP;
+    // const isMobile = width <= BREAKPOINT_MOBILE;
+    // const isTablet = width <= BREAKPOINT_TABLET;
+    // const isLaptop = width <= BREAKPOINT_LAPTOP;
 
-    const imageCount = () => {
-        if (isMobile) {
-            return 12;
-        } else if (isTablet) {
-            return 4;
-        } else if (isLaptop) {
-            return 9;
-        } else {
-            return 12;
-        }
-    };
+    // const imageCount = () => {
+    //     if (isMobile) {
+    //         return 12;
+    //     } else if (isTablet) {
+    //         return 4;
+    //     } else if (isLaptop) {
+    //         return 9;
+    //     } else {
+    //         return 12;
+    //     }
+    // };
 
-    const max = 100;
+    // const max = 100;
 
-    const [limit, setLimit] = useState(() => imageCount());
+    // const [limit, setLimit] = useState(() => imageCount());
 
     return (
         <div css={wrapperStyle}>
@@ -124,6 +124,7 @@ query {
                     //.slice(0, limit)
                     <Zoom key={img.id}>
                         <GatsbyImage
+                            loading="eager"
                             css={[itemStyle]}
                             alt={'Gallery Image'}
                             image={getImage(img)}
@@ -131,6 +132,12 @@ query {
                     </Zoom>
                 ))}
             </div>
+            <Button
+                style={buttonStyle}
+                onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+                Move to Top
+            </Button>
             {/* <div
                 style={{
                     width: 170,
@@ -161,7 +168,7 @@ query {
                     ></div>
                 </div>
             </div> */}
-            <div
+            {/* <div
                 ref={containerRef}
                 style={{
                     display: 'flex',
@@ -169,8 +176,8 @@ query {
                     width: 'auto',
                     margin: '0 auto',
                 }}
-            >
-                {/* <a href="#top">
+            > */}
+            {/* <a href="#top">
                     <img
                         style={{
                             paddingTop: '2px',
@@ -179,35 +186,27 @@ query {
                         alt="Navigation Up"
                     />
                 </a> */}
-                {/* {limit >= max ? (
-                    <Button
-                        style={buttonStyle}
-                        onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}
-                    >
-                        Move to Top
-                    </Button>
-                ) : null} */}
 
-                <Button
+            {/* <Button
                     style={buttonStyle}
                     onClick={() => scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                     Move to Top
-                </Button>
+                </Button> */}
 
-                {/* <Button
+            {/* <Button
                     onClick={handleShowMoreImages}
                     style={buttonStyle}
                 >
                     View More
                 </Button> */}
-                {/* <a href="#bottom">
+            {/* <a href="#bottom">
                     <img
                         src={ArrowDownImg}
                         alt="Navigation Down"
                     />
                 </a> */}
-            </div>
+            {/* </div> */}
         </div>
     );
 };

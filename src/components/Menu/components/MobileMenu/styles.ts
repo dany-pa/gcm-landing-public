@@ -6,6 +6,7 @@ export const wrapperStyle = css({
     padding: '40px 0 70px 0',
     width: '100vw',
     height: '100vh',
+    minHeight: '-webkit-fill-available',
     backgroundColor: '#2EA5ED',
     position: 'fixed',
     top: 0,
