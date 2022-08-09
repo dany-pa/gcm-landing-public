@@ -1,3 +1,5 @@
+import { AppConfig, UserSession, showConnect, openContractCall } from '@stacks/connect';
+
 import {
     buttonStyle,
     centerWrapperStyle,
@@ -30,16 +32,18 @@ import PlusImg from '../../../images/plus.svg';
 import { Button } from '../../ui';
 import { useCallback, useMemo, useState } from 'react';
 import { PRICE_ONE_NFT } from '../../../const/general';
+import { CONTRACT_ADDRESS, CONTRACT_NAME, MAX_MINT_COUNT, MINT_FUNCTION_NAME, MIN_MINT_COUNT } from './constants';
 
 export const MintScreen = () => {
-    const [mintCount, setMintCount] = useState(0);
+    const [mintCount, setMintCount] = useState(1);
 
     const handleClickPlus = useCallback(() => {
+        if (mintCount === MAX_MINT_COUNT) return;
         setMintCount(mintCount + 1);
     }, [mintCount]);
 
     const handleClickMinus = useCallback(() => {
-        if (mintCount === 0) return;
+        if (mintCount === MIN_MINT_COUNT) return;
         setMintCount(mintCount - 1);
     }, [mintCount]);
 
@@ -48,9 +52,45 @@ export const MintScreen = () => {
     }, [mintCount]);
 
     const isDisabledMintBtn = useMemo(() => {
-        console.log(mintCount);
         return mintCount === 0;
     }, [mintCount]);
+
+    const [stxAddress, setStxAddress] = useState<string | undefined>(undefined);
+    const [userSession, setUserSession] = useState<UserSession | undefined>(undefined);
+    const createSession = useCallback(() => {
+        const appConfig = new AppConfig(['store_write']);
+        const session = new UserSession({ appConfig });
+        setUserSession(session);
+    }, []);
+
+    const callMintContract = useCallback(() => {
+        openContractCall({
+            contractAddress: CONTRACT_ADDRESS,
+            contractName: CONTRACT_NAME,
+            functionName: MINT_FUNCTION_NAME,
+            functionArgs: [],
+        });
+    }, []);
+
+    const handleMintClick = useCallback(() => {
+        createSession();
+
+        if (stxAddress) {
+            callMintContract();
+            return;
+        }
+
+        showConnect({
+            appDetails: {
+                name: 'Galactic Market Cats',
+                icon: window.location.origin + '/favicon.ico',
+            },
+            onFinish: (response) => {
+                setStxAddress(response.authResponsePayload.profile.stxAddress.testnet);
+            },
+            userSession: userSession,
+        });
+    }, [callMintContract, createSession, stxAddress, userSession]);
 
     return (
         <section css={sectionStyle}>
@@ -101,7 +141,7 @@ export const MintScreen = () => {
                                         />
                                     </button>
                                     <input
-                                        type="number"
+                                        type="text"
                                         css={inputStyle}
                                         value={mintCount}
                                         disabled
@@ -130,8 +170,9 @@ export const MintScreen = () => {
                         <Button
                             style={buttonStyle}
                             disabled={isDisabledMintBtn}
+                            onClick={handleMintClick}
                         >
-                            MINT
+                            {stxAddress ? 'MINT' : 'CONNECT'}
                         </Button>
                     </div>
                 </div>

@@ -5,7 +5,6 @@ import City from '../../../images/webp/city.webp';
 import CityLaptop from '../../../images/cityLaptop.png';
 import CityTablet from '../../../images/cityTablet.png';
 import CityMobile from '../../../images/cityMobile.png';
-import { ABOUT_US_SCREEN_ID } from '../../../const/urls';
 import { sectionStyle, wrapperStyle, logoIconWrapperStyle, buttonStyle, cityImgStyle, titleStyle } from './styles';
 import { Link } from 'gatsby';
 

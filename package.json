@@ -23,6 +23,9 @@
         "@emotion/react": "^11.9.3",
         "@emotion/styled": "^11.9.3",
         "@fontsource/montserrat": "^4.5.11",
+        "@stacks/auth": "^4.3.3",
+        "@stacks/connect": "^6.9.1",
+        "buffer": "^6.0.3",
         "eslint-plugin-promise": "^6.0.0",
         "gatsby": "^4.18.0",
         "gatsby-image": "^3.11.0",
@@ -62,5 +65,8 @@
         "eslint-plugin-react": "^7.30.1",
         "eslint-plugin-react-hooks": "^4.6.0",
         "typescript": "^4.7.4"
-    }
+    },
+    "browserslist": [
+        "defaults"
+    ]
 }
