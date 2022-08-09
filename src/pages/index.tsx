@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import {
     MainScreen,
     AboutUsScreen,
@@ -11,10 +12,14 @@ import {
 import { Footer } from '../components/Footer';
 
 import { DefaultLayout } from '../layouts/DefaultLayout';
+import { DEFAULT_TITLE } from '../const/general';
 
 function IndexPage() {
     return (
         <DefaultLayout>
+            <Helmet>
+                <title>{DEFAULT_TITLE} - Home</title>
+            </Helmet>
             <MainScreen />
             <AboutUsScreen />
             <GalleryScreen />

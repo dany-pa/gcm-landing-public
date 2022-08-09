@@ -3,7 +3,12 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
     siteMetadata: {
         title: `Galactic Matket Cats`,
-        siteUrl: `https://www.yourdomain.tld`,
+        siteUrl: `https://www.gmcats.xyz/`,
+        description: `GALACTIC MARKET CATS is more than just a pfp collection. It is a character
+        for the free universe, the world, the story we
+        build together.`,
+        twitterUsername: '@GMCatsNFT',
+        image: './src/images/icon.webp',
     },
     // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
     // If you use VSCode you can also use the GraphQL plugin
@@ -14,16 +19,22 @@ const config: GatsbyConfig = {
         {
             resolve: 'gatsby-plugin-google-analytics',
             options: {
-                trackingId: 'TEST',
+                trackingId: 'G-KHV9YJ3MPC',
             },
         },
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',
         {
-            resolve: 'gatsby-plugin-manifest',
+            resolve: `gatsby-plugin-manifest`,
             options: {
-                icon: 'src/images/icon.png',
+                name: `Galactic Matket Cats`,
+                short_name: `Galactic Matket Cats`,
+                start_url: `https://www.gmcats.xyz/`,
+                background_color: `#0DB7E8`,
+                theme_color: `#FFB774`,
+                display: `standalone`,
+                icon: 'src/images/icon.webp',
             },
         },
         'gatsby-plugin-sharp',

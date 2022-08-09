@@ -101,7 +101,7 @@ export const personsWrapperStyle = css({
     display: 'flex',
     justifyContent: 'space-between',
 
-    '.person:nth-child(1) .titlePerson': {
+    '.person:nth-of-type(1) .titlePerson': {
         marginBottom: 25,
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {

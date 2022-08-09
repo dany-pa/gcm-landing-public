@@ -130,20 +130,20 @@ export const wrapperStyle = css({
 
 export const slideRowStyle = css({
     margin: '20px 0',
-    'img:nth-child(2)': {
+    'img:nth-of-type(2)': {
         marginRight: 20,
         marginLeft: 20,
     },
     display: 'flex',
 
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        'img:nth-child(3)': {
+        'img:nth-of-type(3)': {
             display: 'none',
         },
-        'img:nth-child(2)': {
+        'img:nth-of-type(2)': {
             margin: 0,
         },
-        'img:nth-child(1)': {
+        'img:nth-of-type(1)': {
             marginRight: 20,
         },
     },

@@ -56,10 +56,9 @@ export const GalleryHeader = () => {
                 id="#top"
                 css={[containerStyle]}
             >
-                {images.map((img) => {
-                    console.log(img.childImageSharp.fixed);
+                {images.map((img, index) => {
                     return (
-                        <Zoom key={img.id}>
+                        <Zoom key={index}>
                             <Img
                                 fixed={img.childImageSharp.fixed}
                                 key={img.id}

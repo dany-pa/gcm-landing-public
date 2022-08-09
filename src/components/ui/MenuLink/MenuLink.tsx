@@ -65,13 +65,15 @@ export const MenuLink: FC<Props> = ({ title, link, color = COLOR_PRIMARY, style,
             {link.startsWith('#') ? (
                 <ScrollIntoView selector={link}>{linkElement()}</ScrollIntoView>
             ) : (
-                <Link
-                    to={link}
-                    css={[linkStyle, style]}
-                    className="link"
-                >
-                    {title}
-                </Link>
+                <div>
+                    <Link
+                        to={link}
+                        css={[linkStyle, style]}
+                        className="link"
+                    >
+                        {title}
+                    </Link>
+                </div>
             )}
         </>
     );

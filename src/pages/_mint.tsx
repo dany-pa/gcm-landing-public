@@ -1,5 +1,6 @@
+import { Helmet } from 'react-helmet';
 import { MintScreen } from '../components/screens';
-import { MENU_LINKS } from '../const/general';
+import { DEFAULT_TITLE, MENU_LINKS } from '../const/general';
 
 import { DefaultLayout } from '../layouts/DefaultLayout';
 
@@ -15,7 +16,10 @@ function MintPage() {
             links={links}
             isShowLogo={true}
         >
-            {<MintScreen />}
+            <Helmet>
+                <title>{DEFAULT_TITLE} - Mint</title>
+            </Helmet>
+            <MintScreen />
         </DefaultLayout>
     );
 }

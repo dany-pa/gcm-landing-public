@@ -5,8 +5,9 @@ import City from '../../../images/webp/city.webp';
 import CityLaptop from '../../../images/cityLaptop.png';
 import CityTablet from '../../../images/cityTablet.png';
 import CityMobile from '../../../images/cityMobile.png';
-import { sectionStyle, wrapperStyle, logoIconWrapperStyle, buttonStyle, cityImgStyle, titleStyle } from './styles';
-import { Link } from 'gatsby';
+import { sectionStyle, wrapperStyle, logoIconWrapperStyle, cityImgStyle, titleStyle } from './styles';
+import ScrollIntoView from 'react-scroll-into-view';
+import { ABOUT_US_SCREEN_ID } from '../../../const/urls';
 
 export const MainScreen = () => {
     return (
@@ -15,12 +16,16 @@ export const MainScreen = () => {
                 <div css={logoIconWrapperStyle}>
                     <LogoIcon color={COLOR_SECONDARY} />
                 </div>
-                <Link
+                {/* <Link
                     to="/mint"
                     style={{ textDecoration: 'none' }}
                 >
                     <Button style={buttonStyle}>MINT</Button>
-                </Link>
+                </Link> */}
+
+                <ScrollIntoView selector={`#${ABOUT_US_SCREEN_ID}`}>
+                    <Button>VIEW MORE</Button>
+                </ScrollIntoView>
             </Wrapper>
             <img
                 className="hideOnLaptop"
