@@ -44,7 +44,7 @@ export const Button: FC<PropsWithChildren<Props>> = ({
     children,
     style,
     disabled = false,
-    onClick = () => void,
+    onClick
 }) => {
     return (
         <button
