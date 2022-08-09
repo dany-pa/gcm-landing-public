@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Link } from 'gatsby';
 import { COLOR_SECONDARY } from '../../const/colors';
 import { MenuLinkType } from '../../types/general';
 import { LogoIcon } from '../icons';
@@ -17,9 +18,11 @@ export const Menu: FC<Props> = ({ links, isShowLogo = false }) => {
             className="nav"
         >
             {isShowLogo && (
-                <div css={logoIconWrapperStyle}>
-                    <LogoIcon color={COLOR_SECONDARY} />
-                </div>
+                <Link to="/">
+                    <div css={logoIconWrapperStyle}>
+                        <LogoIcon color={COLOR_SECONDARY} />
+                    </div>
+                </Link>
             )}
             {links.map((link) => {
                 return (

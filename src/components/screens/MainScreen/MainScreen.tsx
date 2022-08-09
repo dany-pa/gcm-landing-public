@@ -7,6 +7,7 @@ import CityTablet from '../../../images/cityTablet.png';
 import CityMobile from '../../../images/cityMobile.png';
 import { ABOUT_US_SCREEN_ID } from '../../../const/urls';
 import { sectionStyle, wrapperStyle, logoIconWrapperStyle, buttonStyle, cityImgStyle, titleStyle } from './styles';
+import { Link } from 'gatsby';
 
 export const MainScreen = () => {
     return (
@@ -15,9 +16,12 @@ export const MainScreen = () => {
                 <div css={logoIconWrapperStyle}>
                     <LogoIcon color={COLOR_SECONDARY} />
                 </div>
-                <a href={`#${ABOUT_US_SCREEN_ID}`}>
+                <Link
+                    to="/mint"
+                    style={{ textDecoration: 'none' }}
+                >
                     <Button style={buttonStyle}>MINT</Button>
-                </a>
+                </Link>
             </Wrapper>
             <img
                 className="hideOnLaptop"
