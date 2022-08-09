@@ -40,7 +40,12 @@ interface Props {
     onClick?: () => void;
 }
 
-export const Button: FC<PropsWithChildren<Props>> = ({ children, style, disabled = false, onClick }) => {
+export const Button: FC<PropsWithChildren<Props>> = ({
+    children,
+    style,
+    disabled = false,
+    onClick = () => void,
+}) => {
     return (
         <button
             css={[buttonStyle, style]}

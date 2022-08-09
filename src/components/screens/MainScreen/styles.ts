@@ -47,7 +47,13 @@ export const buttonStyle = css({
     fontSize: 20,
     lineHeight: '24px',
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        display: 'none',
+        // display: 'none',
+    },
+    [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
+        display: 'block',
+        margin: '56px auto 0 auto;',
+        fontSize: 16,
+        lineHeight: '20px',
     },
 });
 
@@ -74,7 +80,7 @@ export const titleStyle = css({
     },
 
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        display: 'none',
+        //display: 'none',
         fontSize: 20,
         lineHeight: '25px',
         marginTop: 0,

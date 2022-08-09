@@ -15,7 +15,10 @@ export const MainScreen = () => {
                 <div css={logoIconWrapperStyle}>
                     <LogoIcon color={COLOR_SECONDARY} />
                 </div>
-                <Link to="/mint">
+                <Link
+                    to="/mint"
+                    style={{ textDecoration: 'none' }}
+                >
                     <Button style={buttonStyle}>MINT</Button>
                 </Link>
             </Wrapper>

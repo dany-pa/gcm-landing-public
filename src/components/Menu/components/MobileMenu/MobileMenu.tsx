@@ -1,4 +1,5 @@
 import { SerializedStyles } from '@emotion/react';
+import { Link } from 'gatsby';
 import { FC } from 'react';
 import { COLOR_BACKGROUND } from '../../../../const/colors';
 import { DISCORD_URL, TWITTER_URL } from '../../../../const/urls';
@@ -54,9 +55,12 @@ export const MobileMenu: FC<Props> = ({ style, links, onCloseClick }) => {
                     <CloseIcon />
                 </button>
             </Wrapper>
-            <div css={logoIconStyle}>
-                <LogoIcon />
-            </div>
+            <Link to="/">
+                <div css={logoIconStyle}>
+                    <LogoIcon />
+                </div>
+            </Link>
+
             <nav css={navStyle}>
                 {links.map((link) => {
                     return (
