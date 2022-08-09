@@ -109,21 +109,21 @@ export const containerStyle = css({
 });
 
 export const itemStyle = css({
-    width: 262,
-    height: 262,
+    width: '262px !important',
+    height: '262px !important',
     filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
     borderRadius: 13,
     [`@media (max-width: ${BREAKPOINT_LAPTOP}px)`]: {
-        width: 240,
-        height: 240,
+        width: '240px !important',
+        height: '240px !important',
     },
     [`@media (max-width: ${BREAKPOINT_TABLET}px)`]: {
-        width: 240,
-        height: 240,
+        width: '240px !important',
+        height: '240px !important',
     },
     [`@media (max-width: ${BREAKPOINT_MOBILE}px)`]: {
-        width: 151,
-        height: 151,
+        width: '151px !important',
+        height: '151px !important',
     },
 });
 
