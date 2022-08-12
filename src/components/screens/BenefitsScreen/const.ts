@@ -131,7 +131,7 @@ export const BENEFITS = [
     },
     {
         id: 5,
-        text: 'Access to the<br /> allfuture drops<br /> and roadmap<br />activations',
+        text: 'Access to the<br /> all future drops<br /> and roadmap<br />activations',
         icon: dropsIcon,
         iconStyle: css({
             width: 148,

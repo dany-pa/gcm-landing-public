@@ -81,7 +81,7 @@ export const AboutUsScreen = () => {
                                 style={textStyle}
                             >
                                 <strong>GM Cats NFT</strong> serves as a pass to a community
-                                <br className="hideOnMobile" /> of people whosupport each other's creative vision.{' '}
+                                <br className="hideOnMobile" /> of people who support each other's creative vision.{' '}
                                 <br className="hideOnTablet showOnMobile" />
                                 <br className="hideOnDesktop hideOnLaptop showOnMobile" />
                                 The Market with noboundaries for Imagination
@@ -98,7 +98,7 @@ export const AboutUsScreen = () => {
                 </AdvanceStyled>
                 <DividerStyled />
                 <AdvanceStyled>
-                    <strong css={advanceNumberStyle}>3</strong> unique cherecters
+                    <strong css={advanceNumberStyle}>3</strong> unique characters
                 </AdvanceStyled>
                 <DividerStyled />
                 <AdvanceStyled>infinite universe</AdvanceStyled>
